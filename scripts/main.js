@@ -60,3 +60,34 @@ function loadPage(page) {
 document.addEventListener('DOMContentLoaded', function() {
     loadPage('home.html');
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const navbar = document.getElementById('navbar');
+    const navLinks = document.querySelectorAll('#navbar a');
+
+    menuToggle.addEventListener('click', function() {
+        // Toggle the active class on the menu button
+        menuToggle.classList.toggle('active');
+        
+        // Toggle the expanded class on the nav
+        navbar.classList.toggle('expanded');
+        
+        // Remove the collapsed class if it exists
+        navbar.classList.remove('collapsed');
+    });
+
+    // Collapse the nav panel when any link is clicked
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            // Remove the active class from the menu button
+            menuToggle.classList.remove('active');
+            
+            // Remove the expanded class to collapse the nav
+            navbar.classList.remove('expanded');
+            
+            // Add the collapsed class to hide the nav
+            navbar.classList.add('collapsed');
+        });
+    });
+});

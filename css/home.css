@@ -1,29 +1,29 @@
-
+/* Base Styles */
 .home-content {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column; /* Stack elements vertically by default */
+    justify-content: center;
     align-items: center;
     position: relative;
-    height: 61vh; /* Full page height */
+    height: auto; /* Allow height to adjust based on content */
     overflow: hidden;
 }
 
 .text-content {
     position: relative;
     z-index: 1;
-    width: 50%;
-    padding: 40px;
+    width: 100%; /* Full width on mobile */
+    padding: 20px;
     box-sizing: border-box;
+    text-align: center; /* Center text on mobile */
 }
-
-
 
 .image-container {
     position: relative;
     top: 0;
-    right: 0;
-    width: 50%; /* Adjusted to occupy half of the container */
-    height: 100%;
+    width: 100%; /* Full width on mobile */
+    height: 200px; /* Adjust height as needed */
+    margin-bottom: 20px; /* Add spacing between image and text on mobile */
 }
 
 .faded-image {
@@ -31,64 +31,163 @@
     background-size: cover;
     height: 100%;
     width: 100%;
-    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 90%);
-    -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 90%);
+    mask-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 90%);
+    -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 90%);
 }
 
-
-
-
-
-.image-container {
-    position: relative;
-    top: 0;
-    padding: -0px;
-    right: 0;
+/* Additional classes for other faded images */
+.spares-faded-image, .club-faded-image {
+    height: 200px; /* Adjust height as needed for mobile */
     width: 100%;
-    height: 100%;
 }
 
-.faded-image {
-    background: url('/images/matchlessg3wo.jpeg') no-repeat center center;
-    background-size: cover;
-    height: 100%;
-    width: 100%;
-    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 90%);
-    -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 90%);
+/* Scaling and positioning for different screen sizes */
+@media (max-width: 900px) {
+    .header-grid {
+        transform: scale(0.8); /* Further scale down for very small screens */
+    }
+
+    /* On small screens, move the image container above the text */
+    .home-content {
+        flex-direction: column-reverse;
+    }
+
+    .image-container {
+        margin-bottom: 20px; /* Add space below the image */
+    }
+
+    .faded-image {
+        mask-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 90%);
+        -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 90%);
+    }
 }
 
-.spares-faded-image {
-    background: url('/images/spares.jpg') no-repeat center center;
-    background-size: cover;
-    height: 100%;
+/* Additional classes for other faded images */
+.spares-faded-image, .club-faded-image {
+    height: 200px; /* Adjust height as needed for mobile */
     width: 100%;
-    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 90%);
-    -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 90%);
 }
 
-.club-faded-image {
-    background: url('/images/york.jpg') no-repeat center center;
-    background-size: cover;
-    height: 100%;
-    width: 100%;
-    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 90%);
-    -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 90%);
+/* Masonry Layout for Photos */
+.masonry-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 columns on mobile */
+    gap: 10px;
+    margin: 20px 0;
 }
 
-.iframe-wrapper {
-    width: 100%;
-    height: calc(100vh - 200px); /* Adjust height based on header/footer size */
+.header-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column grid by default */
+    grid-template-rows: auto auto auto; /* Three rows, one for each header */
+    gap: 10px; /* Space between grid items */
+    justify-items: center; /* Center items within their grid cells */
+    align-items: center; /* Center items vertically */
+    transform-origin: top left; /* Set transform origin for scaling */
+    margin-top: 0px; /* Reset margin on small screens */
+}
+
+/* Scaling and positioning for different screen sizes */
+@media (max-width: 1100px) {
+    .header-grid {
+        transform: scale(0.9); /* Scale the entire grid down for smaller screens */
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 900px) {
+    .header-grid {
+        transform: scale(0.8); /* Further scale down for very small screens */
+    }
+
+    /* On small screens, move the image container above the text */
+    .home-content {
+        flex-direction: column-reverse;
+    }
+
+    .image-container {
+        margin-bottom: 20px; /* Add space below the image */
+    }
+
+    .faded-image {
+        mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 90%);
+        -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 90%);
+    }
+}
+
+@media (min-width: 768px) {
+    .header-grid {
+        margin-top: 200px; /* Adjust margin to position the grid as needed */
+    }
+
+    /* Tablet and larger screens */
+    .home-content {
+        flex-direction: row; /* Restore row direction */
+        height: 61vh; /* Restore original height */
+    }
+
+    .text-content {
+        width: 50%; /* Half width on larger screens */
+        padding: 40px;
+        text-align: left; /* Align text to the left on larger screens */
+    }
+
+    .image-container {
+        width: 50%; /* Half width on larger screens */
+        height: 100%; /* Full height on larger screens */
+        margin-top: 0; /* Remove spacing between text and image */
+    }
+
+    .masonry-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust grid for larger screens */
+    }
+}
+
+/* Header styling */
+.small-header {
+    font-family: 'Einhorn Std Regular', 'Arial Black', Gadget, sans-serif;
+    font-size: 2em; /* Consistent size for all headers */
     margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #fff; /* Optional: Background color */
+    margin-bottom: -170px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
 }
 
-.iframe-wrapper iframe {
-    width: 100%;
-    height: 400%;
-    border: none;
-    display: block;
+.jampot-title {
+    font-family: 'Einhorn Std Regular', 'Arial Black', Gadget, sans-serif;
+    font-size: 10em; /* Larger font size for main title */
+    margin: 0;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+}
+
+.small-header.west-of-england {
+    font-family: 'Einhorn Std Regular', 'Arial Black', Gadget, sans-serif;
+    font-size: 2em; /* Consistent size for all headers */
+    margin: 0;
+    margin-top: -100px;
+    margin-left: 190px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 1100px) {
+    .small-header {
+        font-size: 1.5em;
+        margin-bottom: -170px;
+    }
+
+    .small-header {
+        font-size: 1.5em;
+        margin-bottom: -130px;
+    }
+
+    .jampot-title {
+        font-size: 8em;
+        margin-bottom: -50px;
+    }
+
+    .small-header.west-of-england {
+        font-size: 1.5em;
+        margin-top: -10px;
+    }
 }
