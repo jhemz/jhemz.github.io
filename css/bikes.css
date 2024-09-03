@@ -1,0 +1,216 @@
+/* bikes.css */
+.bikes-page {
+    padding: 0px;
+}
+
+.bikes-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.table-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.table-column {
+    flex: 1;
+    min-width: 200px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+thead {
+    background-color: #333;
+    color: #fff;
+}
+
+th, td {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.bike-card {
+    display: flex;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 48%; /* Half of the screen width minus the gap */
+    height: 400px; /* Increase height */
+}
+
+.bike-image img {
+    width: 400px;
+    height: 100%; /* Adjust height to fill the container */
+    object-fit: cover;
+}
+
+.bike-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bike-info h3 {
+    margin-top: 0;
+    font-size: 1.8em;
+    color: #333;
+}
+
+.bike-info p {
+    font-size: 1em;
+    margin: 10px 0;
+    color: #666;
+    flex-grow: 1; /* Allow the description to fill available space */
+}
+
+.bike-stats {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+.bike-stats li {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border-bottom: 1px solid #ccc;
+    background-color: #f1f1f1;
+    text-align: center;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+    margin: 0 10px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 20px;
+    border-top: none;
+}
+
+.tabcontent.active {
+    display: block;
+}
+
+
+
+
+
+.card {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-image {
+    flex: 0 0 600px; /* Increase the width of the image section */
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Ensure the image doesn't overflow the container */
+}
+
+
+.card-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.card-content {
+    padding: 20px;
+    flex: 1;
+}
+
+.card-content h3 {
+    margin-top: 0;
+    font-size: 24px;
+}
+
+.card-content p {
+    margin: 5px 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Secondary Navigation Bar as Full-Width Subtle Bar */
+.secondary-nav {
+    display: flex;
+    justify-content: center;
+    background-color: #d9d9d9; /* Very light gray */
+    padding: 8px 0; /* Slimmer padding */
+    width: 100%; /* Full width */
+    border-radius: 0px; /* No rounded corners */
+    box-shadow: none; /* Remove any shadows */
+}
+
+.secondary-nav a {
+    color: #333; /* Dark gray text color for good readability */
+    text-decoration: none;
+    padding: 8px 16px; /* Subtle padding */
+    font-size: 16px;
+    font-weight: normal; /* Normal font weight for a subtle look */
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin: 0 5px; /* Spacing between options */
+    border-radius: 30px; /* No rounded corners */
+    display: inline-block; /* Keep links inline */
+}
+
+.secondary-nav a:hover {
+    background-color: rgb(255, 255, 255); /* Slightly darker shade of the bar's color */
+    color: #333; /* Same dark gray text color */
+}
+
+.secondary-nav a.active {
+    background-color: #e6e6e6; /* Slightly darker shade for the active link */
+    color: #333; /* Same dark gray text color */
+    font-weight: bold; /* Slightly bolder text for the active link */
+}

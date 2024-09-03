@@ -1,0 +1,87 @@
+/* header-footer.css */
+@font-face {
+    font-family: 'Einhorn Std Regular';
+    src: url('/fonts/Einhorn%20Std%20Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+header {
+    background-color: #51624F;
+    color: #ffffff;
+    padding: 40px 40px;
+    height: 0px; /* Adjusted height to make space for the logo */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+    width: 95%;
+    margin: 20px auto;
+    border-radius: 15px;
+    position: relative;
+    top: 10px; /* Adjust this value to control how much the logo protrudes */
+    overflow: visible; /* Allows the logo to protrude */
+}
+
+.logo {
+    max-height: 150px; /* Adjusted logo size */
+    height: auto;
+    margin: 0;
+    display: block;
+    position: absolute;
+    top: -30px; /* Adjust this value to control how much the logo protrudes */
+    left: 60px; /* Adjust if necessary to keep the logo aligned */
+}
+
+.logo.left {
+    left: 30px; /* Keep it aligned to the left */
+}
+
+.logo.right {
+    right: 15px; /* Keep it aligned to the right */
+}
+
+footer {
+    background-color: #51624F;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px 0;
+    border-top: 4px solid #000000;
+    font-size: 0.9em;
+}
+
+footer p {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+.small-header {
+    font-family: 'Einhorn Std Regular', 'Arial Black', Gadget, sans-serif;
+    font-size: 1.5em;
+    margin: 0;
+    margin-left: 80px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+    margin-top: -20px; /* Closer to JAMPOT title */
+    margin-bottom:-50px;
+}
+
+.small-header.west-of-england {
+    font-size: 2.5em;
+    margin-top: -10px;
+    position: absolute;
+    margin-left: 350px;
+    top: 150px; /* Adjusted closer to the JAMPOT title */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+}
+
+.jampot-title {
+    font-family: 'Einhorn Std Regular', 'Arial Black', Gadget, sans-serif;
+    font-size: 10em;
+    margin: 0;
+    margin-top: -100px;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+}
+
+

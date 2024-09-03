@@ -1,0 +1,135 @@
+.history-title-container {
+    text-align: center;
+    background-color: #4D4B1D;
+    padding: 20px 0;
+}
+
+.history-title {
+    font-size: 3em;
+    color: #fff;
+    margin: 0;
+    font-family: 'Merriweather', serif;
+}
+
+.intro {
+    text-align: center;
+    padding: 40px;
+    background: linear-gradient(90deg, rgba(244,241,233,1) 0%, rgba(200,193,174,1) 100%);
+}
+
+.intro p {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.timeline-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    position: relative;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+    position: sticky;
+    top: 100px;
+}
+
+.timeline-date {
+    background-color: #4D4B1D;
+    color: white;
+    font-size: 1.5em; /* Increase font size for the dates */
+    padding: 10px;
+    margin: 20px 0; /* Adjust spacing for better alignment */
+    border-radius: 50%; /* Make the buttons round */
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    width: 80px; /* Adjust the size of the buttons */
+    height: 80px;
+    line-height: 80px; /* Center the text vertically */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2), /* Inner shadow */
+                0 4px 6px rgba(0, 0, 0, 0.3); /* Outer shadow */
+    background: linear-gradient(145deg, #4D4B1D, #6E6B3B); /* Shaded 3D effect */
+    border: 10px solid #9A9A6A; /* Adding border to the buttons */
+}
+
+.timeline-date:hover,
+.timeline-date.active {
+    background-color: #9A9A6A;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1), 
+                0 6px 8px rgba(0, 0, 0, 0.4);
+}
+
+.timeline-details {
+    flex: 1;
+    padding-left: 100px; /* Adjusted padding to center the timeline bar correctly */
+}
+
+.timeline-item {
+    display: none;
+    margin-bottom: 40px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-item img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.timeline-item h2 {
+    font-family: 'Merriweather', serif;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #4D4B1D;
+}
+
+.timeline-item p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+/* Fancy Timeline Bar */
+.timeline-bar {
+    position: absolute;
+    left: 10.8%; /* Positioning the bar correctly */
+    transform: translateX(-50%); /* Ensure the bar is centered */
+    top: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(180deg, #4D4B1D, #9A9A6A);
+    border-radius: 2.5px;
+}
+
+.timeline-bar:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 12px;
+    background-color: #9A9A6A;
+    border-radius: 50%;
+}
+
+.timeline-bar:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 12px;
+    background-color: #9A9A6A;
+    border-radius: 50%;
+}

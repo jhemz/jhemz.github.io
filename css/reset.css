@@ -1,0 +1,27 @@
+/* reset.css */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #ffffff;
+    color: #2e2e2e;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1; /* This makes the content area take up available space */
+}
+
+.container {
+    flex: 1; /* This makes the content area take up available space */
+    width: 100%;
+    margin: 0px auto;
+    background-color: #ffffff;
+    padding: 0px;
+}

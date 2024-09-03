@@ -1,0 +1,445 @@
+/* styles.css */
+@font-face {
+    font-family: 'Einhorn Std Regular';
+    src: url('/fonts/Einhorn%20Std%20Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #ffffff;
+    color: #2e2e2e;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1; /* This makes the content area take up available space */
+}
+
+header {
+    background-color: #d52a33;
+    color: #ffffff;
+    padding: 10px 0;
+    height: 180px;
+    text-align: center;
+    border-bottom: 4px solid #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+}
+
+footer {
+    background-color: #d52a33;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px 0;
+    border-top: 4px solid #000000;
+    font-size: 0.9em;
+}
+
+.small-header {
+    font-family: 'Einhorn Std Regular', 'Arial Black', Gadget, sans-serif;
+    font-size: 1.5em;
+    margin: 0;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.9);
+    margin-top: 50px; /* Closer to JAMPOT title */
+    margin-bottom: -140px;
+}
+
+.small-header.west-of-england {
+    font-size: 2.5em;
+    margin-top: -20px;
+    position: absolute;
+    margin-right: -470px;
+    top: 160px; /* Adjusted closer to the JAMPOT title */
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.9);
+}
+
+.jampot-title {
+    font-family: 'Einhorn Std Regular', 'Arial Black', Gadget, sans-serif;
+    font-size: 10em;
+    margin: 0;
+    margin-top: 50px;
+    letter-spacing: 2px;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.9);
+}
+
+.logo {
+    height: 100%;
+    max-height: 160px;
+    margin: 0 15px;
+    position: absolute;
+    top: 10px;
+}
+
+.logo.left {
+    left: 15px;
+}
+
+.logo.right {
+    right: 15px;
+}
+
+nav {
+    background-color: #c0c0c0;
+    text-align: center;
+    padding: 10px 0;
+}
+
+nav a {
+    color: #000000;
+    margin: 0 20px;
+    text-decoration: none;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    padding-bottom: 5px;
+    cursor: pointer;
+}
+
+nav a:hover {
+    border-bottom: 2px solid #000000;
+}
+
+.secondary-nav {
+    background-color: #e5e5e5;
+    text-align: center;
+    padding: 10px 0;
+    border-top: 2px solid #000000;
+}
+
+.secondary-nav a {
+    color: #000000;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 1em;
+    padding-bottom: 5px;
+}
+
+.container {
+    flex: 1; /* This makes the content area take up available space */
+    width: 100%;
+    margin: 0px auto;
+    background-color: #ffffff;
+    padding: 0px;
+}
+
+
+
+footer p {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+
+
+.events-page {
+    padding: 20px;
+}
+
+.events-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+#calendar {
+    height: 800px; /* Set a height for the map */
+    width: 48%;
+}
+
+#map {
+    width: 48%;
+    height: 800px; /* Set a height for the map */
+}
+
+
+
+
+
+.home-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    height: 61vh; /* Full page height */
+    overflow: hidden;
+}
+
+.text-content {
+    position: relative;
+    z-index: 1;
+    width: 50%;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.image-container {
+    position: relative;
+    top: 0;
+    padding: -0px;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.faded-image {
+    background: url('/images/matchlessg3wo.jpeg') no-repeat center center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 90%);
+    -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 90%);
+}
+
+
+.spares-faded-image {
+    background: url('/images/spares.jpg') no-repeat center center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 90%);
+    -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 90%);
+}
+
+.club-faded-image {
+    background: url('/images/york.jpg') no-repeat center center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 90%);
+    -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 90%);
+}
+
+.bikes-page {
+    padding: 20px;
+}
+
+.bikes-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap to the next line */
+    gap: 20px; /* Space between the cards */
+    justify-content: space-between;
+}
+
+.bike-card {
+    display: flex;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 48%; /* Half of the screen width minus the gap */
+    height: 400px; /* Increase height */
+}
+
+.bike-image img {
+    width: 400px;
+    height: 100%; /* Adjust height to fill the container */
+    object-fit: cover;
+}
+
+.bike-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bike-info h3 {
+    margin-top: 0;
+    font-size: 1.8em;
+    color: #333;
+}
+
+.bike-info p {
+    font-size: 1em;
+    margin: 10px 0;
+    color: #666;
+    flex-grow: 1; /* Allow the description to fill available space */
+}
+
+.bike-stats {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+.bike-stats li {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+
+
+.masonry-container {
+    column-count: 3; /* Number of columns */
+    column-gap: 20px; /* Space between columns */
+    margin: 40px 0;
+    padding: 0 20px;
+}
+
+.masonry-item {
+    break-inside: avoid;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.masonry-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 1px solid #ddd;
+}
+
+.masonry-item p {
+    padding: 10px;
+    font-size: 1em;
+    color: #333;
+    text-align: center;
+    margin: 0;
+}
+
+
+
+.sections-page {
+    text-align: center; /* Center text content */
+    padding: 20px; /* Add padding around the content */
+}
+
+.sections-content {
+    max-width: 1200px; /* Set a maximum width for the content */
+    margin: 0 auto; /* Center the content horizontally */
+    text-align: left; /* Ensure the text inside the content is left-aligned */
+}
+
+.sections-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Center the section cards */
+    margin-top: 20px; /* Add some space above the list */
+}
+
+.section-card {
+    position: relative;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background-color: #fff; /* Ensure text is readable */
+    z-index: 1;
+}
+
+.section-card img {
+    z-index: 2; /* Ensure the badge is above the background */
+}
+
+.section-card h3, .section-card p {
+    z-index: 2; /* Ensure text is above the background */
+}
+
+.section-card:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1; /* Semi-transparent background */
+    z-index: 0; /* Place background image behind content */
+    border-radius: 8px; /* Match the card's border radius */
+}
+
+.section-card[data-country="Australia"]:before {
+    background-image: url('/images/flags/australia.png');
+}
+
+.section-card[data-country="Belgium"]:before {
+    background-image: url('/images/flags/belgium.png');
+}
+
+.section-card[data-country="Canada"]:before {
+    background-image: url('/images/flags/canada.png');
+}
+
+.section-card[data-country="Denmark"]:before {
+    background-image: url('/images/flags/denmark.png');
+}
+
+.section-card[data-country="Finland"]:before {
+    background-image: url('/images/flags/finland.png');
+}
+
+.section-card[data-country="France"]:before {
+    background-image: url('/images/flags/france.png');
+}
+
+.section-card[data-country="Germany"]:before {
+    background-image: url('/images/flags/germany.png');
+}
+
+.section-card[data-country="Netherlands"]:before {
+    background-image: url('/images/flags/netherlands.png');
+}
+
+.section-card[data-country="New Zealand"]:before {
+    background-image: url('/images/flags/newzealand.png');
+}
+
+.section-card[data-country="Norway"]:before {
+    background-image: url('/images/flags/norway.png');
+}
+
+.section-card[data-country="South Africa"]:before {
+    background-image: url('/images/flags/southafrica.png');
+}
+
+.section-card[data-country="Sweden"]:before {
+    background-image: url('/images/flags/sweden.png');
+}
+
+.section-card[data-country="Switzerland"]:before {
+    background-image: url('/images/flags/switzerland.png');
+}
+
+.section-card[data-country="USA"]:before {
+    background-image: url('/images/flags/usa.png');
+}
+
+.section-badge {
+    width: 100px;
+    height: auto;
+    margin-bottom: 16px;
+}
+
+.section-card h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.section-card p {
+    margin: 4px 0;
+}

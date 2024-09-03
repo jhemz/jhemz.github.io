@@ -1,0 +1,55 @@
+<div class="bikes-page">  
+    <!-- Tab navigation -->
+    <div class="secondary-nav">
+        <a class="tablinks" onclick="openTab(event, 'Bikes')">Bikes</a>
+        <a class="tablinks" onclick="openTab(event, 'Table')">Number Plates</a>
+        <a class="tablinks" onclick="openTab(event, 'WDBikes')">WD Bikes</a>
+    </div>
+
+    <!-- Tab content for bikes -->
+    <div id="Bikes" class="tabcontent">
+        <div class="bikes-container">
+            <!-- The bike cards will be dynamically generated and inserted here by JavaScript -->
+        </div>
+    </div>
+
+    <!-- Tab content for table -->
+    <div id="Table" class="tabcontent">
+        <!-- Tool to find bike location by number plate -->
+        <div class="location-tool" style="text-align: center; margin-bottom: 20px;">
+            <input type="text" id="numberPlateInput" placeholder="Enter number plate" style="padding: 10px; font-size: 16px;">
+            <button onclick="showBikeLocation()" style="padding: 10px 20px; font-size: 16px;">Search</button>
+            <p id="locationDisplay" style="margin-top: 15px; font-size: 30px; font-weight: bold;"></p>
+        </div>
+
+        <div class="table-wrapper">
+            <!-- Columns will be dynamically generated here by JavaScript -->
+        </div>
+    </div>
+
+      <!-- Tab content for WD bikes -->
+      <div id="WDBikes" class="tabcontent">
+        <div class="wd-bikes-container">
+            <!-- Tool to find bike location by frame number, engine number, or WD serial number -->
+            <div class="location-tool" style="text-align: center; margin-bottom: 20px;">
+                <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+                    <div>
+                        <input type="text" id="frameNumberInput" placeholder="Enter frame number" style="padding: 10px; font-size: 16px;">
+                        <button onclick="searchByFrameNumber()" style="padding: 10px 20px; font-size: 16px;">Search by Frame Number</button>
+                    </div>
+                    <div>
+                        <input type="text" id="engineNumberInput" placeholder="Enter engine number" style="padding: 10px; font-size: 16px;">
+                        <button onclick="searchByEngineNumber()" style="padding: 10px 20px; font-size: 16px;">Search by Engine Number</button>
+                    </div>
+                    <div>
+                        <input type="text" id="serialNumberInput" placeholder="Enter WD serial number" style="padding: 10px; font-size: 16px;">
+                        <button onclick="searchBySerialNumber()" style="padding: 10px 20px; font-size: 16px;">Search by Serial Number</button>
+                    </div>
+                </div>
+                <div id="wdLocationDisplay" style="margin-top: 20px;"></div>
+
+                <div id="contractTableDisplay"></div>
+            </div>
+        </div>
+    </div>
+</div>
