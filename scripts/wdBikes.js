@@ -356,9 +356,9 @@ function generateBikeCardHTML(result) {
     ">C ${result["WD Serial No."]}</span>`;
 
     return `
-        <div class="card">
+        <div class="card responsive-card">
             <div class="card-image">
-                <img src="${imageUrl}" alt="Bike Image" />
+                <img src="${imageUrl}" alt="Bike Image" style="width: 100%; height: auto;" />
             </div>
             <div class="card-content">
                 <h3>${result["Maker's Type"]}</h3>

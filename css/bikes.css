@@ -1,51 +1,13 @@
-/* bikes.css */
-.bikes-page {
-    padding: 0px;
-}
-
-.bikes-container {
+.bikes-container,
+.table-wrapper,
+.wd-bikes-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
 }
 
-.table-wrapper {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.table-column {
-    flex: 1;
-    min-width: 200px;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-}
-
-thead {
-    background-color: #333;
-    color: #fff;
-}
-
-th, td {
-    padding: 8px 12px;
-    border: 1px solid #ddd;
-    text-align: left;
-}
-
-tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-tbody tr:hover {
-    background-color: #f1f1f1;
-}
-
+/* Bike card should take up full width on smaller screens */
 .bike-card {
     display: flex;
     background-color: #f9f9f9;
@@ -53,115 +15,33 @@ tbody tr:hover {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 48%; /* Half of the screen width minus the gap */
-    height: 400px; /* Increase height */
+    width: 48%; /* Default to half width */
+    height: 400px; /* Height defined */
 }
 
+/* Full width on smaller screens */
+@media screen and (max-width: 768px) {
+    .bike-card {
+        width: 100%; /* Full width for small screens */
+    }
+}
+
+/* Adjust image and text for better responsiveness */
 .bike-image img {
-    width: 400px;
-    height: 100%; /* Adjust height to fill the container */
-    object-fit: cover;
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
 }
 
-.bike-info {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.bike-info h3 {
-    margin-top: 0;
-    font-size: 1.8em;
-    color: #333;
-}
-
-.bike-info p {
-    font-size: 1em;
-    margin: 10px 0;
-    color: #666;
-    flex-grow: 1; /* Allow the description to fill available space */
-}
-
-.bike-stats {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0 0 0;
-}
-
-.bike-stats li {
-    font-size: 1em;
-    color: #333;
-    margin-bottom: 5px;
-}
-
-/* Style the tab */
-.tab {
-    overflow: hidden;
-    border-bottom: 1px solid #ccc;
-    background-color: #f1f1f1;
-    text-align: center;
-}
-
-/* Style the buttons inside the tab */
-.tab button {
-    background-color: inherit;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-    font-size: 17px;
-    margin: 0 10px;
-}
-
-/* Change background color of buttons on hover */
-.tab button:hover {
-    background-color: #ddd;
-}
-
-/* Create an active/current tablink class */
-.tab button.active {
-    background-color: #ccc;
-}
-
-/* Style the tab content */
-.tabcontent {
-    display: none;
-    padding: 20px;
-    border-top: none;
-}
-
-.tabcontent.active {
-    display: block;
-}
-
-
-
-
-
+/* Card layout for smaller screens */
 .card {
     display: flex;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    overflow: hidden;
+    flex-direction: column;
     margin-top: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .card-image {
-    flex: 0 0 600px; /* Increase the width of the image section */
-    background-color: #f4f4f4;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden; /* Ensure the image doesn't overflow the container */
-}
-
-
-.card-image img {
-    max-width: 100%;
-    height: auto;
+    flex: 0 0 100%; /* Full width for small screens */
+    max-width: 100%; /* Ensure no overflow */
 }
 
 .card-content {
@@ -169,48 +49,152 @@ tbody tr:hover {
     flex: 1;
 }
 
-.card-content h3 {
-    margin-top: 0;
-    font-size: 24px;
-}
-
-.card-content p {
-    margin: 5px 0;
-    font-size: 16px;
-    line-height: 1.5;
-}
-
-/* Secondary Navigation Bar as Full-Width Subtle Bar */
+/* Restore secondary nav as horizontal menu for small screens */
 .secondary-nav {
     display: flex;
     justify-content: center;
-    background-color: #d9d9d9; /* Very light gray */
-    padding: 8px 0; /* Slimmer padding */
-    width: 100%; /* Full width */
-    border-radius: 0px; /* No rounded corners */
-    box-shadow: none; /* Remove any shadows */
+    background-color: #d9d9d9;
+    padding: 10px 0;
+    width: 100%;
 }
 
 .secondary-nav a {
-    color: #333; /* Dark gray text color for good readability */
-    text-decoration: none;
-    padding: 8px 16px; /* Subtle padding */
-    font-size: 16px;
-    font-weight: normal; /* Normal font weight for a subtle look */
-    text-transform: uppercase;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    margin: 0 5px; /* Spacing between options */
-    border-radius: 30px; /* No rounded corners */
-    display: inline-block; /* Keep links inline */
+    margin: 0 10px;
+    padding: 10px 15px;
+    font-size: 14px;
+    text-align: center;
+    display: inline-block;
 }
 
 .secondary-nav a:hover {
-    background-color: rgb(255, 255, 255); /* Slightly darker shade of the bar's color */
-    color: #333; /* Same dark gray text color */
+    background-color: rgb(255, 255, 255);
+    color: #333;
 }
 
 .secondary-nav a.active {
-    background-color: #e6e6e6; /* Slightly darker shade for the active link */
-    color: #333; /* Same dark gray text color */
-    font-weight: bold; /* Slightly bolder text for the active link */
+    background-color: #e6e6e6;
+    font-weight: bold;
+}
+
+/* Tab content section */
+.tabcontent {
+    padding: 20px;
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .tabcontent {
+        padding: 10px;
+    }
+}
+
+/* Make tables scrollable on small screens */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px 12px;
+    text-align: left;
+}
+
+@media screen and (max-width: 600px) {
+    th, td {
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+}
+
+/* Location tool responsiveness */
+.location-tool {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.location-tool input,
+.location-tool button {
+    width: 100%;
+    max-width: 300px;
+    margin: 5px 0;
+}
+
+@media screen and (max-width: 600px) {
+    .location-tool input,
+    .location-tool button {
+        max-width: 100%; /* Full width on mobile */
+    }
+}
+
+/* Global media queries for small screens */
+@media screen and (max-width: 600px) {
+    .bikes-page {
+        padding: 10px;
+    }
+
+    .bike-info h3 {
+        font-size: 1.5em;
+    }
+
+    .bike-info p {
+        font-size: 0.9em;
+    }
+
+    .bike-stats li {
+        font-size: 0.9em;
+    }
+
+    .card-content h3 {
+        font-size: 20px;
+    }
+
+    .card-content p {
+        font-size: 14px;
+    }
+}
+
+/* Responsive styling for bike cards */
+.responsive-card {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 100%; /* Full width on small screens */
+}
+
+/* Image in the card should be responsive */
+.card-image img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Card content should remain flexible */
+.card-content {
+    padding: 20px;
+    flex: 1;
+}
+
+@media screen and (min-width: 768px) {
+    .responsive-card {
+        flex-direction: row; /* Row layout on larger screens */
+    }
+
+    .card-image {
+        flex: 0 0 50%; /* Image takes up 50% on larger screens */
+    }
+
+    .card-content {
+        flex: 1; /* Text content takes the remaining space */
+    }
 }
