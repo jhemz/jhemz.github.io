@@ -17,7 +17,7 @@
 
 /* Apply to the container inside the content */
 .container {
-    padding: 20px; /* Optional padding to add space around the loaded content */
+    padding: 0px; /* Optional padding to add space around the loaded content */
 }
 
 /* If you want the secondary nav to have more specific adjustments, target it directly */
@@ -57,6 +57,7 @@ header {
 }
 
 .menu-toggle {
+    margin-right: 15px;
     display: none; /* Hidden by default on desktop */
     flex-direction: column;
     cursor: pointer;
@@ -130,6 +131,8 @@ main, .content-wrapper {
         align-items: center;
         justify-content: center;
         height:100vh; /* Ensure it still fits the viewport */
+        width: 100vw;
+        margin-left: -10px;
     }
     
     nav a {
