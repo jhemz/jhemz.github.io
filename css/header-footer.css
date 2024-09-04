@@ -84,6 +84,13 @@ main, .content-wrapper {
     margin-top: 70px; /* Push the content down to avoid being hidden by the header */
 }
 
+.nav-logo {
+   
+    width: 100px;
+    height: auto;
+    margin: 0px;
+}
+
 /* Hide nav by default only on mobile */
 @media (max-width: 768px) {
     header {
@@ -107,6 +114,16 @@ main, .content-wrapper {
         display: flex; /* Show toggle button on mobile */
     }
 
+    .top-logo {
+        margin-bottom: 10px; /* Add margin to space out from nav links */
+    }
+
+    .bottom-logo {
+      
+        bottom: 10px; /* Stick the bottom image to the bottom of the nav */
+       
+    }
+
     nav {
         flex-direction: column;
         width: 100%;
@@ -120,6 +137,7 @@ main, .content-wrapper {
         display: none; /* Hide by default */
         overflow-y: auto; /* Allow scrolling if content overflows */
     }
+    
     
     nav.collapsed {
         display: none;
