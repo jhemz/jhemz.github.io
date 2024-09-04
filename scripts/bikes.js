@@ -3,7 +3,7 @@
 const bikes = [
     {
         name: "Matchless G3WO",
-        image: "/images/g3wo.jpg",
+        image: "/images/g3wo2.jpg",
         description: "The Matchless G3WO was a military motorcycle used extensively during World War II. It was known for its ruggedness and reliability in tough conditions.",
         year: 1940,
         engine: "350cc single-cylinder",
@@ -12,7 +12,7 @@ const bikes = [
     },
     {
         name: "Matchless G3L",
-        image: "https://upload.wikimedia.org/wikipedia/commons/3/36/Matchless_WG3L_350.jpg",
+        image: "/images/g3l2.jpg",
         description: "Introduced in 1941, the G3L was the first motorcycle to feature Teledraulic forks, which became a standard in motorcycle design. It served as a military bike during WWII.",
         year: 1941,
         engine: "350cc single-cylinder",
