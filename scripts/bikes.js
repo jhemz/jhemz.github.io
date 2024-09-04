@@ -189,6 +189,7 @@ function loadNumberPlateData() {
 // Function to populate the table columns with number plate data
 function populateTable(data) {
     const tableWrapper = document.querySelector('.table-wrapper');
+    tableWrapper.innerHTML = ''; // Clear existing content
    
     const maxRowsPerColumn = 80;
     let currentColumn;
@@ -204,13 +205,19 @@ function populateTable(data) {
             const table = document.createElement('table');
             const thead = document.createElement('thead');
             const tr = document.createElement('tr');
+
+            // Create the table header cells
             const thCode = document.createElement('th');
             thCode.textContent = 'Code';
+
             const thLocation = document.createElement('th');
             thLocation.textContent = 'Location';
 
+            // Append the header cells to the header row
             tr.appendChild(thCode);
             tr.appendChild(thLocation);
+
+            // Append the row to the table header
             thead.appendChild(tr);
             table.appendChild(thead);
 
@@ -226,6 +233,7 @@ function populateTable(data) {
         const tr = document.createElement('tr');
         const tdCode = document.createElement('td');
         tdCode.textContent = item.prefix;
+
         const tdLocation = document.createElement('td');
         tdLocation.textContent = item.location;
 
@@ -314,4 +322,14 @@ function initializeBikesPage() {
     if (firstTab) {
         openTab({ currentTarget: firstTab }, 'Bikes'); // Pass a fake event object
     }
+
+    document.getElementById("numberPlateInput").addEventListener("input", function (e) {
+        let value = e.target.value.replace(/\s+/g, '').toUpperCase(); // Remove any spaces and convert to uppercase
+       
+        if (value.length > 3) {
+            value = value.slice(0, 3) + ' ' + value.slice(3); // Add space after the third character
+        }
+        e.target.value = value;
+    });
 }
+

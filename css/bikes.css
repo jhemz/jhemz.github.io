@@ -234,3 +234,111 @@ th, td {
         margin-bottom: 20px; /* More space between the image and text on larger screens */
     }
 }
+
+
+
+/* Base button styling */
+button {
+    background-color: #f4f4f4; /* Light neutral background */
+    color: #333; /* Dark gray text for contrast */
+    font-size: 1em; /* Standard font size */
+    font-weight: bold; /* Bold text for readability */
+    border: 2px solid #ddd; /* Light border for a subtle frame */
+    border-radius: 5px; /* Small border-radius for modern look */
+    padding: 10px 20px; /* Adequate padding for a clean, balanced button */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Very subtle shadow */
+}
+
+/* Hover state */
+button:hover {
+    background-color: #e0e0e0; /* Slightly darker background on hover */
+    border-color: #ccc; /* Change border to a slightly darker gray */
+    color: #000; /* Darker text on hover */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); /* Slightly more defined shadow on hover */
+}
+
+/* Active state (when button is clicked) */
+button:active {
+    background-color: #d0d0d0; /* Darker shade for clicked state */
+    border-color: #bbb; /* Darker border when pressed */
+    transform: translateY(2px); /* Pressed down effect */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Reduced shadow when pressed */
+}
+
+/* Disabled state */
+button:disabled {
+    background-color: #f0f0f0; /* Lighter gray for disabled state */
+    color: #999; /* Lighter text */
+    cursor: not-allowed;
+    border-color: #ddd; /* Match the lighter button state */
+    box-shadow: none; /* No shadow for disabled buttons */
+}
+
+/* Button container for alignment */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Space between buttons */
+    margin-top: 20px; /* Spacing above the buttons */
+}
+
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+/* Styling the table header */
+thead {
+    background-color: #51624F; /* Your website header color */
+    color: white;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* Table columns */
+.table-column {
+    margin-bottom: 20px;
+}
+
+/* Responsive for small screens */
+@media screen and (max-width: 768px) {
+    table {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 6px 10px;
+    }
+}
+
+#numberPlateInput {
+    background-color: black;
+    color: white;
+    font-family: 'Arial Black', 'Impact', sans-serif; /* Use a blocky font to simulate a number plate */
+    font-size: 30px;
+    text-align: center; /* Center the text */
+    text-transform: uppercase; /* Always display text in uppercase */
+    padding: 15px 20px; /* Adjust padding for better look */
+    border: none; /* Remove default border */
+    border-radius: 8px; /* Optional: Add rounded corners if you'd like */
+    width: 100%;
+    max-width: 200px; /* Set a max width to simulate the rectangular look */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add a slight shadow to mimic the number plate effect */
+    letter-spacing: 5px; /* Space out the letters */
+}
+
+#numberPlateInput::placeholder {
+    color: rgba(255, 255, 255, 0.6); /* Make the placeholder text slightly transparent */
+    font-size: 30px; /* Adjust the size of the placeholder */
+    text-transform: uppercase;
+}
