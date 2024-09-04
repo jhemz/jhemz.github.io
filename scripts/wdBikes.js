@@ -346,7 +346,7 @@ function generateBikeCardHTML(result) {
     // Create the styled WD Serial Number
     const serialNumberStyled = `<span style="
         display: inline-block;
-        background-color: #4D4B1D; /* This is a close approximation to the green in the image */
+        background-color: #4D4B1D; /* Close approximation to the green in the image */
         color: white;
         font-weight: bold;
         font-family: Arial, sans-serif;
@@ -422,7 +422,7 @@ function countBikesByContract(data) {
 }
 
 function generateContractTableHTML(sortedContracts) {
-    const khakiGreenNo3 = "#4D4B1D"; // Khaki Green No. 3 color
+    const khakiGreenNo3 = "#51624F"; // Khaki Green No. 3 color
 
     let tableHTML = `
         <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">

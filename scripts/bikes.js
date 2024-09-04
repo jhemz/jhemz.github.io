@@ -149,55 +149,30 @@ const bikes = [
 
 function createBikeCards() {
     const container = document.querySelector('.bikes-container');
-    console.log(container)
+    container.innerHTML = ''; // Clear existing content
+
     bikes.forEach(bike => {
-        const card = document.createElement('div');
-        card.classList.add('bike-card');
+        console.log(bike.name)
+        // Dynamically create the card structure using template literals
+        const cardHTML = `
+            <div class="card responsive-card">
+                <div class="card-image">
+                    <img src="${bike.image}" alt="Bike Image" style="width: 100%; height: auto;" />
+                </div>
+                <div class="card-content">
+                    <h3>${bike.name}</h3>
+                    <p>${bike.description}</p>
+                    <ul class="bike-stats">
+                        <li><strong>Year:</strong> ${bike.year}</li>
+                        <li><strong>Engine:</strong> ${bike.engine}</li>
+                        <li><strong>Top Speed:</strong> ${bike.topSpeed}</li>
+                        <li><strong>Weight:</strong> ${bike.weight}</li>
+                    </ul>
+                </div>
+            </div>`;
 
-        const bikeImage = document.createElement('div');
-        bikeImage.classList.add('bike-image');
-        const img = document.createElement('img');
-        img.src = bike.image;
-        img.alt = bike.name;
-        bikeImage.appendChild(img);
-
-        const bikeInfo = document.createElement('div');
-        bikeInfo.classList.add('bike-info');
-
-        const bikeTitle = document.createElement('h3');
-        bikeTitle.textContent = bike.name;
-
-        const bikeDescription = document.createElement('p');
-        bikeDescription.textContent = bike.description;
-
-        const bikeStats = document.createElement('ul');
-        bikeStats.classList.add('bike-stats');
-
-        const yearStat = document.createElement('li');
-        yearStat.innerHTML = `<strong>Year:</strong> ${bike.year}`;
-        
-        const engineStat = document.createElement('li');
-        engineStat.innerHTML = `<strong>Engine:</strong> ${bike.engine}`;
-        
-        const topSpeedStat = document.createElement('li');
-        topSpeedStat.innerHTML = `<strong>Top Speed:</strong> ${bike.topSpeed}`;
-        
-        const weightStat = document.createElement('li');
-        weightStat.innerHTML = `<strong>Weight:</strong> ${bike.weight}`;
-
-        bikeStats.appendChild(yearStat);
-        bikeStats.appendChild(engineStat);
-        bikeStats.appendChild(topSpeedStat);
-        bikeStats.appendChild(weightStat);
-
-        bikeInfo.appendChild(bikeTitle);
-        bikeInfo.appendChild(bikeDescription);
-        bikeInfo.appendChild(bikeStats);
-
-        card.appendChild(bikeImage);
-        card.appendChild(bikeInfo);
-
-        container.appendChild(card);
+        // Insert the card HTML into the container
+        container.innerHTML += cardHTML;
     });
 }
 
