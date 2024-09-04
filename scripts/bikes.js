@@ -21,7 +21,7 @@ const bikes = [
     },
     {
         name: "AJS Model 16",
-        image: "https://upload.wikimedia.org/wikipedia/commons/2/2f/AJS_Model_16MS_1953.JPG",
+        image: "/images/AJS Model 16.jpeg",
         description: "The AJS Model 16, produced from 1945 onwards, was a civilian version of the military G3L. It was a reliable and popular choice among post-war motorcycle enthusiasts.",
         year: 1945,
         engine: "350cc single-cylinder",
@@ -30,7 +30,7 @@ const bikes = [
     },
     {
         name: "AJS Model 18",
-        image: "https://upload.wikimedia.org/wikipedia/commons/2/28/AJS_18S_500_cc_1952.jpg",
+        image: "/images/AJS Model 18.jpg",
         description: "The AJS Model 18 was one of the most popular motorcycles produced by AJS in the post-war era. Known for its reliability and robust design, this bike is a favorite among classic motorcycle enthusiasts.",
         year: 1945,
         engine: "500cc single-cylinder",
@@ -48,7 +48,7 @@ const bikes = [
     },
     {
         name: "AJS 7R",
-        image: "https://upload.wikimedia.org/wikipedia/commons/0/06/AJS_7R_motorcycle.jpg",
+        image: "/images/AJS 7R.png",
         description: "The AJS 7R, also known as the 'Boy Racer', was a racing motorcycle produced from 1948 to 1963. It was highly successful in competition and remains a legendary bike in racing history.",
         year: 1948,
         engine: "350cc single-cylinder",
@@ -66,7 +66,7 @@ const bikes = [
     },
     {
         name: "AJS Model 20",
-        image: "https://upload.wikimedia.org/wikipedia/commons/a/ab/AJS_Model_20_%281954%29.jpg",
+        image: "/images/AJS Model 20.jpeg",
         description: "The AJS Model 20 was a 500cc twin-cylinder motorcycle, introduced in 1949. It was known for its smooth performance and became a popular model in the early 1950s.",
         year: 1949,
         engine: "500cc twin-cylinder",
@@ -75,7 +75,7 @@ const bikes = [
     },
     {
         name: "Matchless G45",
-        image: "https://via.placeholder.com/400x300.png?text=Matchless+G45",
+        image: "/images/Matchless G45.jpeg",
         description: "The Matchless G45 was a racing motorcycle introduced in 1951. It was based on the G9 but was tuned for racing, making it a competitive machine on the track.",
         year: 1951,
         engine: "500cc twin-cylinder",
