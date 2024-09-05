@@ -88,7 +88,7 @@ main, .content-wrapper {
    
     width: 100px;
     height: auto;
-    margin: 0px;
+    margin: 0px auto;
 }
 
 /* Hide nav by default only on mobile */
