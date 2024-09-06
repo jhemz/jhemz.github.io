@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.09a500a0.css",
-    "main.js": "/static/js/main.a27ef7ee.js",
+    "main.js": "/static/js/main.6bc1e5bd.js",
     "static/js/453.ad6eb26e.chunk.js": "/static/js/453.ad6eb26e.chunk.js",
     "static/media/Matchless G45.jpeg": "/static/media/Matchless G45.2ee022b6b1a35ee8e38f.jpeg",
     "static/media/AJS 7R.png": "/static/media/AJS 7R.c5afb2dec2045f5052d1.png",
@@ -20,11 +20,11 @@
     "static/media/matchlesslogo.png": "/static/media/matchlesslogo.31e150bc6bacbc907d33.png",
     "index.html": "/index.html",
     "main.09a500a0.css.map": "/static/css/main.09a500a0.css.map",
-    "main.a27ef7ee.js.map": "/static/js/main.a27ef7ee.js.map",
+    "main.6bc1e5bd.js.map": "/static/js/main.6bc1e5bd.js.map",
     "453.ad6eb26e.chunk.js.map": "/static/js/453.ad6eb26e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.09a500a0.css",
-    "static/js/main.a27ef7ee.js"
+    "static/js/main.6bc1e5bd.js"
   ]
 }
