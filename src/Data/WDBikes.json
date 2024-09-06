@@ -1,0 +1,600 @@
+[
+    {
+        "Maker's Type": "T/4",
+        "Military Class": "M/C solo 350cc SV",
+        "WD Serial No. Allocation": "20351, ?, ?",
+        "Contract Number": "C1933",
+        "CAT. REF.": "1",
+        "Frame Number": "10397, ?, ?",
+        "Engine Number": "T/4 4419, ?, ?",
+        "Qty Prod'd": "3",
+        "Dates": "04/05/29 DM, 18/06/29 CD",
+        "Price(s)": "£42.10s",
+        "Delivery Destination & Notes": "Civilian registration of one was MT 6345"
+    },
+    {
+        "Maker's Type": "Silver Arrow",
+        "Military Class": "M/C solo 400cc SV V-twin",
+        "WD Serial No. Allocation": "20974, 20966",
+        "Contract Number": "P.2.T. 4045",
+        "CAT. REF.": "3",
+        "Frame Number": "1390, 967",
+        "Engine Number": "1299, 1022",
+        "Qty Prod'd": "?",
+        "Dates": "1930, 20/02/30 DL",
+        "Price(s)": "?",
+        "Delivery Destination & Notes": "Civilian registration of one was MG 9485"
+    },
+    {
+        "Maker's Type": "Silver Arrow",
+        "Military Class": "M/C solo 400cc SV V-twin",
+        "WD Serial No. Allocation": "21821, 21813",
+        "Contract Number": "C3644",
+        "CAT. REF.": "5",
+        "Frame Number": "2098, 2103",
+        "Engine Number": "A1991, 1961",
+        "Qty Prod'd": "37",
+        "Dates": "07/04/31 DM, 05/06/31 CD, 11/09/31 DL and into 1932",
+        "Price(s)": "£49.7s 8d",
+        "Delivery Destination & Notes": "Farnborough. Civilian registration of one was HX 6501"
+    },
+    {
+        "Maker's Type": "?",
+        "Military Class": "?",
+        "WD Serial No. Allocation": "?",
+        "Contract Number": "P.2.T. 3932",
+        "CAT. REF.": "2",
+        "Frame Number": "?",
+        "Engine Number": "?",
+        "Qty Prod'd": "?",
+        "Dates": "?",
+        "Price(s)": "?",
+        "Delivery Destination & Notes": "?"
+    },
+    {
+        "Maker's Type": "?",
+        "Military Class": "?",
+        "WD Serial No. Allocation": "?",
+        "Contract Number": "P.2.T. 4219",
+        "CAT. REF.": "4",
+        "Frame Number": "?",
+        "Engine Number": "?",
+        "Qty Prod'd": "?",
+        "Dates": "?",
+        "Price(s)": "?",
+        "Delivery Destination & Notes": "?"
+    },
+
+
+
+    {
+        "Maker's Type": "G7",
+        "Military Class": "M/C solo 246cc SV",
+        "WD Serial No. Allocation": "363870-364021",
+        "Contract Number": "C9221",
+        "CAT. REF.": "7",
+        "Frame Number": "1744, ?, ?",
+        "Engine Number": "37/G7 526, ?",
+        "Qty Prod'd": "152",
+        "Dates": "17/08/36 DM, 26/09/36 CD",
+        "Price(s)": "£30.1s 4d",
+        "Delivery Destination & Notes": "Chilwell at 13/16 per week. Civilian registration of one was EMV 635"
+    },
+    {
+        "Maker's Type": "G80, G90, G5",
+        "Military Class": "M/C solo 500cc SV or OHV (All civilian specification)",
+        "WD Serial No. Allocation": "4191348-4191353, 4191749-4191752, 4191757-4191759",
+        "Contract Number": "C7373",
+        "CAT. REF.": "8",
+        "Frame Number": "?",
+        "Engine Number": "?",
+        "Qty Prod'd": "12 - G80, 1 - G90, 2 - G5",
+        "Dates": "?",
+        "Price(s)": "£50.0s 1d, £53.0s 1d, £44",
+        "Delivery Destination & Notes": "Catterick or Stirling"
+    },
+    {
+        "Maker's Type": "Exptl LW",
+        "Military Class": "M/C solo 250cc OHV",
+        "WD Serial No. Allocation": "4187516",
+        "Contract Number": "C6674",
+        "CAT. REF.": "?",
+        "Frame Number": "550",
+        "Engine Number": "W40/G2M 4237",
+        "Qty Prod'd": "1",
+        "Dates": "16/04/40 DM, 03/06/40 CD, 19/03/40 DL",
+        "Price(s)": "£49.19s",
+        "Delivery Destination & Notes": "Farnborough"
+    },
+    {
+        "Maker's Type": "?",
+        "Military Class": "M/C solo 350cc",
+        "WD Serial No. Allocation": "37180, 37181",
+        "Contract Number": "?",
+        "CAT. REF.": "?",
+        "Frame Number": "?",
+        "Engine Number": "?",
+        "Qty Prod'd": "2",
+        "Dates": "?",
+        "Price(s)": "?",
+        "Delivery Destination & Notes": "?"
+    },
+    {
+        "Maker's Type": "?",
+        "Military Class": "M/C solo",
+        "WD Serial No. Allocation": "?",
+        "Contract Number": "?",
+        "CAT. REF.": "?",
+        "Frame Number": "D.E.6",
+        "Engine Number": "4247",
+        "Qty Prod'd": "1",
+        "Dates": "10/06/40 DL",
+        "Price(s)": "?",
+        "Delivery Destination & Notes": "?"
+    },
+    {
+        "Maker's Type": "Exptl LW",
+        "Military Class": "M/C solo 250cc OHV",
+        "WD Serial No. Allocation": "?",
+        "Contract Number": "C8019",
+        "CAT. REF.": "",
+        "Frame Number": "578",
+        "Engine Number": "4249",
+        "Qty Prod'd": "1",
+        "Dates": "19/07/40 DM, 17/08/40 CD, 20/06/40 DL",
+        "Price(s)": "£49.18s 9d",
+        "Delivery Destination & Notes": "Chilwell"
+    },
+    {
+        "Maker's Type": "G3",
+        "Military Class": "M/C solo 350cc OHV",
+        "WD Serial No. Allocation": "35795",
+        "Contract Number": "C7641",
+        "CAT. REF.": "6",
+        "Frame Number": "617",
+        "Engine Number": "36/G3 630",
+        "Qty Prod'd": "1",
+        "Dates": "15/08/35 DM, 11/09/35 DL",
+        "Price(s)": "£44.4s",
+        "Delivery Destination & Notes": "Civilian reg. CMM 749. Evaluation model"
+    },
+    {
+        "Maker's Type": "G3",
+        "Military Class": "M/C solo 350cc OHV",
+        "WD Serial No. Allocation": "36260-36270",
+        "Contract Number": "C8968",
+        "CAT. REF.": "24",
+        "Frame Number": "?",
+        "Engine Number": "?",
+        "Qty Prod'd": "11",
+        "Dates": "02/07/36 DM, 19/08/36 CD",
+        "Price(s)": "£42.17s 9d",
+        "Delivery Destination & Notes": "Feltham. Fitted with air cleaners"
+    },
+    {
+        "Maker's Type": "G3",
+        "Military Class": "M/C solo 350cc OHV",
+        "WD Serial No. Allocation": "3535312-3535355, C8239, 354624-354689",
+        "Contract Number": "25",
+        "CAT. REF.": "1001, 990, ?",
+        "Frame Number": "36/G3 767, 777, ?",
+        "Engine Number": "110",
+        "Qty Prod'd": "110",
+        "Dates": "22/11/35 DM, 31/12/35 CD, 30/03/36 CP",
+        "Price(s)": "£38.18s",
+        "Delivery Destination & Notes": "Feltham at 10 per week. C353544 had air cleaner. Civilian registration of one was DMF 42"
+    },
+
+
+
+
+
+
+
+    {
+        "Maker's Type": "G3",
+        "Military Class": "M/C solo 350cc OHV",
+        "WD Serial No. Allocation": "?",
+        "Contract Number": "C422",
+        "CAT. REF.": "?",
+        "Frame Number": "?",
+        "Engine Number": "?",
+        "Qty Prod'd": "2",
+        "Dates": "13/07/37 DM, 13/08/37 CD, 16/07/37 CPs",
+        "Price(s)": "£45",
+        "Delivery Destination & Notes": "Feltham"
+    },
+    {
+        "Maker's Type": "G3",
+        "Military Class": "M/C solo 350cc OHV",
+        "WD Serial No. Allocation": "3811084-3811347",
+        "Contract Number": "C2073",
+        "CAT. REF.": "21",
+        "Frame Number": "3257-3520",
+        "Engine Number": "39/G3-2715 to 39/G3-2978",
+        "Qty Prod'd": "264",
+        "Dates": "30/06/38 DM, 26/09/38 CD, 25/11/38 CP",
+        "Price(s)": "£42",
+        "Delivery Destination & Notes": "Feltham at 50 per week. (Panel in tank) Civilian registration of one was RHX 643"
+    },
+    {
+        "Maker's Type": "G3",
+        "Military Class": "M/C solo 350cc OHV",
+        "WD Serial No. Allocation": "3916253-3916452",
+        "Contract Number": "C3360",
+        "CAT. REF.": "18",
+        "Frame Number": "?",
+        "Engine Number": "?",
+        "Qty Prod'd": "200",
+        "Dates": "27/04/39 CD",
+        "Price(s)": "£43",
+        "Delivery Destination & Notes": "Feltham at 50 per week"
+    },
+    {
+        "Maker's Type": "G3",
+        "Military Class": "M/C solo 350cc OHV",
+        "WD Serial No. Allocation": "39515-39534",
+        "Contract Number": "C3398",
+        "CAT. REF.": "28",
+        "Frame Number": "?",
+        "Engine Number": "?",
+        "Qty Prod'd": "20",
+        "Dates": "20/12/38 DM, 09/08/39 CD",
+        "Price(s)": "£45.2s 1d",
+        "Delivery Destination & Notes": "?"
+    },
+    {
+        "Maker's Type": "G3",
+        "Military Class": "M/C solo 350cc OHV",
+        "WD Serial No. Allocation": "3917752-3918091",
+        "Contract Number": "C4608",
+        "CAT. REF.": "13",
+        "Frame Number": "502-841",
+        "Engine Number": "40-G3WO-3516 to 40-G3WO-3855",
+        "Qty Prod'd": "340",
+        "Dates": "26/07/39 DM, 02/10/39 CD",
+        "Price(s)": "?",
+        "Delivery Destination & Notes": "Chilwell at 50 per week. (Panel in tank) as C3360"
+    },
+    {
+        "Maker's Type": "G3",
+        "Military Class": "M/C solo 350cc OHV",
+        "WD Serial No. Allocation": "63586-65551, 65553-65569, 65571-65583, 65586-67585, 78041, 78058, 78061, 78065, 78068, 78069, 78078",
+        "Contract Number": "C5247",
+        "CAT. REF.": "10",
+        "Frame Number": "845-4844",
+        "Engine Number": "40-G3WO-3862 to 40-G3WO-7861",
+        "Qty Prod'd": "4,000",
+        "Dates": "25/10/39 DM, 18/01/40 CD, 23/03/40 CP",
+        "Price(s)": "£49.18s 9d",
+        "Delivery Destination & Notes": "Feltham at 200 per week from 25/11/39. (Panel in tank)"
+    },
+    {
+        "Maker's Type": "G3",
+        "Military Class": "M/C solo 350cc OHV",
+        "WD Serial No. Allocation": "65552, 65570, 65584, 65585, 78038-78040, 78042-78057, 78059, 78060, 78062-78064, 78066, 78067, 78070-78077, 78079-80037, 80764-80766",
+        "Contract Number": "C6094",
+        "CAT. REF.": "11",
+        "Frame Number": "5000-6999",
+        "Engine Number": "40-G3WO-8226 to 40-G3WO-10225",
+        "Qty Prod'd": "2,000",
+        "Dates": "25/01/40 DM, 24/06/40 CD, 15/11/40 CP",
+        "Price(s)": "£49.18s 4d",
+        "Delivery Destination & Notes": "Olympia at 180 per week from 01/06/40. (Panel in tank)"
+    },
+    
+
+
+
+
+    {
+        "Maker's Type": "G3",
+        "Military Class": "M/C solo 350cc OHV",
+        "WD Serial No. Allocation": "92889–93358, 95889–96288, 934001–938590",
+        "Contract Number": "C7183",
+        "CAT. REF.": "17",
+        "Frame Number": "7000–12999",
+        "Engine Number": "40-G3WO-10226 to 40-G3WO-16225",
+        "Qty Prod'd": "6,000",
+        "Dates": "23/05/40 DM, 29/03/41 CD",
+        "Price(s)": "£49.13s 11d",
+        "Delivery Destination & Notes": "Ashchurch and Feltham. (Destined for Middle East) 150 per week rising to 450 per week. Deliveries starting from 29/03/41"
+    },
+    {
+        "Maker's Type": "G3",
+        "Military Class": "M/C solo 350cc OHV",
+        "WD Serial No. Allocation": "4335008–4337785, 938591–938900, 938930–938940",
+        "Contract Number": "C8078",
+        "CAT. REF.": "12",
+        "Frame Number": "13000–16399",
+        "Engine Number": "40-G3WO-17226 to 40-G3WO-20325",
+        "Qty Prod'd": "3,000* *gaps in frame/engine & serial nos",
+        "Dates": "01/08/40 DM, 29/07/41 CD",
+        "Price(s)": "£49.12s 4d",
+        "Delivery Destination & Notes": "321 to Slough, rest to Chilwell by April 1941. 256 have panel in tank. C4337785 had BSA WB30 engine fitted (WB30–556)"
+    },
+    {
+        "Maker's Type": "G3",
+        "Military Class": "M/C solo 350cc OHV",
+        "WD Serial No. Allocation": "938901–938929, 938941–941911",
+        "Contract Number": "C8934",
+        "CAT. REF.": "14",
+        "Frame Number": "16300–19299",
+        "Engine Number": "41-G3WO-20000 to 41-G3WO-22999",
+        "Qty Prod'd": "3,000",
+        "Dates": "15/10/40 DM, 26/04/41 CD",
+        "Price(s)": "£49.12s 11d",
+        "Delivery Destination & Notes": "Feltham and Slough. Deliveries at 300 per week. 50 fitted with teles"
+    },
+    {
+        "Maker's Type": "G3",
+        "Military Class": "M/C solo 350cc OHV",
+        "WD Serial No. Allocation": "RAF",
+        "Contract Number": "?",
+        "CAT. REF.": "?",
+        "Frame Number": "?",
+        "Engine Number": "?",
+        "Qty Prod'd": "?",
+        "Dates": "?",
+        "Price(s)": "?",
+        "Delivery Destination & Notes": "?"
+    },
+    {
+        "Maker's Type": "G3",
+        "Military Class": "M/C solo 350cc OHV",
+        "WD Serial No. Allocation": "4191756",
+        "Contract Number": "C7373",
+        "CAT. REF.": "9",
+        "Frame Number": "?",
+        "Engine Number": "?",
+        "Qty Prod'd": "1",
+        "Dates": "26/05/40",
+        "Price(s)": "£46.5s 6d",
+        "Delivery Destination & Notes": "Catterick or Stirling. Standard specification"
+    },
+    {
+        "Maker's Type": "G3L proto.",
+        "Military Class": "M/C solo 350cc OHV",
+        "WD Serial No. Allocation": "?",
+        "Contract Number": "?",
+        "CAT. REF.": "14",
+        "Frame Number": "16100, ?",
+        "Engine Number": "20326, ?",
+        "Qty Prod'd": "2",
+        "Dates": "21/11/40 DL",
+        "Price(s)": "£49.18s 9d",
+        "Delivery Destination & Notes": "Farnborough. 328lb. Civilian registration EED 869 and GPP 869. Frame from contract C8078"
+    },
+    {
+        "Maker's Type": "G3L",
+        "Military Class": "M/C solo 350cc OHV",
+        "WD Serial No. Allocation": "4588175–4589424",
+        "Contract Number": "C9506",
+        "CAT. REF.": "15",
+        "Frame Number": "19400–20649",
+        "Engine Number": "41-G3L-23800 to 41-G3L-25049",
+        "Qty Prod'd": "1,250",
+        "Dates": "02/01/41 DM, 26/09/41 CD",
+        "Price(s)": "£52.15s",
+        "Delivery Destination & Notes": "Chilwell"
+    },
+
+
+
+
+
+
+    {
+        "Maker's Type": "G3L",
+        "Military Class": "M/C solo 350cc OHV",
+        "WD Serial No. Allocation": "4649425–4651174 less catalogue reference 20, 941912–943911 less catalogue reference 20",
+        "Contract Number": "C9841",
+        "CAT. REF.": "16",
+        "Frame Number": "20650–24399 including catalogue reference 20",
+        "Engine Number": "41-G3L-25050 to 41-G3L-28799 including catalogue reference 20",
+        "Qty Prod'd": "3,608*",
+        "Dates": "15/02/41",
+        "Price(s)": "£52.15s",
+        "Delivery Destination & Notes": "Chilwell or Liverpool. *3,643 serial numbers. Lucas lighting fitted"
+    },
+    {
+        "Maker's Type": "G3L",
+        "Military Class": "M/C solo 350cc OHV",
+        "WD Serial No. Allocation": "4649432, 438, 466, 470, 481, 528, 719, 764, 765, 768–70, 772–75, 795, 796, 798, 805, 882, 883, 886, 891, 4650032, 056, 077, 105, 112, 115, 130, 136, 140, 142, 144, 146, 161, 162, 170, 171, 174, 177, 187, 199, 203, 204, 209, 238, 310, 464, 507, 510, 511, 610, 618, 707, 941961, 963, 988, 991–94, 997, 942000, 002–05, 007–10, 013, 015, 018–23, 026–029, 032, 033, 035, 038, 043, 044, 050, 055, 057, 060, 118–20, 254, 256, 257, 260, 261, 263–65, 268, 271, 273, 277, 278, 280, 282–84, 287, 289, 290, 292, 293, 295, 297, 299, 319, 326, 335, 340, 345, 356, 369, 943048, 058, 062, 065, 068, 076, 091, 092, 124, 153, 198, 206",
+        "Contract Number": "C9841",
+        "CAT. REF.": "20",
+        "Frame Number": "See catalogue reference 16",
+        "Engine Number": "See catalogue reference 16",
+        "Qty Prod'd": "142",
+        "Dates": "15/02/41",
+        "Price(s)": "?",
+        "Delivery Destination & Notes": "Chilwell or Liverpool. Miller lighting fitted"
+    },
+
+    
+
+
+
+
+    {
+        "Maker's Type": "G3L",
+        "Military Class": "M/C solo 350cc OHV",
+        "WD Serial No. Allocation": "?",
+        "Contract Number": "C/S11462",
+        "CAT. REF.": "?",
+        "Frame Number": "?",
+        "Engine Number": "?",
+        "Qty Prod'd": "500",
+        "Dates": "12/08/41 DM, 17/09/41 CD, 09/41 CP",
+        "Price(s)": "£52.15s",
+        "Delivery Destination & Notes": "?"
+    },
+    {
+        "Maker's Type": "G3L",
+        "Military Class": "M/C solo 350cc OHV",
+        "WD Serial No. Allocation": "RAF",
+        "Contract Number": "C/S12428",
+        "CAT. REF.": "?",
+        "Frame Number": "25000–25199",
+        "Engine Number": "41-G3L-40000 to 41-G3L-40199",
+        "Qty Prod'd": "200",
+        "Dates": "10/11/41 DM, 28/01/42 CD",
+        "Price(s)": "£55.17s",
+        "Delivery Destination & Notes": "To MUs throughout country at 50 per week starting in January"
+    },
+    {
+        "Maker's Type": "G3L",
+        "Military Class": "M/C solo 350cc OHV",
+        "WD Serial No. Allocation": "RAF",
+        "Contract Number": "C/S12800",
+        "CAT. REF.": "?",
+        "Frame Number": "25200–26011",
+        "Engine Number": "41-G3LWO-40200 to 41-G3LWO-41011",
+        "Qty Prod'd": "812",
+        "Dates": "12/12/41 DM",
+        "Price(s)": "£55.19s",
+        "Delivery Destination & Notes": "Quedgeley, Milton, Stafford, Hartlebury, Carlisle, and Haywood"
+    },
+    {
+        "Maker's Type": "G3L",
+        "Military Class": "M/C solo 350cc OHV",
+        "WD Serial No. Allocation": "943912–945110, 155–58, 160, 161, 166–71, 173–76, 180, 182, 183, 185, 191–771, 922–41, 952–66, 972–91, 946007–946041, 047–66, 072–96, 102–16, 946120–947521",
+        "Contract Number": "C11102",
+        "CAT. REF.": "30",
+        "Frame Number": "26012–29363",
+        "Engine Number": "41-G3L-41012 to 41-G3L-44363",
+        "Qty Prod'd": "3,352*",
+        "Dates": "21/07/41",
+        "Price(s)": "£56.18s 3d",
+        "Delivery Destination & Notes": "Chilwell and Tewkesbury. Miller lighting fitted. *Only 3,252 serial nos"
+    },
+
+
+
+
+
+    
+    
+    {
+        "Maker's Type": "G3L",
+        "Military Class": "M/C solo 350cc OHV",
+        "WD Serial No. Allocation": "945111–154, 159, 162–65, 172, 177–79, 181, 184, 186–90, 772–921, 942–51, 967–71, 945992–946006, 042–46, 067–71, 097–101, 117–19, 4688899–4692898, 4777736–4778125",
+        "Contract Number": "C11102",
+        "CAT. REF.": "19",
+        "Frame Number": "29364–34011",
+        "Engine Number": "41-G3L-44364 to 41-G3L-49011",
+        "Qty Prod'd": "4,648",
+        "Dates": "05/07/41 DM, 11/04/42 CD",
+        "Price(s)": "£56.18s",
+        "Delivery Destination & Notes": "Chilwell and Tewkesbury. Lucas lighting fitted"
+    },
+    {
+        "Maker's Type": "G3L",
+        "Military Class": "M/C solo 350cc OHV",
+        "WD Serial No. Allocation": "4837001–4842500",
+        "Contract Number": "C12632",
+        "CAT. REF.": "23",
+        "Frame Number": "34012–39511",
+        "Engine Number": "41-G3L-49012 to 41-G3L-54511",
+        "Qty Prod'd": "5,500",
+        "Dates": "26/11/41 DM",
+        "Price(s)": "£62.13s 10d",
+        "Delivery Destination & Notes": "Lucas lighting fitted"
+    },
+    {
+        "Maker's Type": "G3L",
+        "Military Class": "M/C solo 350cc OHV",
+        "WD Serial No. Allocation": "4842501–4844000, 947522–947921",
+        "Contract Number": "C12633",
+        "CAT. REF.": "22",
+        "Frame Number": "39512–41011",
+        "Engine Number": "41-G3L-54512 to 41-G3L-56011",
+        "Qty Prod'd": "1,500",
+        "Dates": "26/11/41 DM",
+        "Price(s)": "£65.16s",
+        "Delivery Destination & Notes": "Miller lighting fitted"
+    },
+    {
+        "Maker's Type": "G3L",
+        "Military Class": "M/C solo 350cc OHV",
+        "WD Serial No. Allocation": "4990101–4997100",
+        "Contract Number": "C14499",
+        "CAT. REF.": "27",
+        "Frame Number": "41012–48011",
+        "Engine Number": "41-G3L-56012 to 41-G3L-63011",
+        "Qty Prod'd": "7,000",
+        "Dates": "01/05/42",
+        "Price(s)": "£65.17s 10d",
+        "Delivery Destination & Notes": "Chilwell"
+    },
+    {
+        "Maker's Type": "G3L",
+        "Military Class": "M/C solo 350cc OHV",
+        "WD Serial No. Allocation": "5255460–5264459",
+        "Contract Number": "S.1050",
+        "CAT. REF.": "29",
+        "Frame Number": "48060–57059",
+        "Engine Number": "41-G3L-63060 to 41-G3L-72059",
+        "Qty Prod'd": "9,000",
+        "Dates": "01/10/42",
+        "Price(s)": "£60",
+        "Delivery Destination & Notes": "Army, but some to RAF regiment"
+    },
+    {
+        "Maker's Type": "G3L",
+        "Military Class": "M/C solo 350cc OHV",
+        "WD Serial No. Allocation": "5477370–5484369",
+        "Contract Number": "S.2604",
+        "CAT. REF.": "31",
+        "Frame Number": "57070–64069",
+        "Engine Number": "72070 to 79069",
+        "Qty Prod'd": "7,000",
+        "Dates": "03/03/43",
+        "Price(s)": "£67.15s 10d",
+        "Delivery Destination & Notes": "?"
+    },
+    {
+        "Maker's Type": "G3L",
+        "Military Class": "M/C solo 350cc OHV",
+        "WD Serial No. Allocation": "5800000–5807999",
+        "Contract Number": "S.4555",
+        "CAT. REF.": "32",
+        "Frame Number": "64070–72069",
+        "Engine Number": "79070–87069",
+        "Qty Prod'd": "8,000",
+        "Dates": "20/09/43",
+        "Price(s)": "£60.15s",
+        "Delivery Destination & Notes": "Delivery at 1,300 per month"
+    },
+
+
+
+
+    
+    {
+        "Maker's Type": "G3L",
+        "Military Class": "M/C solo 350cc OHV",
+        "WD Serial No. Allocation": "6112000–6121999",
+        "Contract Number": "S.6150",
+        "CAT. REF.": "33",
+        "Frame Number": "73000–79088 (was to 82999)",
+        "Engine Number": "90000–96088 (was to 99999)",
+        "Qty Prod'd": "6,089 (was 10,000)",
+        "Dates": "15/03/44",
+        "Price(s)": "?",
+        "Delivery Destination & Notes": "All fitted with air cleaners. Late deliveries had push-button head lamps (no ammeter)"
+    },
+    {
+        "Maker's Type": "Prototype",
+        "Military Class": "M/C solo OHV",
+        "WD Serial No. Allocation": "?",
+        "Contract Number": "?",
+        "CAT. REF.": "?",
+        "Frame Number": "?",
+        "Engine Number": "?",
+        "Qty Prod'd": "1",
+        "Dates": "1944",
+        "Price(s)": "?",
+        "Delivery Destination & Notes": "Rear springing fitted"
+    }
+]
