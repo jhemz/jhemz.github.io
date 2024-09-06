@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.84e74b33.css",
-    "main.js": "/static/js/main.c1592eb9.js",
+    "main.css": "/static/css/main.f8c51af6.css",
+    "main.js": "/static/js/main.77c415f1.js",
     "static/js/453.ad6eb26e.chunk.js": "/static/js/453.ad6eb26e.chunk.js",
     "static/media/Matchless G45.jpeg": "/static/media/Matchless G45.2ee022b6b1a35ee8e38f.jpeg",
     "static/media/AJS 7R.png": "/static/media/AJS 7R.c5afb2dec2045f5052d1.png",
@@ -10,21 +10,29 @@
     "static/media/AJS Model 20.jpeg": "/static/media/AJS Model 20.237fce6a14659f3bc497.jpeg",
     "static/media/AJS Model 18.png": "/static/media/AJS Model 18.e42f35adc1d352a2232f.png",
     "static/media/MatchlessG3L.png": "/static/media/MatchlessG3L.58223da92b3bcdedad44.png",
+    "static/media/rally1.jpeg": "/static/media/rally1.19c914566fb1fe0f06b3.jpeg",
+    "static/media/tank2.png": "/static/media/tank2.40cf217598bb76c62c71.png",
+    "static/media/tank1.png": "/static/media/tank1.75bd3e753dded11b4503.png",
     "static/media/matchlessg3wo.jpeg": "/static/media/matchlessg3wo.77c261a7f70b4a2f3dcc.jpeg",
     "static/media/AJS Model 18.jpg": "/static/media/AJS Model 18.acb81f239c03edfb03ed.jpg",
+    "static/media/tank3.png": "/static/media/tank3.e85ef3b730eb0102b06a.png",
+    "static/media/tank4.png": "/static/media/tank4.085d53904a2314d029d3.png",
+    "static/media/tank5.png": "/static/media/tank5.df2bb00409cb377e779f.png",
+    "static/media/WDMatchlessLogo.png": "/static/media/WDMatchlessLogo.6eeb065160f06882303d.png",
     "static/media/ClubLogo_west.png": "/static/media/ClubLogo_west.43f64f910cbd4345f582.png",
     "static/media/g3wo2.jpg": "/static/media/g3wo2.cb035cbef9f05b755883.jpg",
     "static/media/ajs.png": "/static/media/ajs.2b54f02210f0ae4f96ab.png",
     "static/media/ajsLogo.png": "/static/media/ajsLogo.7308fe615391185b7865.png",
     "static/media/Einhorn Std Regular.otf": "/static/media/Einhorn Std Regular.0f1e09c17882198221b8.otf",
     "static/media/matchlesslogo.png": "/static/media/matchlesslogo.31e150bc6bacbc907d33.png",
+    "static/media/default_tank.png": "/static/media/default_tank.4535fd68a2d8e20a1de7.png",
     "index.html": "/index.html",
-    "main.84e74b33.css.map": "/static/css/main.84e74b33.css.map",
-    "main.c1592eb9.js.map": "/static/js/main.c1592eb9.js.map",
+    "main.f8c51af6.css.map": "/static/css/main.f8c51af6.css.map",
+    "main.77c415f1.js.map": "/static/js/main.77c415f1.js.map",
     "453.ad6eb26e.chunk.js.map": "/static/js/453.ad6eb26e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.84e74b33.css",
-    "static/js/main.c1592eb9.js"
+    "static/css/main.f8c51af6.css",
+    "static/js/main.77c415f1.js"
   ]
 }
