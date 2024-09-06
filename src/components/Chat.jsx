@@ -31,27 +31,12 @@ const Chat = ({ bikes }) => {
 
   const fetchMessage = async (question) => {
 
-    const prompt = 'Hello, OpenAI!';
+    
 
-    fetch('/.netlify/functions/openai', {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ prompt })
-    })
-    .then(response => response.json())
-    .then(data => {
-    console.log(data); // Handle response from OpenAI
-    })
-    .catch(error => console.error('Error:', error));
-
-
-    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+    const response = await fetch('/.netlify/functions/openai', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer `,
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({
         model: 'gpt-3.5-turbo', // Or 'gpt-4' if you're using GPT-4
@@ -68,6 +53,28 @@ const Chat = ({ bikes }) => {
         max_tokens: 150,
       }),
     });
+
+    // const response = await fetch('https://api.openai.com/v1/chat/completions', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //     'Authorization': `Bearer `,
+    //   },
+    //   body: JSON.stringify({
+    //     model: 'gpt-3.5-turbo', // Or 'gpt-4' if you're using GPT-4
+    //     messages: [
+    //       {
+    //         role: 'system',
+    //         content: "You are a helpful assistant. Respond in a polite and concise manner, providing clear and structured answers.",
+    //       },
+    //       {
+    //         role: 'user',
+    //         content: question, // User's question prefixed with bike info
+    //       },
+    //     ],
+    //     max_tokens: 150,
+    //   }),
+    // });
 
     const data = await response.json();
     return data.choices[0].message.content.trim();
