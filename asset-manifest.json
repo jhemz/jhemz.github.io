@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.11c62760.css",
-    "main.js": "/static/js/main.d9bde21b.js",
+    "main.js": "/static/js/main.ba641ed0.js",
     "static/js/453.99dcf01f.chunk.js": "/static/js/453.99dcf01f.chunk.js",
     "static/media/1940_Matchless_G3WO_Parts_list.pdf": "/static/media/1940_Matchless_G3WO_Parts_list.ce07a0f3ee00ad43bb42.pdf",
     "static/media/PartsListIcon.jpg": "/static/media/PartsListIcon.dae6353948b7921f4d2f.jpg",
@@ -39,11 +39,11 @@
     "static/media/default_tank.png": "/static/media/default_tank.4535fd68a2d8e20a1de7.png",
     "index.html": "/index.html",
     "main.11c62760.css.map": "/static/css/main.11c62760.css.map",
-    "main.d9bde21b.js.map": "/static/js/main.d9bde21b.js.map",
+    "main.ba641ed0.js.map": "/static/js/main.ba641ed0.js.map",
     "453.99dcf01f.chunk.js.map": "/static/js/453.99dcf01f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.11c62760.css",
-    "static/js/main.d9bde21b.js"
+    "static/js/main.ba641ed0.js"
   ]
 }
