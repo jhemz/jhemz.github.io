@@ -1,7 +1,7 @@
 const fetch = require('node-fetch');
 
 exports.handler = async function(event, context) {
-  const OPENAI_API_KEY = process.env.OPENAI_API_KEY;  // This will come from your Netlify environment
+  const OPENAI_API_KEY = process.env.openai;  // This will come from your Netlify environment
 
   const response = await fetch('https://api.openai.com/v1/engines/davinci/completions', {
     method: 'POST',

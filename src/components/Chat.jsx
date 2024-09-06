@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 
 
 const Chat = ({ bikes }) => {
+    
   const [input, setInput] = useState('');
   const [selectedBike, setSelectedBike] = useState(''); // To store the selected bike name and year
   const [showModal, setShowModal] = useState(false);
@@ -29,6 +30,23 @@ const Chat = ({ bikes }) => {
   };
 
   const fetchMessage = async (question) => {
+
+    const prompt = 'Hello, OpenAI!';
+
+    fetch('/.netlify/functions/openai', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ prompt })
+    })
+    .then(response => response.json())
+    .then(data => {
+    console.log(data); // Handle response from OpenAI
+    })
+    .catch(error => console.error('Error:', error));
+
+
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
       headers: {
