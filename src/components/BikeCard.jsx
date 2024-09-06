@@ -1,70 +1,220 @@
 import React from 'react';
-import '../css/BikeCard.css'; // Import the CSS
+import Card from 'react-bootstrap/Card'; // Import Bootstrap Card
 import MatchlessLogo from '../assets/matchlesslogo.png';
 import AJSLogo from '../assets/ajsLogo.png';
+import WDMatchlessLogo from '../assets/WDMatchlessLogo.png';
+import YearBadge from './YearBadge';
+import SmallBadge from './SmallBadge';
 
+// Matchless Card Component
 const MatchlessCard = ({ bike }) => {
   const bikeImage = require(`../assets/bikes/${bike.image}`);
-  const bikeName = bike.name.replace('Matchless', 'Model');
+  const bikeName = bike.name.replace('Matchless', '');
 
   return (
-    <div className="bike-card matchless">
-      {/* Year Badge */}
-      <div className="year-badge">{bike.year}</div>
-
-      {/* Top Section: Left for specs, right for image */}
-      <div className="top-section">
-        <div className="left-section">
-          <img src={MatchlessLogo} alt="Matchless Logo" className="matchless-logo" />
-          <h2 className="matchless-model-name">{bikeName}</h2>
-          <p className="specs">{bike.engine}</p>
-          <p className="specs">{bike.suspension}</p>
-        </div>
-        <div className="right-section">
-          <img src={bikeImage} alt={`${bike.name} Image`} className="bike-image" />
-        </div>
+    <Card style={{
+      width: '100%', 
+      maxWidth: '39rem', 
+      margin: '20px auto', 
+      boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', 
+      position: 'relative',
+      background: 'white',
+      borderRadius: '10px'
+    }}>
+      {/* Name and engine specs below the logo */}
+      <div style={{
+        position: 'absolute', 
+        top: '10px', // Adjust based on logo size
+        left: '10px',
+        zIndex: 10,
+        textAlign: 'center',
+      }}>
+        <img 
+          src={MatchlessLogo} 
+          alt="Matchless Logo" 
+          style={{
+            top: '-10px',
+            left: '30px',
+            width: '100px',
+            height: 'auto',
+            zIndex: 10, // Ensure the logo is above other elements
+          }} 
+        />
+        <h2 style={{ fontFamily: 'Trebuchet MS, sans-serif',fontSize: '24px', fontWeight: 'bold', color: '#d40c0b', margin: 0 }}>
+          {bikeName}
+        </h2>
+        <p style={{ fontFamily: 'Trebuchet MS, sans-serif',fontSize: '18px', margin: '5px 0' }}>{bike.engine}</p>
       </div>
 
-      {/* Bottom pink section for description */}
-      <div className="bottom-colored-section" style={{ backgroundColor: '#f5a9a9' }}>
-        <p className="description">{bike.description}</p>
-      </div>
-    </div>
+      <div style={{ position: 'relative' }}>
+  {/* Flexbox wrapper for the badges with absolute positioning */}
+  <div style={{
+    position: 'absolute',
+    top: '10px',  // Adjust to position the badges vertically
+    right: '10px', // Adjust to position the badges horizontally
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-end', // Ensure badges are aligned to the right
+    zIndex: 10 // Ensure badges are above other elements
+  }}>
+    <YearBadge text={bike.year} />
+  </div>
+
+  <Card.Img
+    variant="top"
+    src={bikeImage}
+    alt={`${bikeName} Image`}
+    style={{ width: '90%', marginLeft:'20px', marginRight:'10px', height: 'auto', marginTop: '100px' }}
+  />
+</div>
+
+      <Card.Body>
+        <div style={{
+                backgroundColor: '#d40c0b', 
+                height: '5px', 
+                borderRadius: '0px',
+                color: 'white',
+                display: 'flex',
+                justifyContent: 'space-between', 
+                alignItems: 'center' }}>        
+        </div>
+        <Card.Text
+          style={{fontFamily: 'Trebuchet MS, sans-serif', marginLeft: '20px', marginRight: '20px', fontSize: '15px' }}
+          >{bike.description}</Card.Text>
+      </Card.Body>
+    </Card>
   );
 };
 
+
+// WD Matchless Card Component (identical for now, but you can customize colors later)
+const WDMatchlessCard = ({ bike }) => {
+  const bikeImage = require(`../assets/bikes/${bike.image}`);
+  const bikeName = bike.name.replace('Matchless', '');
+
+  return (
+    <Card style={{
+      width: '100%', 
+      maxWidth: '39rem', 
+      margin: '20px auto', 
+      boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', 
+      position: 'relative',
+      background: 'white',
+      borderRadius: '10px'
+    }}>
+      <div style={{
+        position: 'absolute', 
+        top: '30px', 
+        left: '10px',
+        zIndex: 10,
+        textAlign: 'center',
+      }}>
+        <img 
+          src={WDMatchlessLogo} 
+          alt="Matchless Logo" 
+          style={{
+            top: '10px',
+            left: '30px',
+            width: '120px',
+            height: 'auto',
+            zIndex: 10,
+          }} 
+        />
+        <h2 style={{ fontFamily: 'Trebuchet MS, sans-serif',fontSize: '24px', fontWeight: 'bold', color: '#4D4B1D', margin: 0 }}>
+          {bikeName}
+        </h2>
+        <p style={{ fontFamily: 'Trebuchet MS, sans-serif',fontSize: '18px', margin: '5px 0' }}>{bike.engine}</p>
+      </div>
+
+      <div style={{ position: 'relative' }}>
+  {/* Flexbox wrapper for the badges with absolute positioning */}
+  <div style={{
+    position: 'absolute',
+    top: '10px',  // Adjust to position the badges vertically
+    right: '10px', // Adjust to position the badges horizontally
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-end', // Ensure badges are aligned to the right
+    zIndex: 10 // Ensure badges are above other elements
+  }}>
+    <YearBadge text={bike.year} />
+  </div>
+
+  <Card.Img
+    variant="top"
+    src={bikeImage}
+    alt={`${bikeName} Image`}
+    style={{ width: '90%', marginLeft:'20px', marginRight:'10px', height: 'auto', marginTop: '100px' }}
+  />
+</div>
+
+      <Card.Body>
+        <div style={{
+                backgroundColor: '#4D4B1D', 
+                height: '5px', 
+                borderRadius: '0px',
+                color: 'white',
+                display: 'flex',
+                justifyContent: 'space-between', 
+                alignItems: 'center' }}>        
+        </div>
+        <Card.Text
+          style={{fontFamily: 'Trebuchet MS, sans-serif', marginLeft: '20px', marginRight: '20px', fontSize: '15px' }}
+          >{bike.description}</Card.Text>
+      </Card.Body>
+    </Card>
+  );
+};
+
+
+
+
+// AJS Card Component
 const AJSCard = ({ bike }) => {
   const bikeImage = require(`../assets/bikes/${bike.image}`);
   const bikeName1 = bike.name.replace('Model', '');
   const bikeName = bikeName1.replace('AJS', 'Model');
 
   return (
-    <div className="bike-card ajs">
-      {/* Year Badge */}
-      <div className="year-badge">{bike.year}</div>
-
-      {/* Image of the bike */}
-      <div className="bike-image-container">
-        <img src={bikeImage} alt={`${bikeName} Image`} className="bike-image" />
+    <Card style={{
+      width: '100%', // Make card take full width of the container
+      maxWidth: '39rem', // Set a maximum width to prevent it from growing too large
+      margin: '20px auto', // Center the card horizontally
+      boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', 
+      position: 'relative',
+      background: 'white',
+      borderRadius: '10px'
+    }}>
+      <div style={{ position: 'relative' }}>
+        {/* Year Badge */}
+        <YearBadge text={bike.year} />
+        <Card.Img variant="top" src={bikeImage} alt={`${bikeName} Image`} style={{ width: '90%', marginLeft:'20px', marginLRight:'10px', height: 'auto', marginTop: '100px' }} />
       </div>
 
-      {/* Middle blue bar with the bike name */}
-      <div className="ajs-bar" style={{ backgroundColor: '#3b6fc4' }}>
-        <h2 className="ajs-model-name">{bikeName}</h2>
-        <img src={AJSLogo} alt="AJS Logo" className="ajs-logo" />
-      </div>
-
-      {/* Bottom section for description */}
-      <div className="bottom-section ajs-description">
-        <p className="description">{bike.description}</p>
-      </div>
-    </div>
+      <Card.Body >
+        <div style={{ backgroundColor: '#3b6fc4', height: '15px', padding: '10px', borderRadius: '0px', color: 'white', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <Card.Title style={{fontFamily: 'Trebuchet MS, sans-serif', marginLeft: '20px', fontSize: '25px' }}>{bikeName}</Card.Title>
+          <img src={AJSLogo} alt="AJS Logo" style={{ width: '80px', height: 'auto', marginLeft: 'auto', zIndex: '100' }} />
+        </div>
+        <Card.Text
+          style={{fontFamily: 'Trebuchet MS, sans-serif', marginLeft: '20px', marginRight: '20px', fontSize: '15px' }}
+          >{bike.description}</Card.Text>
+      </Card.Body>
+    </Card>
   );
 };
 
+// BikeCard Component
 const BikeCard = ({ bike }) => {
   const isMatchless = bike.name.toLowerCase().startsWith('matchless');
+ 
+  if (isMatchless && bike.wd) {
+    return <WDMatchlessCard bike={bike} />;
+  }
+  
   return isMatchless ? <MatchlessCard bike={bike} /> : <AJSCard bike={bike} />;
 };
 
-export default BikeCard;
+export default BikeCard

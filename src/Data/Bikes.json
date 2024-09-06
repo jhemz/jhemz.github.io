@@ -1,146 +1,90 @@
 [
     {
         "name": "Matchless G3WO",
-        "image": "g3wo2.jpg",
-        "description": "The Matchless G3WO was a military motorcycle used extensively during World War II. It was known for its ruggedness and reliability in tough conditions.",
-        "year": 1940,
+        "image": "MatchlessG3WO.png",
+        "description": "The Matchless G3WO was produced for military use during World War II and was known for its ruggedness and reliability in harsh conditions. It was an early version of the G3 series, featuring a 350cc engine and rigid rear suspension.",
+        "year": "1939-1941",
         "engine": "350cc single-cylinder",
-        "topSpeed": "75 mph",
-        "weight": "405 lbs"
+        "topSpeed": "70 mph",
+        "weight": "395 lbs",
+        "gearbox": "4-speed Burman",
+        "wd": true
+    },
+    {
+        "name": "Matchless WD G3L",
+        "image": "MatchlessWDG3L.png",
+        "description": "The WD G3L was the first military motorcycle to feature Teledraulic front forks, offering better handling and comfort for off-road use. It was widely used by the British Army during World War II and earned a reputation for being robust and easy to maintain.",
+        "year": "1941-1945",
+        "engine": "350cc single-cylinder",
+        "topSpeed": "70 mph",
+        "weight": "350 lbs",
+        "gearbox": "4-speed Burman",
+        "wd": true
     },
     {
         "name": "Matchless G3L",
         "image": "MatchlessG3L.png",
-        "description": "Introduced in 1941, the G3L was the first motorcycle to feature Teledraulic forks, which became a standard in motorcycle design. It served as a military bike during WWII.",
-        "year": 1941,
+        "description": "The civilian version of the G3L was introduced in 1945, carrying forward the innovative Teledraulic forks from the military model. It became a popular bike post-war, offering reliable performance and smooth handling.",
+        "year": "1945-1954",
         "engine": "350cc single-cylinder",
         "topSpeed": "70 mph",
-        "weight": "390 lbs"
-    },
-    {
-        "name": "AJS Model 16",
-        "image": "AJS Model 16.png",
-        "description": "The AJS Model 16, produced from 1945 onwards, was a civilian version of the military G3L. It was a reliable and popular choice among post-war motorcycle enthusiasts.",
-        "year": 1945,
-        "engine": "350cc single-cylinder",
-        "topSpeed": "70 mph",
-        "weight": "390 lbs"
-    },
-    {
-        "name": "AJS Model 18",
-        "image": "AJS Model 18.png",
-        "description": "The AJS Model 18 was one of the most popular motorcycles produced by AJS in the post-war era. Known for its reliability and robust design, this bike is a favorite among classic motorcycle enthusiasts.",
-        "year": 1945,
-        "engine": "500cc single-cylinder",
-        "topSpeed": "85 mph",
-        "weight": "410 lbs"
+        "weight": "350 lbs",
+        "gearbox": "4-speed Burman",
+        "wd": false
     },
     {
         "name": "Matchless G80",
-        "image": "g3wo2.jpg",
-        "description": "The Matchless G80 is an iconic motorcycle known for its powerful engine and smooth ride. A staple of the Matchless brand, this bike continues to capture the hearts of riders worldwide.",
-        "year": 1946,
+        "image": "MatchlessG80-1948.png",
+        "description": "The Matchless G80, introduced in the late 1940s, was a larger 500cc single-cylinder version designed for more powerful performance. It featured Teledraulic front forks and became known for its robustness and versatility on both road and off-road terrains.",
+        "year": "1945-1957",
         "engine": "500cc single-cylinder",
-        "topSpeed": "90 mph",
-        "weight": "420 lbs"
+        "topSpeed": "85 mph",
+        "weight": "390 lbs",
+        "gearbox": "4-speed Burman",
+        "wd": false
     },
     {
-        "name": "AJS 7R",
-        "image": "AJS 7R.png",
-        "description": "The AJS 7R, also known as the 'Boy Racer', was a racing motorcycle produced from 1948 to 1963. It was highly successful in competition and remains a legendary bike in racing history.",
-        "year": 1948,
+        "name": "Matchless G3LS",
+        "image": "MatchlessG3LS.png",
+        "description": "The G3LS was a popular civilian motorcycle introduced in the 1950s, with the 'S' denoting its rear spring suspension. This model provided improved comfort and ride quality, making it a favorite for long-distance riding.",
+        "year": "1949-1956",
         "engine": "350cc single-cylinder",
-        "topSpeed": "100 mph",
-        "weight": "285 lbs"
+        "topSpeed": "70 mph",
+        "weight": "370 lbs",
+        "gearbox": "4-speed Burman",
+        "wd": false
     },
     {
-        "name": "Matchless G9",
-        "image": "g3wo2.jpg",
-        "description": "The Matchless G9 was introduced in 1949 as a 500cc twin-cylinder motorcycle. It was designed to provide a smoother and more powerful ride compared to the single-cylinder models.",
-        "year": 1949,
-        "engine": "500cc twin-cylinder",
+        "name": "Matchless G80",
+        "image": "MatchlessG80-1955.png",
+        "description": "The Matchless G80 from the mid-1950s was an updated version of the earlier 500cc model, featuring improvements in suspension and overall design. It was widely appreciated for its power and durability on a variety of terrains.",
+        "year": "1955-1966",
+        "engine": "500cc single-cylinder",
         "topSpeed": "85 mph",
-        "weight": "400 lbs"
-    },
-    {
-        "name": "AJS Model 20",
-        "image": "AJS Model 20.jpeg",
-        "description": "The AJS Model 20 was a 500cc twin-cylinder motorcycle, introduced in 1949. It was known for its smooth performance and became a popular model in the early 1950s.",
-        "year": 1949,
-        "engine": "500cc twin-cylinder",
-        "topSpeed": "85 mph",
-        "weight": "395 lbs"
-    },
-    {
-        "name": "Matchless G45",
-        "image": "Matchless G45.jpeg",
-        "description": "The Matchless G45 was a racing motorcycle introduced in 1951. It was based on the G9 but was tuned for racing, making it a competitive machine on the track.",
-        "year": 1951,
-        "engine": "500cc twin-cylinder",
-        "topSpeed": "115 mph",
-        "weight": "340 lbs"
+        "weight": "400 lbs",
+        "gearbox": "4-speed Burman",
+        "wd": false
     },
     {
         "name": "Matchless G11",
-        "image": "g3wo2.jpg",
-        "description": "The Matchless G11, introduced in 1956, featured a 600cc twin-cylinder engine. It was designed for touring and offered more power and comfort for long-distance rides.",
-        "year": 1956,
-        "engine": "600cc twin-cylinder",
-        "topSpeed": "95 mph",
-        "weight": "420 lbs"
-    },
-    {
-        "name": "AJS Model 31",
-        "image": "g3wo2.jpg",
-        "description": "The AJS Model 31 was introduced in 1958 as a 650cc twin-cylinder motorcycle. It was designed to compete with other large-capacity bikes of the time and offered a blend of power and reliability.",
-        "year": 1958,
-        "engine": "650cc twin-cylinder",
-        "topSpeed": "100 mph",
-        "weight": "430 lbs"
+        "image": "MatchlessG11-1958.png",
+        "description": "The Matchless G11, introduced in 1956, featured a 600cc twin-cylinder engine, offering more power than previous models. It was built for touring and long-distance rides with a focus on comfort and durability.",
+        "year": "1956-1958",
+        "engine": "593cc twin-cylinder",
+        "topSpeed": "90 mph",
+        "weight": "395 lbs",
+        "gearbox": "4-speed AMC gearbox",
+        "wd": false
     },
     {
         "name": "Matchless G12",
-        "image": "g3wo2.jpg",
-        "description": "The Matchless G12, introduced in 1958, was a 650cc twin-cylinder motorcycle. It was one of the most powerful and largest bikes produced by Matchless, offering a great ride for long distances.",
-        "year": 1958,
-        "engine": "650cc twin-cylinder",
-        "topSpeed": "100 mph",
-        "weight": "440 lbs"
-    },
-    {
-        "name": "AJS Model 14",
-        "image": "g3wo2.jpg",
-        "description": "The AJS Model 14, introduced in 1958, was a 250cc single-cylinder motorcycle. It was aimed at the commuter market and was known for its lightweight and easy handling.",
-        "year": 1958,
-        "engine": "250cc single-cylinder",
-        "topSpeed": "70 mph",
-        "weight": "330 lbs"
-    },
-    {
-        "name": "AJS Model 8",
-        "image": "g3wo2.jpg",
-        "description": "The AJS Model 8 was a 350cc single-cylinder motorcycle introduced in 1960. It was designed to be a robust and reliable bike, suitable for both commuting and touring.",
-        "year": 1960,
-        "engine": "350cc single-cylinder",
-        "topSpeed": "75 mph",
-        "weight": "370 lbs"
-    },
-    {
-        "name": "Matchless G2",
-        "image": "g3wo2.jpg",
-        "description": "The Matchless G2, introduced in 1960, was a 250cc single-cylinder motorcycle. It was part of the lightweight series and was popular among newer riders for its manageable power and handling.",
-        "year": 1960,
-        "engine": "250cc single-cylinder",
-        "topSpeed": "70 mph",
-        "weight": "330 lbs"
-    },
-    {
-        "name": "Matchless G50",
-        "image": "g3wo2.jpg",
-        "description": "The Matchless G50, introduced in 1958, was a racing motorcycle based on the AJS 7R but with a larger 500cc engine. It became a legendary racer and is still revered in classic racing circles.",
-        "year": 1962,
-        "engine": "500cc single-cylinder",
-        "topSpeed": "120 mph",
-        "weight": "320 lbs"
+        "image": "MatchlessG12-1961.png",
+        "description": "The Matchless G12 was produced in the late 1950s and early 1960s, featuring a powerful 650cc twin-cylinder engine. It was designed for high-speed touring and was known for its smooth handling and reliability on long journeys.",
+        "year": "1958-1966",
+        "engine": "646cc twin-cylinder",
+        "topSpeed": "95 mph",
+        "weight": "410 lbs",
+        "gearbox": "4-speed AMC gearbox",
+        "wd": false
     }
 ]

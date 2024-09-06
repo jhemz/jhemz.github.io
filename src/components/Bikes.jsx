@@ -1,142 +1,70 @@
-import React, { useState, useEffect } from 'react';
-import '../css/Bikes.css';
+import React, { useState } from 'react';
 import bikesData from '../Data/Bikes.json';
-import MatchlessBikeCard from './BikeCard';
-const numberPlateData = require('../Data/NumberPlates.json');
-
-const NumberPlateTable = ({ data }) => {
-  const maxRowsPerColumn = 80;
-
-  const createColumns = (data) => {
-    const columns = [];
-    for (let i = 0; i < data.length; i += maxRowsPerColumn) {
-      columns.push(data.slice(i, i + maxRowsPerColumn));
-    }
-    return columns;
-  };
-
-  const columns = createColumns(data);
-
-  return (
-    <div className="table-wrapper">
-      {columns.map((columnData, columnIndex) => (
-        <div key={columnIndex} className="table-column">
-          <table>
-            <thead>
-              <tr>
-                <th>Code</th>
-                <th>Location</th>
-              </tr>
-            </thead>
-            <tbody>
-              {columnData.map((item, rowIndex) => (
-                <tr key={rowIndex}>
-                  <td>{item.prefix}</td>
-                  <td>{item.location}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      ))}
-    </div>
-  );
-};
+import numberPlateData from '../Data/NumberPlates.json';
+import BikesTab from './BikesTab';
+import NumberPlatesTab from './NumberPlatesTab';
+import WDBikesTab from './WDBikesTab';
 
 const BikesPage = () => {
   const [activeTab, setActiveTab] = useState('Bikes');
-  const [numberPlateInput, setNumberPlateInput] = useState('');
-  const [locationDisplay, setLocationDisplay] = useState('');
-  const [bikes, setBikes] = useState(bikesData || []);
-  const [numberPlates, setNumberPlates] = useState(numberPlateData || []);
+  const [bikes] = useState(bikesData || []);
+  const [numberPlates] = useState(numberPlateData || []);
 
   const openTab = (tabName) => {
     setActiveTab(tabName);
   };
 
-  const showBikeLocation = () => {
-    getBikeLocation(numberPlateInput).then((location) => {
-      setLocationDisplay(`Location: ${location}`);
-    });
+  const bikesPageStyle = {
+    padding: '20px',
+    marginTop: '90px',
+    fontFamily: 'Arial, sans-serif',
   };
 
-  const getBikeLocation = async (numberPlate) => {
-    const prefix = extractPrefix(numberPlate);
-    if (prefix) {
-      return getLocationByPrefix(prefix);
-    }
-    return 'Invalid number plate';
+  const secondaryNavStyle = {
+    display: 'flex',
+    justifyContent: 'center',
+    marginBottom: '20px',
   };
 
-  const extractPrefix = (numberPlate) => {
-    const match = numberPlate.match(/^[A-Z]+/i);
-    return match ? match[0].slice(-2).toUpperCase() : null;
-  };
-
-  const getLocationByPrefix = (prefix) => {
-    const entry = numberPlates.find((item) => item.prefix === prefix);
-    return entry ? entry.location : 'Unknown location';
-  };
+  const tablinkStyle = (isActive) => ({
+    padding: '10px 20px',
+    cursor: 'pointer',
+    fontWeight: isActive ? 'bold' : 'normal',
+    backgroundColor: isActive ? '#ddd' : '#f1f1f1',
+    border: '1px solid #ccc',
+    borderRadius: '5px',
+    margin: '0 5px',
+  });
 
   return (
-    <div className="bikes-page">
-      <div className="secondary-nav">
+    <div style={bikesPageStyle}>
+      <div style={secondaryNavStyle}>
         <a
-          className={`tablinks ${activeTab === 'Bikes' ? 'active' : ''}`}
+          style={tablinkStyle(activeTab === 'Bikes')}
           onClick={() => openTab('Bikes')}
         >
           Bikes
         </a>
         <a
-          className={`tablinks ${activeTab === 'Table' ? 'active' : ''}`}
+          style={tablinkStyle(activeTab === 'Table')}
           onClick={() => openTab('Table')}
         >
           Number Plates
         </a>
         <a
-          className={`tablinks ${activeTab === 'WDBikes' ? 'active' : ''}`}
+          style={tablinkStyle(activeTab === 'WDBikes')}
           onClick={() => openTab('WDBikes')}
         >
           WD Bikes
         </a>
       </div>
 
-      {/* Bikes Tab */}
-      {activeTab === 'Bikes' && (
-        <div className="tabcontent">
-          <div className="bikes-container">
-            {bikes.map((bike) => 
-                <MatchlessBikeCard bike={bike} />
-            )}
-          </div>
-        </div>
-      )}
-
-      {/* Number Plates Tab */}
-      {activeTab === 'Table' && (
-        <div className="tabcontent">
-          <div className="location-tool" style={{ textAlign: 'center', marginBottom: '20px' }}>
-            <input
-              type="text"
-              value={numberPlateInput}
-              onChange={(e) => setNumberPlateInput(e.target.value.toUpperCase())}
-              placeholder="Reg"
-              style={{ padding: '10px', fontSize: '30px' }}
-            />
-            <button onClick={showBikeLocation} style={{ padding: '10px 20px', fontSize: '16px' }}>
-              Search
-            </button>
-            <p style={{ marginTop: '15px', fontSize: '30px', fontWeight: 'bold' }}>{locationDisplay}</p>
-          </div>
-          <div className="table-wrapper">
-            <NumberPlateTable data={numberPlates} />
-          </div>
-        </div>
-      )}
-
-      {/* WD Bikes Tab (for future implementation) */}
+      {/* Conditional rendering of tabs */}
+      {activeTab === 'Bikes' && <BikesTab bikes={bikes} />}
+      {activeTab === 'Table' && <NumberPlatesTab numberPlates={numberPlates} />}
+      {activeTab === 'WDBikes' && <WDBikesTab bikes={bikes.filter(bike => bike.wd)} />}
     </div>
   );
 };
 
-export default BikesPage; 
+export default BikesPage;

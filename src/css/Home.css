@@ -1,215 +1,227 @@
 /* Base Styles */
 @font-face {
-    font-family: 'Einhorn Std Regular';
-    src: url('../fonts/Einhorn%20Std%20Regular.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'Einhorn Std Regular';
+  src: url('../fonts/Einhorn%20Std%20Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 body {
-    margin: 0;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.home-content {
+  position: relative; /* This makes the container a reference for absolutely positioned children */
+  height: auto;
+  overflow: hidden;
+  padding: 0;
+}
+
+.text-content {
+  background-color: transparent;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  position: relative;
+  z-index: 2; /* Make sure text stays above the image */
+}
+
+.image-container {
+  position: absolute; /* Allows the image to sit behind the text */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Image behind the text */
+}
+
+.faded-image {
+  background: url('../assets/matchlessg3wo.jpeg') no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  mask-image: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 250%); /* Extend gradient fade on the left for large screens */
+  -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 250%);
+}
+
+/* Header grid styles */
+.header-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column for small screens */
+  grid-template-rows: auto auto auto;
+  gap: 10px;
+  justify-items: center;
+  align-items: center;
+  margin-top: 0; /* Reset margin for small screens */
+  width: 100%; /* Full width on small screens */
+  padding: 20px;
+  top: 50px;
+  
+  text-align: center; /* Center text for mobile */
+}
+
+/* Typography for headers */
+.small-header {
+  font-family: 'Einhorn Std Regular', 'Arial Black', sans-serif;
+  font-size: 2em; /* Standardize font size */
+  margin: 0;
+  margin-top: 100px;
+  margin-bottom: -60px;
+  margin-left: 30px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+}
+
+.jampot-title {
+  font-family: 'Einhorn Std Regular', 'Arial Black', sans-serif;
+  font-size: 8em; /* Larger font size for the main title */
+  margin: 0;
+  letter-spacing: 2px;
+  margin-left: 40px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+}
+
+/* Adjust West of England header */
+.small-header.west-of-england {
+  margin-left: 280px;
+  margin-top: -100px; /* Adjust spacing for consistency */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+}
+
+/* Masonry Layout for Photos */
+.masonry-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 columns for small screens */
+  gap: 10px;
+  margin: 20px 0;
+}
+
+/* Responsive Scaling and positioning */
+@media (min-width: 768px) {
+  .home-content {
+    height: 100vh; /* Full screen height */
     padding: 0;
-    font-family: Arial, sans-serif;
   }
+
+  .text-content {
+    width: 50%; /* Limit the text width */
+    text-align: left; /* Align text left */
+    position: relative;
+    margin-left: 10%; /* Center the text block within the screen */
+    z-index: 2; /* Ensure it is above the image */
+  }
+
+  .image-container {
+    width: 100%; /* Image takes the full width of the container */
+    height: 100%; /* Full height of the container */
+    top: 0;
+    left: 0;
+  }
+
+  .faded-image {
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 250%); /* Longer fade for large screens */
+    -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 250%);
+  }
+
+  /* Header grid for larger screens */
+  .header-grid {
+    width: 600px;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for larger screens */
+    margin-top: 100px;
+    gap: 20px;
+  }
+
+  .small-header {
+    width: 500px;
+    font-size: 2em; /* Scale up headers */
+    margin-left: 40px;
+    margin-top: -180px; /* Adjust spacing for consistency */
+  }
+
+  .jampot-title {
+    margin-left: -560px;
+    margin-top: 10px;
+    font-size: 10em; /* Main title stays large */
+  }
+
+  .small-header.west-of-england {
+    font-size: 2em; /* Scale up West of England header */
+    margin-left: -410px;
+    margin-top: 110px; /* Adjust spacing for consistency */
+  }
+}
+
+@media (max-width: 900px) {
+  .header-grid {
+    transform: scale(0.9); /* Scale down for small screens */
+    margin-left: 0px;
+    width: 100%; /* Ensure it takes up full width */
+    text-align: center; /* Center text inside the grid */
+    margin-left: -60px;
+    margin-top: -686px;
+  }
+
+
   
   .home-content {
     display: flex;
-    flex-direction: column-reverse; /* Stack image above text on small screens */
-    justify-content: center;
-    align-items: center;
-    position: relative;
+    flex-direction: column-reverse; /* Stack image above text */
     height: auto;
-    overflow: hidden;
   }
-  
-  .text-content {
-    width: 100%; /* Full width on small screens */
-    padding: 20px;
-    top: 50px;
-    box-sizing: border-box;
-    text-align: center; /* Center text for mobile */
-  }
-  
+
   .image-container {
-    width: 50%; /* Half width on medium and larger screens */
-    margin-top: 0;
-    height: auto; /* Allow the container to adjust its height dynamically */
-  }
-  
-  .faded-image {
-    background: url('../assets/matchlessg3wo.jpeg') no-repeat center center;
-    background-size: cover; /* Ensure the image scales properly */
-    padding-top: 110%; /* This is a 16:9 aspect ratio trick (height based on width) */
+    position: relative; /* Make the image flow within the layout */
     width: 100%;
-   
-    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 90%);
-    -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 90%);
+    height: auto;
+    z-index: 1; /* Keep it within the layout */
   }
-  
-  /* Header grid styles */
-  .header-grid {
-    display: grid;
-    grid-template-columns: 1fr; /* Single column for small screens */
-    grid-template-rows: auto auto auto;
-    gap: 10px;
-    justify-items: center;
-    align-items: center;
-    margin-top: 0; /* Reset margin for small screens */
-    width: 100%; /* Full width on small screens */
-    padding: 20px;
-    top: 50px;
-    box-sizing: border-box;
-    text-align: center; /* Center text for mobile */
-  }
-  
-  /* Typography for headers */
-  .small-header {
-    font-family: 'Einhorn Std Regular', 'Arial Black', sans-serif;
-    font-size: 2em; /* Standardize font size */
-    margin: 0;
-    margin-top: 100px;
-    margin-bottom: -70px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
-  }
-  
-  .jampot-title {
-    font-family: 'Einhorn Std Regular', 'Arial Black', sans-serif;
-    font-size: 8em; /* Larger font size for the main title */
-    margin: 0;
-    letter-spacing: 2px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
-  }
-  
-  /* Adjust West of England header */
-  .small-header.west-of-england {
-    margin-top: -120px; /* Adjust spacing for consistency */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
-  }
-  
-  /* Masonry Layout for Photos */
-  .masonry-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* 2 columns for small screens */
-    gap: 10px;
-    margin: 20px 0;
-  }
-  
-  /* Responsive Scaling and positioning */
-  @media (min-width: 768px) {
-    .home-content {
-      flex-direction: row; /* Side by side on larger screens */
-      height: auto; /* Allow height to adjust */
-    }
-  
-    .text-content {
-      width: 50%; /* Half width on medium and larger screens */
-      padding: 40px;
-      text-align: left; /* Align text to the left on larger screens */
-    }
-  
-    .image-container {
-      width: 50%; /* Half width on medium and larger screens */
-      height: auto; /* Adjust height dynamically */
-      margin-top: 0;
-    }
-  
-    .faded-image {
-      background-size: cover; /* Ensure the image scales properly */
-      height: 100%;
-      width: 100%;
-    }
-  
-    .masonry-container {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
-    }
-  
-    /* Larger header adjustments */
-    .small-header {
-      font-size: 2em; /* Scale up headers */
-    }
-  
-    .jampot-title {
-      font-size: 10em; /* Main title stays large */
-    }
-  
-    .small-header.west-of-england {
-      font-size: 2em; /* Scale up West of England header */
-      margin-left: 250px;
-    }
-  }
-  
-  @media (min-width: 1300px) {
-    .jampot-title {
-      font-size: 10em; /* Larger font for big screens */
-    }
-  
-    .small-header {
-      font-size: 2em; /* Larger for very big screens */
-    }
-  
-    .header-grid {
-      margin-top: 0px; /* Adjust spacing as needed */
-    }
-  }
-  
-  /* Image gradient and responsive tweaks */
+
   .faded-image {
-    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 90%);
-    -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 90%);
+    padding-top: 110%;
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 250%);
+    -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 250%);
   }
-  
-  @media (max-width: 900px) {
-    .header-grid {
-        transform: scale(0.9); /* Scale down for small screens */
-        margin-top: 0;
-        margin-left: 0px;
-        width: 100%; /* Ensure it takes up full width */
-        max-width: 600px; /* Set a max width to avoid stretching too much */
-        text-align: center; /* Center text inside the grid */
-        margin-left: -60px;
-      }
-  
-    .home-content {
-      flex-direction: column-reverse;
-    }
-  
-    .image-container {
-      margin-bottom: 20px; /* Add space below the image */
-    }
-  
-    .jampot-title {
-      font-size: 8.5em; /* Smaller size for very small screens */
-    }
 
-    .small-header.west-of-england {
-        font-size: 1.5m; /* Smaller size for very small screens */
-    }
+  .text-content {
+    position: relative;
+    width: 100%;
+    z-index: 2;
+    color: black; /* Ensure readability */
+  }
+}
 
-    .small-header {
-    font-size: 1.5m; /* Smaller size for very small screens */
-    }
+@media (max-width: 600px) {
+  .header-grid {
+    transform: scale(0.9); /* Further scaling for smaller screens */
+    width: 100vw;
+    margin-top: -470px;
+    padding: 0;
   }
-  
-  @media (max-width: 600px) {
-    .header-grid {
-      transform: scale(0.85); /* Further scaling for smaller screens */
-width: 100vw;
-      margin-top: -180px;
-    }
-  
-    .home-content {
-      padding: 0px;
-    }
-  
-    .image-container {
-      width: 100%;
-      margin-top: 0;
-      height: auto;
-    }
-  
-    .faded-image {
-        margin-top: -40px;
-      mask-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 90%);
-      -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 90%);
-    }
+
+  .home-content {
+    padding: 0px;
   }
+
+  .image-container {
+    width: 100%;
+    margin-top: 0;
+    height: auto;
+  }
+
+  .faded-image {
+    margin-top: -40px;
+    mask-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 250%);
+    -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 250%);
+  }
+
+  .jampot-title {
+    font-size: 8.5em; /* Smaller size for very small screens */
+  }
+
+  .small-header.west-of-england,
+  .small-header {
+    font-size: 1.6em; /* Smaller size for very small screens */
+  }
+}
