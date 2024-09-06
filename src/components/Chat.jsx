@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-import { OpenAIAPIKey } from '../config'; // Ensure your config.js has the OpenAI key
+
 
 const Chat = ({ bikes }) => {
   const [input, setInput] = useState('');
@@ -33,7 +33,7 @@ const Chat = ({ bikes }) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${OpenAIAPIKey}`,
+        'Authorization': `Bearer `,
       },
       body: JSON.stringify({
         model: 'gpt-3.5-turbo', // Or 'gpt-4' if you're using GPT-4
