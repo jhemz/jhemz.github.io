@@ -39,18 +39,7 @@ const Chat = ({ bikes }) => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        model: 'gpt-3.5-turbo', // Or 'gpt-4' if you're using GPT-4
-        messages: [
-          {
-            role: 'system',
-            content: "You are a helpful assistant. Respond in a polite and concise manner, providing clear and structured answers.",
-          },
-          {
-            role: 'user',
-            content: question, // User's question prefixed with bike info
-          },
-        ],
-        max_tokens: 150,
+         prompt: question
       }),
     });
 
