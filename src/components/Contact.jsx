@@ -1,15 +1,28 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css'; // Ensure Bootstrap is imported
+import { FaHardHat } from 'react-icons/fa'; // Import a construction worker icon from react-icons
 
 function Contact() {
   return (
-    <div>
-      <h1>Contact Us</h1>
-      <p>If you have any questions or would like more information, feel free to reach out to us.</p>
-      <ul>
-        <li>Phone: +44 (0)1536 511532</li>
-        <li>Email: info@ajsmatchlessclub.com</li>
-        <li>Address: Unit 3, Robinson Way, Telford Way Ind. Estate, Kettering, Northants, NN16 8PT, England</li>
-      </ul>
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh', // Full viewport height to center vertically
+        padding: '20px',
+        backgroundColor: 'transparent', // Light background color
+      }}
+    >
+      <div className="card" style={{ maxWidth: '500px', width: '100%', textAlign: 'center' }}>
+        <div className="card-body">
+          <FaHardHat size={60} style={{ color: 'rgb(87 114 182)', marginBottom: '20px' }} />
+          <h1 className="card-title">Under Construction</h1>
+          <p className="card-text">
+            Our events page is currently under construction. Stay tuned for updates!
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
