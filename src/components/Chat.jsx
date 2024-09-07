@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-
+import 'bootstrap/dist/css/bootstrap.min.css'; // Make sure Bootstrap is imported
 
 const Chat = ({ bikes }) => {
-    
   const [input, setInput] = useState('');
   const [selectedBike, setSelectedBike] = useState(''); // To store the selected bike name and year
   const [showModal, setShowModal] = useState(false);
@@ -30,24 +29,17 @@ const Chat = ({ bikes }) => {
   };
 
   const fetchMessage = async (question) => {
-
-    const res = await fetch(`/.netlify/functions/openai`);
-    console.log(res);
-
     const response = await fetch('/.netlify/functions/openai', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-         prompt: question
+        prompt: question,
       }),
     });
 
-    
-
     const data = await response.json();
-    console.log(data)
     return data.choices[0].message.content.trim();
   };
 
@@ -56,22 +48,21 @@ const Chat = ({ bikes }) => {
   // Function to handle combobox change
   const handleBikeChange = (e) => {
     const bikeName = e.target.value;
-    const selectedBikeObj = bikes.find(bike => bike.name === bikeName);
+    const selectedBikeObj = bikes.find((bike) => bike.name === bikeName);
     setSelectedBike(selectedBikeObj || null); // Set the selected bike object
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '20px' }}>
+    <div className="chat-container" style={{ padding: '20px' }}>
       {/* Input field with combobox for bike selection */}
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
+      <div className="input-container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap', gap: '10px' }}>
         {/* Combobox (dropdown) for selecting bike */}
         <select
           value={selectedBike ? selectedBike.name : ''}
           onChange={handleBikeChange}
           style={{
             padding: '10px',
-            width: '300px',
-            marginRight: '10px',
+            flex: '1 1 250px',
             borderRadius: '5px',
             border: '1px solid #ccc',
           }}
@@ -93,16 +84,14 @@ const Chat = ({ bikes }) => {
           placeholder="Type a message..."
           style={{
             padding: '10px',
-            width: '300px',
+            flex: '2 1 250px',
             borderRadius: '5px',
             border: '1px solid #ccc',
-            marginRight: '10px',
           }}
         />
 
         {/* Send button */}
-        <Button onClick={sendMessage} variant="primary" style={{
-            background:'#51624F'}}>
+        <Button onClick={sendMessage} variant="primary" style={{ flex: '0 1 auto', backgroundColor: '#51624F' }}>
           Ask
         </Button>
       </div>
@@ -112,9 +101,7 @@ const Chat = ({ bikes }) => {
         <Modal.Header closeButton>
           <Modal.Title>Jampot Mechanic</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
-          {botResponse} {/* Display the bot's response here */}
-        </Modal.Body>
+        <Modal.Body>{botResponse}</Modal.Body>
         <Modal.Footer></Modal.Footer>
       </Modal>
     </div>
