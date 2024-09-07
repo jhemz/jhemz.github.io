@@ -7,10 +7,11 @@ const WDSerialBadge = ({ text }) => {
         position: 'absolute', 
         right: '10px',
         top: '50px',  
+        margin:'10px',
         backgroundColor: '#4D4B1D', // Dark green background
         color: '#fff', // White text
-        padding: '5px 10px', 
-        fontSize: '38px', 
+        padding: '1px 10px', 
+        fontSize: '328x', 
         fontWeight: 'bold', 
         borderRadius: '30px', // Corner radius for rounded edges
         display: 'flex', // Use flexbox to center the text

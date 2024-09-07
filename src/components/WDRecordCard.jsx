@@ -56,13 +56,23 @@ const WDRecordCard = ({ record }) => {
       
       </div>
 
-      <div style={{ position: 'relative' }}>
-        {/* Use the YearBadge component and pass in the contract dates */}
-        <YearBadge text={record["Dates"]} />
-        <WDSerialBadge 
-          text={record["WD Serial No."]} 
-        />
-      </div>
+      <div style={{
+          position: 'absolute',
+          top: '10px',  // Adjust to position the badges vertically
+          right: '10px', // Adjust to position the badges horizontally
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'flex-start',
+          alignItems: 'flex-end', // Ensure badges are aligned to the right
+          zIndex: 10 // Ensure badges are above other elements
+        }}>
+              <YearBadge text={record["Dates"]} />
+              <WDSerialBadge 
+                text={record["WD Serial No."]} 
+              />
+        </div>
+
+    
 
       {/* Display the bike image */}
      
