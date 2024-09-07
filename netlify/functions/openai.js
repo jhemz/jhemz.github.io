@@ -1,11 +1,10 @@
-const fetch = require('node-fetch');
+
 
 exports.handler = async function(event, context) {
   const OPENAI_API_KEY = process.env.openai;  // This will come from your Netlify environment
+  let body = JSON.parse(event.body)
 
- 
-
-const response = await fetch('https://api.openai.com/v1/chat/completions', {
+  const response = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -20,7 +19,7 @@ const response = await fetch('https://api.openai.com/v1/chat/completions', {
           },
           {
             role: 'user',
-            content: event.body.prompt, // User's question prefixed with bike info
+            content: body.prompt, // User's question prefixed with bike info
           },
         ],
         max_tokens: 150,
