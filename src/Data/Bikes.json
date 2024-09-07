@@ -1,5 +1,27 @@
 [
     {
+        "name": "Matchless Silver Hawk",
+        "image": "MatchlessSilverHawk.png",
+        "description": "The Matchless Silver Hawk was an advanced motorcycle introduced in 1931, featuring a 593cc V-four engine. It was considered a luxury model, combining innovative engineering with smooth performance. With its enclosed valve gear and four-cylinder design, the Silver Hawk was one of the most unique motorcycles of its time. However, due to its high cost and the onset of the Great Depression, production was limited.",
+        "year": "1931-1935",
+        "engine": "593cc V-four",
+        "topSpeed": "85 mph",
+        "weight": "390 lbs",
+        "gearbox": "4-speed Burman",
+        "wd": false
+    },
+    {
+        "name": "Matchless Model X",
+        "image": "MatchlessModelX.png",
+        "description": "The Matchless Model X was a powerful V-twin motorcycle produced from the late 1930s. Known for its large 990cc engine, it was primarily used as a civilian and sidecar bike before World War II. Its strong performance, coupled with excellent handling for its size, made it popular for long-distance riding and sidecar work.",
+        "year": "1937-1939",
+        "engine": "990cc V-twin",
+        "topSpeed": "80 mph",
+        "weight": "450 lbs",
+        "gearbox": "4-speed Burman",
+        "wd": false
+    },
+    {
         "name": "Matchless G3WO",
         "image": "MatchlessG3WO.png",
         "description": "The Matchless G3WO was produced for military use during World War II and was known for its ruggedness and reliability in harsh conditions. It was an early version of the G3 series, featuring a 350cc engine and rigid rear suspension.",
@@ -84,6 +106,17 @@
         "engine": "646cc twin-cylinder",
         "topSpeed": "95 mph",
         "weight": "410 lbs",
+        "gearbox": "4-speed AMC gearbox",
+        "wd": false
+    },
+    {
+        "name": "Matchless G50",
+        "image": "MatchlessG50.png",
+        "description": "The Matchless G50 was a racing motorcycle introduced in 1958. It was based on the successful Matchless G45 but featured a more powerful 500cc engine, making it highly competitive in racing circuits. Known for its lightweight frame and reliability, the G50 became a popular choice among private racers and was used extensively in Grand Prix motorcycle racing.",
+        "year": "1958-1963",
+        "engine": "500cc single-cylinder",
+        "topSpeed": "135 mph",
+        "weight": "320 lbs",
         "gearbox": "4-speed AMC gearbox",
         "wd": false
     }
