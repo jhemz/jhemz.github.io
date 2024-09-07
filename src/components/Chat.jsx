@@ -13,13 +13,23 @@ const Chat = ({ bikes }) => {
   const [loading, setLoading] = useState(false); // Add a loading state to prevent multiple submissions
 
   const chatRef = useRef(null); // Create a ref for the chat container
+  const faqRef = useRef(null); // Create a ref for the FAQ container
+
+  // Dummy FAQ list
+  const faqList = [
+    "How often should I change the oil?",
+    "What's the recommended tire pressure?",
+    "How do I check the brake fluid?",
+    "What's the top speed of my bike?",
+    "What fuel should I use?",
+  ];
 
   // Function to send the message and fetch bot's response
   const sendMessage = async () => {
     if (input.trim() && !loading) {
       setLoading(true); // Prevent multiple submissions
       setBotResponse(''); // Clear previous response
-      const bikeInfo = selectedBike ? `${selectedBike.name} (${selectedBike.year}): ` : '';
+      const bikeInfo = selectedBike ? `Only answer questions to do with the specific motorbike I give you, anything else and you shopud say you cant asnwer that. You should answer in the style of a motobike enthusiast from the 1940s. My motorbbike is: ${selectedBike.name} (${selectedBike.year}): ` : '';
       const question = bikeInfo + input;
       const response = await fetchMessage(question);
       setBotResponse(response);
@@ -50,26 +60,74 @@ const Chat = ({ bikes }) => {
     setSelectedBike(selectedBikeObj || null); // Set the selected bike object
   };
 
-  // Close the chat and modal when clicking outside of the chat window
+  // Handle clicking on an FAQ bubble to auto-fill and send
+  const handleFAQClick = async (faq) => {
+    setInput(faq); // Set the clicked FAQ as the input value
+    await sendMessage(); // Automatically send the question after setting the input
+  };
+
+  // Close the chat and modal when clicking outside of the chat window and FAQ area
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (chatRef.current && !chatRef.current.contains(event.target)) {
-        setShowChat(false); // Close the chat if click is outside the chat container
+      if (
+        chatRef.current &&
+        !chatRef.current.contains(event.target) &&
+        faqRef.current &&
+        !faqRef.current.contains(event.target)
+      ) {
+        setShowChat(false); // Close the chat if the click is outside both the chat and FAQ areas
         setShowModal(false); // Close the modal if chat is closed
       }
     };
 
     // Add event listener to the document to detect outside clicks
     document.addEventListener('mousedown', handleClickOutside);
-    
+
     return () => {
       // Cleanup the event listener when the component is unmounted
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [chatRef]);
+  }, [chatRef, faqRef]);
 
   return (
     <>
+      {/* FAQ Bubbles Outside the Chat Container */}
+      {showChat && (
+        <div
+          ref={faqRef} // Attach the ref to the FAQ container
+          style={{
+            position: 'fixed',
+            bottom: '360px', // Place the FAQ bubbles above the chat box
+            right: '20px',
+            display: 'flex',
+            flexDirection: 'column', // Stack FAQ bubbles vertically
+            gap: '10px',
+            zIndex: '1000',
+          }}
+        >
+          {faqList.map((faq, index) => (
+            <div
+              key={index}
+              onClick={() => handleFAQClick(faq)}
+              style={{
+                backgroundColor: 'rgb(87 114 182)', // Use the button's color
+                color: '#fff',
+                padding: '10px',
+                borderRadius: '20px',
+                cursor: 'pointer',
+                textAlign: 'center',
+                width: 'auto', // Set a fixed width for each bubble
+                whiteSpace: 'nowrap', // Prevent text wrapping
+                overflow: 'hidden', // Hide any overflowing text
+                textOverflow: 'ellipsis', // Add ellipsis if the text overflows
+              }}
+            >
+              {faq}
+            </div>
+          ))}
+        </div>
+      )}
+
       {/* Floating action button (FAB) */}
       {!showChat && (
         <div
@@ -169,7 +227,7 @@ const Chat = ({ bikes }) => {
               }}
             >
               {loading ? 'Loading...' : 'Ask Jam-Bot'}
-            </Button>
+              </Button>
           </div>
 
           {/* Modal for displaying bot response */}

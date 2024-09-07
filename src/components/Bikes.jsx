@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import bikesData from '../Data/Bikes.json';
+import GearboxData from '../Data/Gearboxes.json';
 import numberPlateData from '../Data/NumberPlates.json';
 import BikesTab from './BikesTab';
 import NumberPlatesTab from './NumberPlatesTab';
 import WDBikesTab from './WDBikesTab';
+import GearboxesTab from './GearboxesTab';
+import factoryImage from '../assets/factory.png'; // Import the image
 
 const BikesPage = () => {
   const [activeTab, setActiveTab] = useState('Bikes');
@@ -16,12 +19,17 @@ const BikesPage = () => {
 
   const bikesPageStyle = {
     padding: '20px',
-    marginTop: '90px',
+    marginTop: '0px',
     fontFamily: 'Arial, sans-serif',
+    minHeight: '100vh',
+   
+    backgroundSize: 'cover',
+    backgroundAttachment: 'fixed', // Makes the background image fixed while scrolling
   };
 
   const secondaryNavStyle = {
     display: 'flex',
+    marginTop: '100px',
     justifyContent: 'center',
     marginBottom: '20px',
   };
@@ -46,6 +54,12 @@ const BikesPage = () => {
           Bikes
         </a>
         <a
+          style={tablinkStyle(activeTab === 'Gearboxes')}
+          onClick={() => openTab('Gearboxes')}
+        >
+          Gearboxes
+        </a>
+        <a
           style={tablinkStyle(activeTab === 'Table')}
           onClick={() => openTab('Table')}
         >
@@ -61,6 +75,7 @@ const BikesPage = () => {
 
       {/* Conditional rendering of tabs */}
       {activeTab === 'Bikes' && <BikesTab bikes={bikes} />}
+      {activeTab === 'Gearboxes' && <GearboxesTab gearboxes={GearboxData} />}
       {activeTab === 'Table' && <NumberPlatesTab numberPlates={numberPlates} />}
       {activeTab === 'WDBikes' && <WDBikesTab bikes={bikes.filter(bike => bike.wd)} />}
     </div>

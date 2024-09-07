@@ -1,0 +1,35 @@
+[
+    {
+      "name": "4-speed Burman BA",
+      "image": "BurmanBAGearbox.png",
+      "bikes": [
+      ]
+    },
+    {
+      "name": "4-speed Burman BAP",
+      "image": "Burman-Type-BAP.png",
+      "bikes": [
+      ]
+    },
+    {
+      "name": "4-speed Burman CP",
+      "image": "BurmanCPGearbox.png",
+      "bikes": [
+        "Matchless G3WO",
+        "Matchless WD G3L",
+        "Matchless G3L"
+      ]
+    },
+    {
+      "name": "4-speed Burman GB",
+      "image": "BurmanCPGearbox.png",
+      "bikes": [
+      ]
+    },
+    {
+      "name": "4-speed AMC gearbox",
+      "image": "BurmanCPGearbox.png",
+      "bikes": [
+      ]
+    }
+  ]
