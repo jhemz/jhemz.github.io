@@ -5,6 +5,8 @@ import Home from './components/Home';
 import Bikes from './components/Bikes';
 import Events from './components/Events';
 import Contact from './components/Contact';
+import Chat from './components/Chat'; // Import Chat component
+import bikesData from './Data/Bikes.json'; // Import bikes data for Chat component
 import './App.css'; // Import global styles
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -37,6 +39,27 @@ function App() {
       </div>
 
       <Footer />
+
+      {/* Floating Chat Component, accessible across all pages */}
+      <div style={{
+          overflow: 'hidden',       // Ensure nothing overflows
+          position: 'fixed',
+          bottom: '20px',
+          right: '20px',
+          width: '0%',
+          maxWidth: '400px',
+          padding: '0px',
+          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',  // Ensure shadow isn't causing overflow
+          backgroundColor: 'red',    // The background color you set
+          borderRadius: '10px',
+          zIndex: '1000',
+          margin: '0',              // Remove 'auto' margin, might push things unexpectedly
+          display: 'flex',          // Ensure the content inside behaves as expected
+          justifyContent: 'center',  // Center the content if necessary
+          alignItems: 'center',
+      }}>
+    <Chat bikes={bikesData} />
+</div>
     </div>
   );
 }
