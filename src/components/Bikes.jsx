@@ -53,12 +53,12 @@ const BikesPage = () => {
         >
           Bikes
         </a>
-        <a
+        {/* <a
           style={tablinkStyle(activeTab === 'Gearboxes')}
           onClick={() => openTab('Gearboxes')}
         >
           Gearboxes
-        </a>
+        </a> */}
         <a
           style={tablinkStyle(activeTab === 'Table')}
           onClick={() => openTab('Table')}
