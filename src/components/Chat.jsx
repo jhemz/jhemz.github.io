@@ -10,18 +10,22 @@ const Chat = ({ bikes }) => {
   const [showChat, setShowChat] = useState(false); // Toggle between chat open and closed
   const [showModal, setShowModal] = useState(false); // To display the bot's response in a modal
   const [botResponse, setBotResponse] = useState(''); // To store the bot's response
+  const [loading, setLoading] = useState(false); // Add a loading state to prevent multiple submissions
 
   const chatRef = useRef(null); // Create a ref for the chat container
 
   // Function to send the message and fetch bot's response
   const sendMessage = async () => {
-    if (input.trim()) {
+    if (input.trim() && !loading) {
+      setLoading(true); // Prevent multiple submissions
+      setBotResponse(''); // Clear previous response
       const bikeInfo = selectedBike ? `${selectedBike.name} (${selectedBike.year}): ` : '';
       const question = bikeInfo + input;
       const response = await fetchMessage(question);
       setBotResponse(response);
       setShowModal(true); // Show the modal when a response is received
       setInput(''); // Clear input field
+      setLoading(false); // Reset loading state
     }
   };
 
@@ -46,11 +50,12 @@ const Chat = ({ bikes }) => {
     setSelectedBike(selectedBikeObj || null); // Set the selected bike object
   };
 
-  // Close the chat when clicking outside of it
+  // Close the chat and modal when clicking outside of the chat window
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (chatRef.current && !chatRef.current.contains(event.target)) {
         setShowChat(false); // Close the chat if click is outside the chat container
+        setShowModal(false); // Close the modal if chat is closed
       }
     };
 
@@ -157,12 +162,13 @@ const Chat = ({ bikes }) => {
             <Button
               onClick={sendMessage}
               variant="primary"
+              disabled={loading} // Disable button while loading
               style={{
                 width: '100%', // Set consistent width
-                backgroundColor: 'rgb(87 114 182)',
+                backgroundColor: loading ? 'gray' : 'rgb(87 114 182)', // Gray color when loading
               }}
             >
-              Ask Jam-Bot
+              {loading ? 'Loading...' : 'Ask Jam-Bot'}
             </Button>
           </div>
 
