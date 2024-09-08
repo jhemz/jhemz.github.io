@@ -1,14 +1,14 @@
 [ 
     {
         "name": "Matchless Model 7",
-        "image": "MatchlessModel7.png",
-        "description": "The Matchless Model 7 was introduced in 1929, featuring a 982cc side-valve V-twin engine. It was primarily designed for sidecar use, known for its torque and reliability. Despite its simple design and lack of advanced technology, it was a popular choice for heavy-duty work, including carrying passengers in sidecars and hauling goods.",
-        "year": "1929-1935",
-        "engine": "982cc V-twin",
-        "topSpeed": "75 mph",
-        "weight": "420 lbs",
-        "gearbox": "3-speed",
-        "wd": false
+    "image": "MatchlessModel7.png",
+    "description": "The Matchless Model 7 was introduced in 1912, featuring a 770cc side-valve V-twin engine. It was designed primarily for touring and sidecar use, known for its torque and reliability. The Model 7 was popular for heavy-duty work such as carrying passengers in sidecars and hauling goods, and it used an early form of a two-speed transmission with a belt drive.",
+    "year": "1912-1915",
+    "engine": "770cc V-twin",
+    "topSpeed": "60 mph",
+    "weight": "320 lbs",
+    "gearbox": "2-speed",
+    "wd": false
     },
     {
         "name": "Matchless Silver Arrow",
