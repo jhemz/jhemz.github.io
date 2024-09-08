@@ -108,17 +108,101 @@ const WDBikesTab = () => {
     return null;
   };
 
-  const handleSearchByFrameNumber = () => {
-    const result = findRecordByFrameNumber(frameNumberInput);
-    if (result) {
-      setSearchResult(result);
-      setSearchError('');
-    } else {
-      setSearchError('No matching record found.');
-      setSearchResult(null);
-    }
-  };
+ // Updated function to search by Engine Number
+ const findRecordByEngineNumber = (engineNumber) => {
+  for (const record of WDData) {
+    if (record['Engine Number'] && record['Frame Number'] && record['WD Serial No. Allocation']) {
+      const frameNumberRange = record['Frame Number'];
+      const engineNumberRange = record['Engine Number'];
+      const wdSerialNumberRanges = record['WD Serial No. Allocation'];
 
+      const engineRangeMatch = engineNumberRange.match(/^(.*-)(\d+)\s+to\s+(.*-)(\d+)$/);
+      const frameRangeMatch = frameNumberRange.match(/^(\d+)[–-](\d+)$/);
+
+      if (engineRangeMatch && frameRangeMatch) {
+        const enginePrefix = engineRangeMatch[1];
+        const engineStart = parseInt(engineRangeMatch[2], 10);
+        const engineEnd = parseInt(engineRangeMatch[4], 10);
+        const frameStart = parseInt(frameRangeMatch[1], 10);
+        const frameEnd = parseInt(frameRangeMatch[2], 10);
+
+        const engineNumbers = generateNumberRange(engineStart, engineEnd).map(num => enginePrefix + num);
+        const frameNumbers = generateNumberRange(frameStart, frameEnd);
+        const wdSerialNumbers = generateSerialNumberList(wdSerialNumberRanges);
+
+        const engineIndex = engineNumbers.indexOf(engineNumber);
+
+        if (engineIndex !== -1 && engineIndex < frameNumbers.length && engineIndex < wdSerialNumbers.length) {
+          const correspondingFrameNumber = frameNumbers[engineIndex];
+          const correspondingSerialNumber = wdSerialNumbers[engineIndex];
+          const tankImage = getTankImageByContractNumber(record["Contract Number"], record["Maker's Type"]);
+          return {
+            "Model": record["Maker's Type"],
+            "Military Class": record["Military Class"],
+            "WD Serial No.": correspondingSerialNumber,
+            "Engine No.": engineNumber,
+            "Contract Number": record["Contract Number"],
+            "Dates": record["Dates"],
+            "Price": record["Price(s)"],
+            "Delivery Destination": record["Delivery Destination & Notes"],
+            "Tank": tankImage,
+            "Frame No.": correspondingFrameNumber
+          };
+        }
+      }
+    }
+  }
+  return null;
+};
+
+ // Updated function to search by WD Serial Number
+ const findRecordBySerialNumber = (serialNumber) => {
+  for (const record of WDData) {
+    if (record['WD Serial No. Allocation'] && record['Frame Number'] && record['Engine Number']) {
+      const wdSerialNumberRanges = record['WD Serial No. Allocation'];
+      const frameNumberRange = record['Frame Number'];
+      const engineNumberRange = record['Engine Number'];
+
+      const frameRangeMatch = frameNumberRange.match(/^(\d+)[–-](\d+)$/);
+      const engineRangeMatch = engineNumberRange.match(/^(.*-)(\d+)\s+to\s+(.*-)(\d+)$/);
+
+      if (frameRangeMatch && engineRangeMatch) {
+        const frameStart = parseInt(frameRangeMatch[1], 10);
+        const frameEnd = parseInt(frameRangeMatch[2], 10);
+        const enginePrefixStart = engineRangeMatch[1];
+        const engineStart = parseInt(engineRangeMatch[2], 10);
+        const engineEnd = parseInt(engineRangeMatch[4], 10);
+
+        const frameNumbers = generateNumberRange(frameStart, frameEnd);
+        const engineNumbers = generateNumberRange(engineStart, engineEnd).map(num => enginePrefixStart + num);
+        const wdSerialNumbers = generateSerialNumberList(wdSerialNumberRanges);
+
+        const serialIndex = wdSerialNumbers.indexOf(parseInt(serialNumber, 10));
+
+        if (serialIndex !== -1 && serialIndex < frameNumbers.length && serialIndex < engineNumbers.length) {
+          const correspondingFrameNumber = frameNumbers[serialIndex];
+          const correspondingEngineNumber = engineNumbers[serialIndex];
+          const tankImage = getTankImageByContractNumber(record["Contract Number"], record["Maker's Type"]);
+          return {
+            "Model": record["Maker's Type"],
+            "Military Class": record["Military Class"],
+            "WD Serial No.": serialNumber,
+            "Engine No.": correspondingEngineNumber,
+            "Contract Number": record["Contract Number"],
+            "Dates": record["Dates"],
+            "Price": record["Price(s)"],
+            "Delivery Destination": record["Delivery Destination & Notes"],
+            "Tank": tankImage,
+            "Frame No.": correspondingFrameNumber
+          };
+        }
+      }
+    }
+  }
+  return null;
+};
+
+  // Define input and button styles inline
   const commonInputStyle = {
     width: '100%',
     padding: '10px',
@@ -150,6 +234,40 @@ const WDBikesTab = () => {
     backgroundColor: '#5a5a3b',
   };
 
+  // Search handlers
+  const handleSearchByFrameNumber = () => {
+    const result = findRecordByFrameNumber(frameNumberInput);
+    if (result) {
+      setSearchResult(result);
+      setSearchError('');
+    } else {
+      setSearchError('No matching record found.');
+      setSearchResult(null);
+    }
+  };
+
+  const handleSearchByEngineNumber = () => {
+    const result = findRecordByEngineNumber(engineNumberInput);
+    if (result) {
+      setSearchResult(result);
+      setSearchError('');
+    } else {
+      setSearchError('No matching record found.');
+      setSearchResult(null);
+    }
+  };
+
+  const handleSearchBySerialNumber = () => {
+    const result = findRecordBySerialNumber(serialNumberInput);
+    if (result) {
+      setSearchResult(result);
+      setSearchError('');
+    } else {
+      setSearchError('No matching record found.');
+      setSearchResult(null);
+    }
+  };
+
   return (
     <div className="wd-bikes-container" style={{ textAlign: 'center', marginBottom: '20px' }}>
       {/* Introductory text explaining the WD Bikes section */}
@@ -179,13 +297,14 @@ const WDBikesTab = () => {
           />
           <button
             onClick={handleSearchByFrameNumber}
-            style={{ ...commonButtonStyle }}
+            style={commonButtonStyle}
             onMouseOver={(e) => (e.target.style.backgroundColor = buttonHoverStyle.backgroundColor)}
             onMouseOut={(e) => (e.target.style.backgroundColor = commonButtonStyle.backgroundColor)}
           >
             Search by Frame Number
           </button>
         </div>
+
         <div style={{ width: '100%', maxWidth: '300px' }}> {/* Adjust width for responsiveness */}
           <input
             type="text"
@@ -195,14 +314,15 @@ const WDBikesTab = () => {
             style={commonInputStyle}
           />
           <button
-            onClick={handleSearchByFrameNumber}
-            style={{ ...commonButtonStyle }}
+            onClick={handleSearchByEngineNumber}
+            style={commonButtonStyle}
             onMouseOver={(e) => (e.target.style.backgroundColor = buttonHoverStyle.backgroundColor)}
             onMouseOut={(e) => (e.target.style.backgroundColor = commonButtonStyle.backgroundColor)}
           >
             Search by Engine Number
           </button>
         </div>
+
         <div style={{ width: '100%', maxWidth: '300px' }}> {/* Adjust width for responsiveness */}
           <input
             type="text"
@@ -212,15 +332,17 @@ const WDBikesTab = () => {
             style={commonInputStyle}
           />
           <button
-            onClick={handleSearchByFrameNumber}
-            style={{ ...commonButtonStyle }}
+            onClick={handleSearchBySerialNumber}
+            style={commonButtonStyle}
             onMouseOver={(e) => (e.target.style.backgroundColor = buttonHoverStyle.backgroundColor)}
             onMouseOut={(e) => (e.target.style.backgroundColor = commonButtonStyle.backgroundColor)}
           >
             Search by Serial Number
           </button>
         </div>
-        </div>
+      </div>
+
+      {/* Display search results or error messages */}
       <div id="wdLocationDisplay" style={{ marginTop: '20px' }}>
         {searchError && <p style={{ color: 'red' }}>{searchError}</p>}
         {searchResult && (
