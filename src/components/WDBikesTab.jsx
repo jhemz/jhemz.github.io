@@ -119,58 +119,113 @@ const WDBikesTab = () => {
     }
   };
 
+  const commonInputStyle = {
+    width: '100%',
+    padding: '10px',
+    fontSize: '16px',
+    backgroundColor: '#f4f4f2',
+    border: '2px solid #6b6b47', // Dark olive green
+    borderRadius: '4px',
+    fontFamily: '"Courier New", Courier, monospace', // Military-style font
+    color: '#2e2e1f',
+    boxShadow: '2px 2px 5px rgba(0, 0, 0, 0.1)',
+    marginBottom: '10px',
+  };
+
+  const commonButtonStyle = {
+    width: '100%',
+    padding: '10px',
+    fontSize: '16px',
+    fontFamily: '"Courier New", Courier, monospace',
+    backgroundColor: '#6b6b47', // Dark olive green
+    color: '#f4f4f2',
+    border: 'none',
+    borderRadius: '4px',
+    cursor: 'pointer',
+    transition: 'background-color 0.3s',
+    boxShadow: '2px 2px 5px rgba(0, 0, 0, 0.1)',
+  };
+
+  const buttonHoverStyle = {
+    backgroundColor: '#5a5a3b',
+  };
+
   return (
-    <div className="wd-bikes-container">
-      <div style={{ textAlign: 'center', marginBottom: '20px' }}>
-        <div style={{
-          display: 'flex', 
-          justifyContent: 'center', 
-          gap: '10px',
-          flexWrap: 'wrap', // Ensure input fields and buttons wrap on smaller screens
-        }}>
-          <div style={{ width: '100%', maxWidth: '300px' }}> {/* Adjust width for responsiveness */}
-            <input
-              type="text"
-              placeholder="Enter frame number"
-              value={frameNumberInput}
-              onChange={(e) => setFrameNumberInput(e.target.value)}
-              style={{ padding: '10px', width: '100%', fontSize: '16px' }}
-            />
-            <button onClick={handleSearchByFrameNumber} style={{ padding: '10px', width: '100%', fontSize: '16px' }}>
-              Search by Frame Number
-            </button>
-          </div>
-          <div style={{ width: '100%', maxWidth: '300px' }}> {/* Adjust width for responsiveness */}
-            <input
-              type="text"
-              placeholder="Enter engine number"
-              value={engineNumberInput}
-              onChange={(e) => setEngineNumberInput(e.target.value)}
-              style={{ padding: '10px', width: '100%', fontSize: '16px' }}
-            />
-            <button onClick={handleSearchByFrameNumber} style={{ padding: '10px', width: '100%', fontSize: '16px' }}>
-              Search by Engine Number
-            </button>
-          </div>
-          <div style={{ width: '100%', maxWidth: '300px' }}> {/* Adjust width for responsiveness */}
-            <input
-              type="text"
-              placeholder="Enter WD serial number"
-              value={serialNumberInput}
-              onChange={(e) => setSerialNumberInput(e.target.value)}
-              style={{ padding: '10px', width: '100%', fontSize: '16px' }}
-            />
-            <button onClick={handleSearchByFrameNumber} style={{ padding: '10px', width: '100%', fontSize: '16px' }}>
-              Search by Serial Number
-            </button>
-          </div>
+    <div className="wd-bikes-container" style={{ textAlign: 'center', marginBottom: '20px' }}>
+      {/* Introductory text explaining the WD Bikes section */}
+      <div style={{ margin: '20px auto', maxWidth: '600px', textAlign: 'left', fontFamily: '"Courier New", Courier, monospace', color: '#2e2e1f' }}>
+        <h2 style={{ color: '#6b6b47' }}>WD Bike Search</h2>
+        <p>
+          This section allows you to explore a variety of bikes used during World War II. 
+          Whether you're searching by frame number, engine number, or WD serial number, 
+          this tool will help you find detailed information about each military bike. 
+          Enter the details below and discover more about the rich history of WD bikes.
+        </p>
+      </div>
+
+      <div style={{
+        display: 'flex', 
+        justifyContent: 'center', 
+        gap: '10px',
+        flexWrap: 'wrap', // Ensure input fields and buttons wrap on smaller screens
+      }}>
+        <div style={{ width: '100%', maxWidth: '300px' }}> {/* Adjust width for responsiveness */}
+          <input
+            type="text"
+            placeholder="Enter frame number"
+            value={frameNumberInput}
+            onChange={(e) => setFrameNumberInput(e.target.value)}
+            style={commonInputStyle}
+          />
+          <button
+            onClick={handleSearchByFrameNumber}
+            style={{ ...commonButtonStyle }}
+            onMouseOver={(e) => (e.target.style.backgroundColor = buttonHoverStyle.backgroundColor)}
+            onMouseOut={(e) => (e.target.style.backgroundColor = commonButtonStyle.backgroundColor)}
+          >
+            Search by Frame Number
+          </button>
         </div>
-        <div id="wdLocationDisplay" style={{ marginTop: '20px' }}>
-          {searchError && <p style={{ color: 'red' }}>{searchError}</p>}
-          {searchResult && (
-            <WDRecordCard record={searchResult} />
-          )}
+        <div style={{ width: '100%', maxWidth: '300px' }}> {/* Adjust width for responsiveness */}
+          <input
+            type="text"
+            placeholder="Enter engine number"
+            value={engineNumberInput}
+            onChange={(e) => setEngineNumberInput(e.target.value)}
+            style={commonInputStyle}
+          />
+          <button
+            onClick={handleSearchByFrameNumber}
+            style={{ ...commonButtonStyle }}
+            onMouseOver={(e) => (e.target.style.backgroundColor = buttonHoverStyle.backgroundColor)}
+            onMouseOut={(e) => (e.target.style.backgroundColor = commonButtonStyle.backgroundColor)}
+          >
+            Search by Engine Number
+          </button>
         </div>
+        <div style={{ width: '100%', maxWidth: '300px' }}> {/* Adjust width for responsiveness */}
+          <input
+            type="text"
+            placeholder="Enter WD serial number"
+            value={serialNumberInput}
+            onChange={(e) => setSerialNumberInput(e.target.value)}
+            style={commonInputStyle}
+          />
+          <button
+            onClick={handleSearchByFrameNumber}
+            style={{ ...commonButtonStyle }}
+            onMouseOver={(e) => (e.target.style.backgroundColor = buttonHoverStyle.backgroundColor)}
+            onMouseOut={(e) => (e.target.style.backgroundColor = commonButtonStyle.backgroundColor)}
+          >
+            Search by Serial Number
+          </button>
+        </div>
+        </div>
+      <div id="wdLocationDisplay" style={{ marginTop: '20px' }}>
+        {searchError && <p style={{ color: 'red' }}>{searchError}</p>}
+        {searchResult && (
+          <WDRecordCard record={searchResult} />
+        )}
       </div>
     </div>
   );

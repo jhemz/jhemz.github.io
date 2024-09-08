@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import '../css/Header.css'; // Assuming you have Header.css for specific header styling
 import ClubLogo from '../assets/ClubLogo_west.png';
 import MatchlessLogo from '../assets/matchless.png';
@@ -6,6 +6,8 @@ import AJSLogo from '../assets/ajs.png';
 
 function Header({ selectedPage, onNavigate }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef(null); // Reference to the menu
+  const headerRef = useRef(null); // Reference to the header
 
   // Toggles the menu between open and closed states
   const toggleMenu = () => {
@@ -18,8 +20,25 @@ function Header({ selectedPage, onNavigate }) {
     setIsMenuOpen(false); // Close the menu after navigation
   };
 
+  // Closes the menu if a click is detected outside of the menu
+  const handleClickOutside = (event) => {
+    if (menuRef.current && !menuRef.current.contains(event.target)) {
+      setIsMenuOpen(false); // Close the menu if the click is outside the menu
+    }
+  };
+
+  useEffect(() => {
+    // Add event listener for clicks
+    document.addEventListener('mousedown', handleClickOutside);
+    
+    // Cleanup the event listener on component unmount
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
-    <header>
+    <header ref={headerRef} className={isMenuOpen ? 'menu-open' : ''}>
       <a href="/">
         <img src={ClubLogo} alt="AJS & Matchless Owners Club Logo" className="logo left" />
       </a>
@@ -28,10 +47,13 @@ function Header({ selectedPage, onNavigate }) {
         <div className="bar"></div>
         <div className="bar"></div>
       </div>
-      <nav className={isMenuOpen ? 'expanded' : 'collapsed'}>
+
+      {/* Overlay that appears when menu is open */}
+      {isMenuOpen && <div className="overlay" onClick={() => setIsMenuOpen(false)} />}
+
+      <nav ref={menuRef} className={isMenuOpen ? 'expanded' : 'collapsed'}>
         <img src={MatchlessLogo} alt="Matchless Logo" className="nav-logo top-logo" />
 
-        {/* When a button is clicked, the menu will collapse */}
         <button
           className={selectedPage === 'home' ? 'active' : ''}
           onClick={() => handleNavigation('home')}
