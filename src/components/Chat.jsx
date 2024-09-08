@@ -10,26 +10,19 @@ const Chat = ({ bikes }) => {
   const [showChat, setShowChat] = useState(false); // Toggle between chat open and closed
   const [showModal, setShowModal] = useState(false); // To display the bot's response in a modal
   const [botResponse, setBotResponse] = useState(''); // To store the bot's response
+  const [faqList, setFaqList] = useState([]); // Dynamic FAQ list
   const [loading, setLoading] = useState(false); // Add a loading state to prevent multiple submissions
 
   const chatRef = useRef(null); // Create a ref for the chat container
   const faqRef = useRef(null); // Create a ref for the FAQ container
-
-  // Dummy FAQ list
-  const faqList = [
-    "How often should I change the oil?",
-    "What's the recommended tire pressure?",
-    "How do I check the brake fluid?",
-    "What's the top speed of my bike?",
-    "What fuel should I use?",
-  ];
+  const modalRef = useRef(null); // Create a ref for the modal container
 
   // Function to send the message and fetch bot's response
   const sendMessage = async () => {
     if (input.trim() && !loading) {
       setLoading(true); // Prevent multiple submissions
       setBotResponse(''); // Clear previous response
-      const bikeInfo = selectedBike ? `Only answer questions to do with the specific motorbike I give you, anything else and you shopud say you cant asnwer that. You should answer in the style of a motobike enthusiast from the 1940s. My motorbbike is: ${selectedBike.name} (${selectedBike.year}): ` : '';
+      const bikeInfo = selectedBike ? `Only answer questions to do with the specific motorbike I give you, anything else and you should say you can't answer that. You should answer in the style of a motorbike enthusiast from the 1940s. My motorbike is: ${selectedBike.name} (${selectedBike.year}): ` : '';
       const question = bikeInfo + input;
       const response = await fetchMessage(question);
       setBotResponse(response);
@@ -39,6 +32,7 @@ const Chat = ({ bikes }) => {
     }
   };
 
+  // Function to fetch bot's response
   const fetchMessage = async (question) => {
     const response = await fetch('/.netlify/functions/openai', {
       method: 'POST',
@@ -52,32 +46,68 @@ const Chat = ({ bikes }) => {
     return data.choices[0].message.content.trim();
   };
 
-  const handleClose = () => setShowModal(false); // To close the modal
+  // Close the modal
+  const handleClose = () => {
+    setShowModal(false);
+  };
 
-  const handleBikeChange = (e) => {
+  // Function to fetch FAQs for the selected bike
+  const fetchFAQs = async (bike) => {
+    const question = `Provide example questions someone might ask about maintenance of the ${bike.name} (${bike.year}) motorcycle.`;
+    const response = await fetch('/.netlify/functions/openai', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ prompt: question }),
+    });
+
+    const data = await response.json();
+    // Assuming the response is an array of questions
+    const questions = data.choices[0].message.content.trim().split('\n');
+    setFaqList(questions);
+  };
+
+  // Function to handle bike change
+  const handleBikeChange = async (e) => {
+    setFaqList([]);
     const bikeName = e.target.value;
     const selectedBikeObj = bikes.find((bike) => bike.name === bikeName);
     setSelectedBike(selectedBikeObj || null); // Set the selected bike object
+
+    // Fetch FAQs for the selected bike
+    if (selectedBikeObj) {
+      await fetchFAQs(selectedBikeObj);
+    }
   };
 
   // Handle clicking on an FAQ bubble to auto-fill and send
   const handleFAQClick = async (faq) => {
-    setInput(faq); // Set the clicked FAQ as the input value
-    await sendMessage(); // Automatically send the question after setting the input
+    if (faq.trim() && !loading) {
+      setLoading(true); // Prevent multiple submissions
+      setBotResponse(''); // Clear previous response
+      const bikeInfo = selectedBike ? `Only answer questions to do with the specific motorbike I give you, anything else and you should say you can't answer that. You should answer in the style of a motorbike enthusiast from the 1940s. My motorbike is: ${selectedBike.name} (${selectedBike.year}): ` : '';
+      const question = bikeInfo + faq;
+      const response = await fetchMessage(question);
+      setBotResponse(response);
+      setShowModal(true); // Show the modal when a response is received
+      setInput(''); // Clear input field
+      setLoading(false); // Reset loading state
+    }
   };
 
-  // Close the chat and modal when clicking outside of the chat window and FAQ area
+  // Close the chat when clicking outside of the chat container, but not the modal or FAQ section
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
-        chatRef.current &&
-        !chatRef.current.contains(event.target) &&
-        faqRef.current &&
-        !faqRef.current.contains(event.target)
+        (chatRef.current && chatRef.current.contains(event.target)) ||
+        (faqRef.current && faqRef.current.contains(event.target)) ||
+        (modalRef.current && modalRef.current.contains(event.target))
       ) {
-        setShowChat(false); // Close the chat if the click is outside both the chat and FAQ areas
-        setShowModal(false); // Close the modal if chat is closed
+        return; // Do nothing if the click is inside the chat, FAQ, or modal
       }
+
+      setShowChat(false); // Close the chat if the click is outside the chat, FAQ, and modal
     };
 
     // Add event listener to the document to detect outside clicks
@@ -87,7 +117,7 @@ const Chat = ({ bikes }) => {
       // Cleanup the event listener when the component is unmounted
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [chatRef, faqRef]);
+  }, [chatRef, faqRef, modalRef]);
 
   return (
     <>
@@ -116,8 +146,8 @@ const Chat = ({ bikes }) => {
                 borderRadius: '20px',
                 cursor: 'pointer',
                 textAlign: 'center',
-                width: 'auto', // Set a fixed width for each bubble
-                whiteSpace: 'nowrap', // Prevent text wrapping
+                textWrap: 'wrap',
+                width: '300px', // Set a fixed width for each bubble
                 overflow: 'hidden', // Hide any overflowing text
                 textOverflow: 'ellipsis', // Add ellipsis if the text overflows
               }}
@@ -227,16 +257,22 @@ const Chat = ({ bikes }) => {
               }}
             >
               {loading ? 'Loading...' : 'Ask Jam-Bot'}
-              </Button>
+            </Button>
           </div>
 
           {/* Modal for displaying bot response */}
           <Modal show={showModal} onHide={handleClose} centered>
-            <Modal.Header closeButton>
-              <Modal.Title>Jampot Mechanic</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>{botResponse}</Modal.Body>
-            <Modal.Footer></Modal.Footer>
+            <div ref={modalRef}>
+              <Modal.Header closeButton>
+                <Modal.Title>Jam-Bot Advice</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>{botResponse}</Modal.Body>
+              <Modal.Footer>
+                <Button variant="secondary" onClick={handleClose}>
+                  Close
+                </Button>
+              </Modal.Footer>
+            </div>
           </Modal>
         </div>
       )}

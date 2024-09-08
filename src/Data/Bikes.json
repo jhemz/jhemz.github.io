@@ -1,4 +1,26 @@
-[
+[ 
+    {
+        "name": "Matchless Model 7",
+        "image": "MatchlessModel7.png",
+        "description": "The Matchless Model 7 was introduced in 1929, featuring a 982cc side-valve V-twin engine. It was primarily designed for sidecar use, known for its torque and reliability. Despite its simple design and lack of advanced technology, it was a popular choice for heavy-duty work, including carrying passengers in sidecars and hauling goods.",
+        "year": "1929-1935",
+        "engine": "982cc V-twin",
+        "topSpeed": "75 mph",
+        "weight": "420 lbs",
+        "gearbox": "3-speed",
+        "wd": false
+    },
+    {
+        "name": "Matchless Silver Arrow",
+        "image": "MatchlessSilverArrow.png",
+        "description": "The Matchless Silver Arrow was introduced in 1929 as a lightweight and innovative motorcycle, featuring a 400cc V-twin engine. It was designed to be a smooth and comfortable ride for touring, with an emphasis on reliability. Despite its advanced engineering, including an enclosed valve gear and gearbox, it was not commercially successful, partly due to the economic climate of the time.",
+        "year": "1929-1933",
+        "engine": "400cc V-twin",
+        "topSpeed": "70 mph",
+        "weight": "330 lbs",
+        "gearbox": "3-speed",
+        "wd": false
+    },
     {
         "name": "Matchless Silver Hawk",
         "image": "MatchlessSilverHawk.png",
