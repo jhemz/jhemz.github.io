@@ -37,7 +37,7 @@ const OldMatchlessCard = ({ bike }) => {
           style={{
             top: '-10px',
             left: '30px',
-            width: '100px',
+            width: '60px',
             height: 'auto',
             zIndex: 10, // Ensure the logo is above other elements
           }} 
