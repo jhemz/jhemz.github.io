@@ -124,40 +124,46 @@ const Chat = ({ bikes }) => {
       {/* FAQ Bubbles Outside the Chat Container */}
       {showChat && (
         <div
-          ref={faqRef} // Attach the ref to the FAQ container
+          ref={faqRef}
           style={{
             position: 'fixed',
-            bottom: '360px', // Place the FAQ bubbles above the chat box
+            bottom: '360px',
             right: '20px',
             display: 'flex',
-            flexDirection: 'column', // Stack FAQ bubbles vertically
+            flexDirection: 'column',
             gap: '10px',
             zIndex: '1000',
+            maxHeight: '200px', // Set a maximum height for the FAQ container
+            overflowY: 'auto', // Allow vertical scrolling
+            width: '300px', // Adjust the width to fit smaller screens better
+            padding: '10px',
+            backgroundColor: '#f9f9f9',
+            borderRadius: '10px',
+            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
           }}
         >
           {faqList.map((faq, index) => (
-            <div
-              key={index}
-              onClick={() => handleFAQClick(faq)}
-              style={{
-                backgroundColor: 'rgb(87 114 182)', // Use the button's color
-                color: '#fff',
-                padding: '10px',
-                borderRadius: '20px',
-                cursor: 'pointer',
-                textAlign: 'center',
-                textWrap: 'wrap',
-                width: '300px', // Set a fixed width for each bubble
-                overflow: 'hidden', // Hide any overflowing text
-                textOverflow: 'ellipsis', // Add ellipsis if the text overflows
-              }}
-            >
-              {faq}
-            </div>
+         <div
+         key={index}
+         onClick={() => handleFAQClick(faq)}
+         style={{
+           backgroundColor: 'rgb(87 114 182)', // Use the button's color
+           color: '#fff',
+           padding: '15px', // Adjust padding
+           borderRadius: '20px',
+           cursor: 'pointer',
+           marginTop: '-1px',
+           textAlign: 'center',
+           wordWrap: 'break-word', // Ensure long words or links break and don't overflow
+           width: '100%', // Ensures it takes full width of the container
+           display: 'block', // Make sure the div behaves like a block element, allowing natural height growth
+         }}
+       >
+         {faq}
+       </div>
           ))}
         </div>
       )}
-
       {/* Floating action button (FAB) */}
       {!showChat && (
         <div
