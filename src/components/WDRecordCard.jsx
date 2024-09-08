@@ -2,13 +2,29 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import WDMatchlessLogo from '../assets/WDMatchlessLogo.png';
 import YearBadge from './YearBadge'; 
-import bikeImage from '../assets/bikes/MatchlessG3WO.png';
 import WDSerialBadge from './WDSerialBadge';
+import placeholderImage from '../assets/bikes/placeholder.png'; // Placeholder image
 
 // WDRecordCard Component
 const WDRecordCard = ({ record }) => {
   // Dynamically require the tank image using the file name from record.Tank
   const tankImage = require(`../assets/tanks/${record.Tank}`);
+
+  // Set bike image based on the Maker's Type
+  let bikeImage;
+  switch(record["Model"]) {
+    case 'Silver Arrow':
+      bikeImage = require('../assets/bikes/MatchlessSilverArrow.png');
+      break;
+    case 'G3WO':
+      bikeImage = require('../assets/bikes/MatchlessG3WO.png');
+      break;
+    case 'G3L':
+      bikeImage = require('../assets/bikes/MatchlessWDG3L.png');
+      break;
+    default:
+      bikeImage = placeholderImage; // Use placeholder if none of the conditions match
+  }
 
   return (
     <Card style={{
@@ -52,8 +68,6 @@ const WDRecordCard = ({ record }) => {
           }}>
             {record.Model}
         </Card.Text>
-
-      
       </div>
 
       <div style={{
@@ -70,22 +84,21 @@ const WDRecordCard = ({ record }) => {
               <WDSerialBadge 
                 text={record["WD Serial No."]} 
               />
-        </div>
-
-    
+      </div>
 
       {/* Display the bike image */}
-     
-    <Card.Img 
+      <Card.Img 
         variant="top"
         src={bikeImage} 
         style={{ 
             width: '90%',
             marginLeft:'20px',
-            marginLRight:'10px',
+            marginRight:'10px',
             height: 'auto',
             marginTop: '100px'
-            }} />
+        }} 
+      />
+
       {/* Green line separator */}
       <div style={{
         backgroundColor: '#4D4B1D', 
@@ -93,9 +106,7 @@ const WDRecordCard = ({ record }) => {
         borderRadius: '0px',
         margin: '10px 0',
         position: 'relative',
-      }}>
-        
-      </div>
+      }} />
 
       {/* Body section with two columns: tank image and text */}
       <Card.Body style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
