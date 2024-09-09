@@ -74,6 +74,12 @@ function Header({ selectedPage, onNavigate }) {
         </button>
         <button
           className={selectedPage === 'contact' ? 'active' : ''}
+          onClick={() => handleNavigation('suppliers')}
+        >
+          Suppliers
+        </button>
+        <button
+          className={selectedPage === 'contact' ? 'active' : ''}
           onClick={() => handleNavigation('contact')}
         >
           Contact

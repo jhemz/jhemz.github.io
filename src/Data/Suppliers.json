@@ -1,0 +1,52 @@
+[
+    {
+      "id": 1,
+      "name": "AMC Classic Spares",
+      "location": "UK",
+      "telphone": "(+44) 01462 811770",
+      "website": "https://amcclassicspares.com/",
+      "email": "spares@amcclassicspares.com",
+      "logo":"amcSpares.png",
+      "details":"Supplier of AJS & Matchless spare parts"
+    },
+    {
+      "id": 2,
+      "name": "Heritage Motor Works",
+      "location": "Eversley, Hook RG27 0PY",
+      "telphone": "0118 973 1631",
+      "website": "-",
+      "email": "metaltel@yahoo.co.uk",
+      "logo":"heritageMotorWorks.jpg",
+      "details":"Traditional coachbuilders and panel beaters. Repairers of fuel tanks, and all tinware"
+    },
+    {
+      "id": 2,
+      "name": "AMOC Spares",
+      "location": "Unit 3, Robinson Way, Telford Way Industrial Estate,Northants,Kettering,NN16 8PT,UNITED KINGDOM",
+      "telphone": "01536 511532",
+      "website":"https://www.amoc-parts.com/",
+      "email": "spares@jampot.com",
+      "logo":"ClubLogo.png",
+      "details":"Supplier of AJS & Matchless spare parts"
+    },
+    {
+      "id": 2,
+      "name": "Acme Stainless Ltd",
+      "location": "ACME STAINLESS LTD,PO BOX 671,BILLINGHAY,LINCOLN,LN4 4XX",
+      "telphone": " 01526 861991",
+      "website":"https://acmestainless.co.uk",
+      "email": "sales@acmestainless.co.uk",
+      "logo":"",
+      "details":"Supplier of AJS & Matchless spare parts"
+    },
+    {
+      "id": 2,
+      "name": "T&L Engineering",
+      "location": "T&L Engineering – Pear Tree Farm, Wilstead Road, Elstow, MK42 9YG",
+      "telphone": "01234 352 418",
+      "website":"https://acmestainless.co.uk",
+      "email": "sales@tandlengineering.co.uk",
+      "logo":"tandlengineering.jpg",
+      "details":"Engine repairs, re-bores, new cylinder liners, valve grinding"
+    }
+  ]
