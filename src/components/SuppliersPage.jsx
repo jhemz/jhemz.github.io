@@ -34,7 +34,7 @@ const SuppliersPage = () => {
   };
 
   return (
-    <div style={{ padding: '0 20px', marginTop:'100px' }}>
+    <div style={{ padding: '0 20px', marginTop:'150px' }}>
       {/* Page Header */}
       <h1 style={pageHeaderStyle}>Trusted Suppliers</h1>
       
