@@ -10,6 +10,7 @@ import bikesData from './Data/Bikes.json'; // Import bikes data for Chat compone
 import './App.css'; // Import global styles
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SuppliersPage from './components/SuppliersPage';
+import ArchivePage from './components/ArchivePage';
 
 function App() {
   const [selectedPage, setSelectedPage] = useState('home');
@@ -25,6 +26,8 @@ function App() {
         return <Events />;   
       case 'suppliers':
         return <SuppliersPage />;
+        case 'archive':
+          return <ArchivePage />;
       case 'contact':
         return <Contact />;
       default:

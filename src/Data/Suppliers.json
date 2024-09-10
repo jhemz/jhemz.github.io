@@ -1,5 +1,16 @@
 [
     {
+      "id": 3,
+      "name": "AMOC Spares",
+      "location": "Unit 3, Robinson Way, Telford Way Industrial Estate, Northants, Kettering, NN16 8PT, UNITED KINGDOM",
+      "telphone": "01536 511532",
+      "website": "https://www.amoc-parts.com/",
+      "email": "spares@jampot.com",
+      "logo": "ClubLogo.png",
+      "details": "Supplier of AJS & Matchless spare parts",
+      "category": "Club Spares"
+    },
+    {
       "id": 1,
       "name": "AMC Classic Spares",
       "location": "UK",
@@ -20,17 +31,6 @@
       "logo": "heritageMotorWorks.jpg",
       "details": "Traditional coachbuilders and panel beaters. Repairers of fuel tanks, and all tinware",
       "category": "Panel Beater & Restoration"
-    },
-    {
-      "id": 3,
-      "name": "AMOC Spares",
-      "location": "Unit 3, Robinson Way, Telford Way Industrial Estate, Northants, Kettering, NN16 8PT, UNITED KINGDOM",
-      "telphone": "01536 511532",
-      "website": "https://www.amoc-parts.com/",
-      "email": "spares@jampot.com",
-      "logo": "ClubLogo.png",
-      "details": "Supplier of AJS & Matchless spare parts",
-      "category": "Spare Parts Suppliers"
     },
     {
       "id": 4,
