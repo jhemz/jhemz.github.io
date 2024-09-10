@@ -108,16 +108,28 @@ const NumberPlatesTab = ({ numberPlates }) => {
     margin: '0 auto',
   };
 
+  // Card styling for the white background container
+  const cardStyle = {
+    backgroundColor: 'white', // White background for the card
+    borderRadius: '8px', // Rounded corners
+    padding: '20px', // Padding inside the card
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', // Subtle shadow to give a card-like effect
+    maxWidth: '600px', // Limit the card width
+    margin: '20px auto', // Center the card
+  };
+
   return (
     <div className="tabcontent" onClick={() => document.getElementById('hiddenInput').focus()}>
-      <div style={locationToolStyle}>
-        {/* Explanation Text */}
+      {/* White card container for the explanatory text */}
+      <div style={cardStyle}>
         <p style={explanationTextStyle}>
           Enter a number plate by clicking on the number plate and typing in a reg, hit "Search" 
           to find the location associated with the plate.
         </p>
+      </div>
 
-        {/* Container for the background image */}
+      {/* Container for the background image */}
+      <div style={locationToolStyle}>
         <div style={numberPlateContainerStyle}>
           {/* SVG container for curved text */}
           <div style={svgContainerStyle}>

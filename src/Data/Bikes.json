@@ -99,6 +99,17 @@
         "wd": false
     },
     {
+        "name": "Matchless G9",
+        "image": "MatchlessG9.png",
+        "description": "The Matchless G9 was introduced in 1949, featuring a 498cc twin-cylinder engine. It was designed for reliability and smooth performance, aimed at the touring market. The G9's robust engine and improved suspension made it a popular choice for long-distance rides.",
+        "year": "1949-1956",
+        "engine": "498cc twin-cylinder",
+        "topSpeed": "85 mph",
+        "weight": "400 lbs",
+        "gearbox": "4-speed Burman",
+        "wd": false
+    },
+    {
         "name": "Matchless G80",
         "image": "MatchlessG80-1955.png",
         "description": "The Matchless G80 from the mid-1950s was an updated version of the earlier 500cc model, featuring improvements in suspension and overall design. It was widely appreciated for its power and durability on a variety of terrains.",

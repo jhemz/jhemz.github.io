@@ -270,8 +270,18 @@ const WDBikesTab = () => {
 
   return (
     <div className="wd-bikes-container" style={{ textAlign: 'center', marginBottom: '20px' }}>
-      {/* Introductory text explaining the WD Bikes section */}
-      <div style={{ margin: '20px auto', maxWidth: '600px', textAlign: 'left', fontFamily: '"Courier New", Courier, monospace', color: '#2e2e1f' }}>
+      {/* Introductory text on a white card */}
+      <div style={{
+        backgroundColor: 'white', // White background for the card
+        borderRadius: '8px', // Rounded corners
+        padding: '20px', // Padding inside the card
+        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', // Subtle shadow to give a card-like effect
+        maxWidth: '600px', // Limit the card width
+        margin: '20px auto', // Center the card
+        fontFamily: '"Courier New", Courier, monospace', // Keep the military-style font
+        color: '#2e2e1f', // Dark color for the text
+        textAlign: 'left',
+      }}>
         <h2 style={{ color: '#6b6b47' }}>WD Bike Search</h2>
         <p>
           This section allows you to explore a variety of bikes used during World War II. 

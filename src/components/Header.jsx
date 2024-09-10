@@ -78,12 +78,12 @@ function Header({ selectedPage, onNavigate }) {
         >
           Suppliers
         </button>
-        {/* <button
+        <button
           className={selectedPage === 'archive' ? 'active' : ''}
           onClick={() => handleNavigation('archive')}
         >
           Archive
-        </button> */}
+        </button>
         <button
           className={selectedPage === 'contact' ? 'active' : ''}
           onClick={() => handleNavigation('contact')}

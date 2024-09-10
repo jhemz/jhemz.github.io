@@ -19,7 +19,7 @@ const BikesPage = () => {
 
   const bikesPageStyle = {
     padding: '20px',
-    marginTop: '0px',
+    marginTop: '100px',
     fontFamily: 'Arial, sans-serif',
     minHeight: '100vh',
    
@@ -29,6 +29,7 @@ const BikesPage = () => {
 
   const secondaryNavStyle = {
     display: 'flex',
+    zIndex: '1000',
     marginTop: '100px',
     justifyContent: 'center',
     marginBottom: '20px',
@@ -44,8 +45,29 @@ const BikesPage = () => {
     margin: '0 5px',
   });
 
+  const titleStyle = {
+    fontFamily: 'Trebuchet MS, sans-serif',
+    position: 'absolute',
+    top: '200px',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    fontSize: '4rem',
+    fontWeight: 'bold',
+    color: 'white',
+    textShadow: '1px 1px 2px rgba(0, 0, 0, 0.9)',
+    zIndex: 20, // Ensure title stays above the faded overlay
+  };
+
   return (
+    <div>
+       <div className="image-container">
+        <div className="faded-factoryImage"></div>
+      </div>
+   
     <div style={bikesPageStyle}>
+      
+      {/* <div style={titleStyle}>BIKES</div> */}
+
       <div style={secondaryNavStyle}>
         <a
           style={tablinkStyle(activeTab === 'Bikes')}
@@ -78,6 +100,7 @@ const BikesPage = () => {
       {activeTab === 'Gearboxes' && <GearboxesTab gearboxes={GearboxData} />}
       {activeTab === 'Table' && <NumberPlatesTab numberPlates={numberPlates} />}
       {activeTab === 'WDBikes' && <WDBikesTab bikes={bikes.filter(bike => bike.wd)} />}
+    </div>
     </div>
   );
 };
