@@ -12,7 +12,7 @@ const SupplierCard = ({ supplier }) => {
       boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)', // Darker shadow for vintage feel
       position: 'relative',
       borderRadius: '20px',
-      background: '#f9f4ef', // Muted white for retro look
+      background: 'white', // Muted white for retro look
       padding: '30px',
     }}>
       
@@ -102,7 +102,7 @@ const SupplierCard = ({ supplier }) => {
         padding: '10px 0',
         marginBottom: '0px',
         textAlign: 'center',
-        background: 'linear-gradient(140deg, rgb(200, 0, 0), rgb(179 8 8))', // Gradient with deep red tones
+        background: 'rgb(81 98 80)', // Gradient with deep red tones
         borderRadius: '10px 10px 0 0'
       }}>
         <h3 style={{
