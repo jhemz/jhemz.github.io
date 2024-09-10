@@ -6,7 +6,7 @@ import DownloadIcon from '../assets/PartsListIcon.jpg';
 import YearBadge from './YearBadge';
 import SmallBadge from './SmallBadge';
 import DownloadItem from './DownloadItem';  // Import the DownloadImage component
-
+import FileViewer from 'react-file-viewer';
 
 const WDDetailedCard = ({ bike }) => {
   const bikeImage = require(`../assets/bikes/${bike.image}`);
@@ -84,7 +84,7 @@ const WDDetailedCard = ({ bike }) => {
                 fileUrl={partsList}
                 fileName="1940_Matchless_G3WO_Parts_list.pdf"
               />
-             
+          
             </div>
           </Card.Body>
         </Tab>

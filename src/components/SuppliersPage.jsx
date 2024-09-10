@@ -46,7 +46,7 @@ const SuppliersPage = () => {
       {/* Supplier Cards Container */}
       <div style={suppliersContainerStyle}>
         {suppliers.map((supplier) => (
-          <div key={supplier.id} style={{ flex: '1 1 calc(33% - 40px)', maxWidth: '300px', minWidth: '250px' }}>
+          <div key={supplier.id} style={{ flex: '1 1 calc(33% - 40px)', maxWidth: '500px', minWidth: '350px' }}>
             <SupplierCard supplier={supplier} />
           </div>
         ))}

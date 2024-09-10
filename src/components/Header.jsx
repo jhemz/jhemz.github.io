@@ -73,7 +73,7 @@ function Header({ selectedPage, onNavigate }) {
           Events
         </button>
         <button
-          className={selectedPage === 'contact' ? 'active' : ''}
+          className={selectedPage === 'suppliers' ? 'active' : ''}
           onClick={() => handleNavigation('suppliers')}
         >
           Suppliers
