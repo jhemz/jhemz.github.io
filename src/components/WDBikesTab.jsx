@@ -270,18 +270,19 @@ const WDBikesTab = () => {
 
   return (
     <div className="wd-bikes-container" style={{ textAlign: 'center', marginBottom: '20px' }}>
-      {/* Introductory text on a white card */}
+      {/* Card that contains both the introductory text and search filters */}
       <div style={{
         backgroundColor: 'white', // White background for the card
         borderRadius: '8px', // Rounded corners
         padding: '20px', // Padding inside the card
         boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', // Subtle shadow to give a card-like effect
-        maxWidth: '600px', // Limit the card width
+        maxWidth: '1000px', // Limit the card width
         margin: '20px auto', // Center the card
         fontFamily: '"Courier New", Courier, monospace', // Keep the military-style font
         color: '#2e2e1f', // Dark color for the text
         textAlign: 'left',
       }}>
+        {/* Introductory Text */}
         <h2 style={{ color: '#6b6b47' }}>WD Bike Search</h2>
         <p>
           This section allows you to explore a variety of bikes used during World War II. 
@@ -289,66 +290,67 @@ const WDBikesTab = () => {
           this tool will help you find detailed information about each military bike. 
           Enter the details below and discover more about the rich history of WD bikes.
         </p>
-      </div>
 
-      <div style={{
-        display: 'flex', 
-        justifyContent: 'center', 
-        gap: '10px',
-        flexWrap: 'wrap', // Ensure input fields and buttons wrap on smaller screens
-      }}>
-        <div style={{ width: '100%', maxWidth: '300px' }}> {/* Adjust width for responsiveness */}
-          <input
-            type="text"
-            placeholder="Enter frame number"
-            value={frameNumberInput}
-            onChange={(e) => setFrameNumberInput(e.target.value)}
-            style={commonInputStyle}
-          />
-          <button
-            onClick={handleSearchByFrameNumber}
-            style={commonButtonStyle}
-            onMouseOver={(e) => (e.target.style.backgroundColor = buttonHoverStyle.backgroundColor)}
-            onMouseOut={(e) => (e.target.style.backgroundColor = commonButtonStyle.backgroundColor)}
-          >
-            Search by Frame Number
-          </button>
-        </div>
+        {/* Search Filters Inside the Card */}
+        <div style={{
+          display: 'flex', 
+          justifyContent: 'center', 
+          gap: '10px',
+          flexWrap: 'wrap', // Ensure input fields and buttons wrap on smaller screens
+        }}>
+          <div style={{ width: '100%', maxWidth: '300px' }}> {/* Adjust width for responsiveness */}
+            <input
+              type="text"
+              placeholder="Enter frame number"
+              value={frameNumberInput}
+              onChange={(e) => setFrameNumberInput(e.target.value)}
+              style={commonInputStyle}
+            />
+            <button
+              onClick={handleSearchByFrameNumber}
+              style={commonButtonStyle}
+              onMouseOver={(e) => (e.target.style.backgroundColor = buttonHoverStyle.backgroundColor)}
+              onMouseOut={(e) => (e.target.style.backgroundColor = commonButtonStyle.backgroundColor)}
+            >
+              Search by Frame Number
+            </button>
+          </div>
 
-        <div style={{ width: '100%', maxWidth: '300px' }}> {/* Adjust width for responsiveness */}
-          <input
-            type="text"
-            placeholder="Enter engine number"
-            value={engineNumberInput}
-            onChange={(e) => setEngineNumberInput(e.target.value)}
-            style={commonInputStyle}
-          />
-          <button
-            onClick={handleSearchByEngineNumber}
-            style={commonButtonStyle}
-            onMouseOver={(e) => (e.target.style.backgroundColor = buttonHoverStyle.backgroundColor)}
-            onMouseOut={(e) => (e.target.style.backgroundColor = commonButtonStyle.backgroundColor)}
-          >
-            Search by Engine Number
-          </button>
-        </div>
+          <div style={{ width: '100%', maxWidth: '300px' }}> {/* Adjust width for responsiveness */}
+            <input
+              type="text"
+              placeholder="Enter engine number"
+              value={engineNumberInput}
+              onChange={(e) => setEngineNumberInput(e.target.value)}
+              style={commonInputStyle}
+            />
+            <button
+              onClick={handleSearchByEngineNumber}
+              style={commonButtonStyle}
+              onMouseOver={(e) => (e.target.style.backgroundColor = buttonHoverStyle.backgroundColor)}
+              onMouseOut={(e) => (e.target.style.backgroundColor = commonButtonStyle.backgroundColor)}
+            >
+              Search by Engine Number
+            </button>
+          </div>
 
-        <div style={{ width: '100%', maxWidth: '300px' }}> {/* Adjust width for responsiveness */}
-          <input
-            type="text"
-            placeholder="Enter WD serial number"
-            value={serialNumberInput}
-            onChange={(e) => setSerialNumberInput(e.target.value)}
-            style={commonInputStyle}
-          />
-          <button
-            onClick={handleSearchBySerialNumber}
-            style={commonButtonStyle}
-            onMouseOver={(e) => (e.target.style.backgroundColor = buttonHoverStyle.backgroundColor)}
-            onMouseOut={(e) => (e.target.style.backgroundColor = commonButtonStyle.backgroundColor)}
-          >
-            Search by Serial Number
-          </button>
+          <div style={{ width: '100%', maxWidth: '300px' }}> {/* Adjust width for responsiveness */}
+            <input
+              type="text"
+              placeholder="Enter WD serial number"
+              value={serialNumberInput}
+              onChange={(e) => setSerialNumberInput(e.target.value)}
+              style={commonInputStyle}
+            />
+            <button
+              onClick={handleSearchBySerialNumber}
+              style={commonButtonStyle}
+              onMouseOver={(e) => (e.target.style.backgroundColor = buttonHoverStyle.backgroundColor)}
+              onMouseOut={(e) => (e.target.style.backgroundColor = commonButtonStyle.backgroundColor)}
+            >
+              Search by Serial Number
+            </button>
+          </div>
         </div>
       </div>
 
