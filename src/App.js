@@ -19,25 +19,25 @@ function App() {
   const renderContent = () => {
     switch (selectedPage) {
       case 'home':
-        return <Home />;
+        return <Home onNavigate={setSelectedPage} />;
       case 'bikes':
-        return <Bikes />;
+        return <Bikes onNavigate={setSelectedPage} />;
       case 'events':
-        return <Events />;   
+        return <Events onNavigate={setSelectedPage} />;
       case 'suppliers':
-        return <SuppliersPage />;
-        case 'archive':
-          return <ArchivePage />;
+        return <SuppliersPage onNavigate={setSelectedPage} />;
+      case 'archive':
+        return <ArchivePage onNavigate={setSelectedPage} />;
       case 'contact':
-        return <Contact />;
+        return <Contact onNavigate={setSelectedPage} />;
       default:
-        return <Home />;
+        return <Home onNavigate={setSelectedPage} />;
     }
   };
 
   return (
     <div className="App">
-      {/* Pass the selectedPage and setSelectedPage to the Header */}
+      {/* Pass the selectedPage and onNavigate to the Header */}
       <Header selectedPage={selectedPage} onNavigate={setSelectedPage} />
 
       <div className="content">
@@ -47,25 +47,27 @@ function App() {
       <Footer />
 
       {/* Floating Chat Component, accessible across all pages */}
-      <div style={{
-          overflow: 'hidden',       // Ensure nothing overflows
+      <div
+        style={{
+          overflow: 'hidden', // Ensure nothing overflows
           position: 'fixed',
           bottom: '20px',
           right: '20px',
           width: '0%',
           maxWidth: '400px',
           padding: '0px',
-          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',  // Ensure shadow isn't causing overflow
-          backgroundColor: 'red',    // The background color you set
+          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)', // Ensure shadow isn't causing overflow
+          backgroundColor: 'red', // The background color you set
           borderRadius: '10px',
           zIndex: '1000',
-          margin: '0',              // Remove 'auto' margin, might push things unexpectedly
-          display: 'flex',          // Ensure the content inside behaves as expected
-          justifyContent: 'center',  // Center the content if necessary
+          margin: '0', // Remove 'auto' margin, might push things unexpectedly
+          display: 'flex', // Ensure the content inside behaves as expected
+          justifyContent: 'center', // Center the content if necessary
           alignItems: 'center',
-      }}>
-    <Chat bikes={bikesData} />
-</div>
+        }}
+      >
+        <Chat bikes={bikesData} />
+      </div>
     </div>
   );
 }

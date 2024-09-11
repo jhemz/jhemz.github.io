@@ -21,6 +21,7 @@ const OldMatchlessCard = ({ bike }) => {
       boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', 
       position: 'relative',
       background: 'white',
+      zIndex:'1000',
       borderRadius: '10px'
     }}>
       {/* Name and engine specs below the logo */}
@@ -103,6 +104,7 @@ const TwentiesMatchlessCard = ({ bike }) => {
       boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', 
       position: 'relative',
       background: 'white',
+      zIndex:'1000',
       borderRadius: '10px'
     }}>
       {/* Name and engine specs below the logo */}
@@ -185,6 +187,7 @@ const MatchlessCard = ({ bike }) => {
       boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', 
       position: 'relative',
       background: 'white',
+      zIndex:'1000',
       borderRadius: '10px'
     }}>
       {/* Name and engine specs below the logo */}
@@ -267,6 +270,7 @@ const WDMatchlessCard = ({ bike }) => {
       boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', 
       position: 'relative',
       background: 'white',
+      zIndex:'1000',
       borderRadius: '10px'
     }}>
       <div style={{
@@ -350,6 +354,7 @@ const AJSCard = ({ bike }) => {
       margin: '20px auto', // Center the card horizontally
       boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', 
       position: 'relative',
+      zIndex:'1000',
       background: 'white',
       borderRadius: '10px'
     }}>

@@ -35,6 +35,9 @@ const SuppliersPage = () => {
 
   return (
     <div style={{ padding: '0 20px', marginTop:'150px' }}>
+       <div className="image-container2">
+        <div className="faded-RepairShopImage"></div>
+      </div>
       {/* Page Header */}
       <h1 style={pageHeaderStyle}>Trusted Suppliers</h1>
       

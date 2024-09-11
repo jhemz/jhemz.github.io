@@ -13,6 +13,7 @@ const SupplierCard = ({ supplier }) => {
       position: 'relative',
       borderRadius: '20px',
       background: 'white', // Muted white for retro look
+      zIndex:'1000',
       padding: '30px',
     }}>
       

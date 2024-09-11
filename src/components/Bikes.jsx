@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import bikesData from '../Data/Bikes.json';
 import GearboxData from '../Data/Gearboxes.json';
 import numberPlateData from '../Data/NumberPlates.json';
@@ -7,8 +7,9 @@ import NumberPlatesTab from './NumberPlatesTab';
 import WDBikesTab from './WDBikesTab';
 import GearboxesTab from './GearboxesTab';
 import factoryImage from '../assets/factory.png'; // Import the image
+import Header from './Header'; // Make sure to import your Header component
 
-const BikesPage = () => {
+const BikesPage = ({ onNavigate }) => {
   const [activeTab, setActiveTab] = useState('Bikes');
   const [bikes] = useState(bikesData || []);
   const [numberPlates] = useState(numberPlateData || []);
@@ -17,33 +18,33 @@ const BikesPage = () => {
     setActiveTab(tabName);
   };
 
+  // Prepare the secondary menu items for the bikes page
+  const secondaryMenuItems = [
+    {
+      name: 'Bikes',
+      isActive: activeTab === 'Bikes',
+      onClick: () => openTab('Bikes')
+    },
+    {
+      name: 'Number Plates',
+      isActive: activeTab === 'Table',
+      onClick: () => openTab('Table')
+    },
+    {
+      name: 'WD Bikes',
+      isActive: activeTab === 'WDBikes',
+      onClick: () => openTab('WDBikes')
+    }
+  ];
+
   const bikesPageStyle = {
     padding: '20px',
-    marginTop: '100px',
+    marginTop: '170px',
     fontFamily: 'Arial, sans-serif',
     minHeight: '100vh',
-   
     backgroundSize: 'cover',
     backgroundAttachment: 'fixed', // Makes the background image fixed while scrolling
   };
-
-  const secondaryNavStyle = {
-    display: 'flex',
-    zIndex: '1000',
-    marginTop: '100px',
-    justifyContent: 'center',
-    marginBottom: '20px',
-  };
-
-  const tablinkStyle = (isActive) => ({
-    padding: '10px 20px',
-    cursor: 'pointer',
-    fontWeight: isActive ? 'bold' : 'normal',
-    backgroundColor: isActive ? '#ddd' : '#f1f1f1',
-    border: '1px solid #ccc',
-    borderRadius: '5px',
-    margin: '0 5px',
-  });
 
   const titleStyle = {
     fontFamily: 'Trebuchet MS, sans-serif',
@@ -60,47 +61,19 @@ const BikesPage = () => {
 
   return (
     <div>
-       <div className="image-container">
+      {/* Pass the secondary menu items to the Header */}
+      <Header selectedPage="bikes" onNavigate={onNavigate} secondaryMenuItems={secondaryMenuItems} />
+
+      <div className="image-container2">
         <div className="faded-factoryImage"></div>
       </div>
-   
-    <div style={bikesPageStyle}>
-      
-      {/* <div style={titleStyle}>BIKES</div> */}
 
-      <div style={secondaryNavStyle}>
-        <a
-          style={tablinkStyle(activeTab === 'Bikes')}
-          onClick={() => openTab('Bikes')}
-        >
-          Bikes
-        </a>
-        {/* <a
-          style={tablinkStyle(activeTab === 'Gearboxes')}
-          onClick={() => openTab('Gearboxes')}
-        >
-          Gearboxes
-        </a> */}
-        <a
-          style={tablinkStyle(activeTab === 'Table')}
-          onClick={() => openTab('Table')}
-        >
-          Number Plates
-        </a>
-        <a
-          style={tablinkStyle(activeTab === 'WDBikes')}
-          onClick={() => openTab('WDBikes')}
-        >
-          WD Bikes
-        </a>
+      <div style={bikesPageStyle}>
+        {/* Render the appropriate tab content based on activeTab */}
+        {activeTab === 'Bikes' && <BikesTab bikes={bikes} />}
+        {activeTab === 'Table' && <NumberPlatesTab numberPlates={numberPlates} />}
+        {activeTab === 'WDBikes' && <WDBikesTab bikes={bikes.filter(bike => bike.wd)} />}
       </div>
-
-      {/* Conditional rendering of tabs */}
-      {activeTab === 'Bikes' && <BikesTab bikes={bikes} />}
-      {activeTab === 'Gearboxes' && <GearboxesTab gearboxes={GearboxData} />}
-      {activeTab === 'Table' && <NumberPlatesTab numberPlates={numberPlates} />}
-      {activeTab === 'WDBikes' && <WDBikesTab bikes={bikes.filter(bike => bike.wd)} />}
-    </div>
     </div>
   );
 };

@@ -4,7 +4,7 @@ import ClubLogo from '../assets/ClubLogo_west.png';
 import MatchlessLogo from '../assets/matchless.png';
 import AJSLogo from '../assets/ajs.png';
 
-function Header({ selectedPage, onNavigate }) {
+function Header({ selectedPage, onNavigate, secondaryMenuItems }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef(null); // Reference to the menu
   const headerRef = useRef(null); // Reference to the header
@@ -38,62 +38,79 @@ function Header({ selectedPage, onNavigate }) {
   }, []);
 
   return (
-    <header ref={headerRef} className={isMenuOpen ? 'menu-open' : ''}>
-      <a href="/">
-        <img src={ClubLogo} alt="AJS & Matchless Owners Club Logo" className="logo left" />
-      </a>
-      <div className="menu-toggle" onClick={toggleMenu}>
-        <div className="bar"></div>
-        <div className="bar"></div>
-        <div className="bar"></div>
-      </div>
+    <>
+      <header ref={headerRef} className={isMenuOpen ? 'menu-open' : ''}>
+        <a href="/">
+          <img src={ClubLogo} alt="AJS & Matchless Owners Club Logo" className="logo left" />
+        </a>
+        <div className="menu-toggle" onClick={toggleMenu}>
+          <div className="bar"></div>
+          <div className="bar"></div>
+          <div className="bar"></div>
+        </div>
 
-      {/* Overlay that appears when menu is open */}
-      {isMenuOpen && <div className="overlay" onClick={() => setIsMenuOpen(false)} />}
+        {/* Overlay that appears when menu is open */}
+        {isMenuOpen && <div className="overlay" onClick={() => setIsMenuOpen(false)} />}
 
-      <nav ref={menuRef} className={isMenuOpen ? 'expanded' : 'collapsed'}>
-        <img src={MatchlessLogo} alt="Matchless Logo" className="nav-logo top-logo" />
+        <nav ref={menuRef} className={isMenuOpen ? 'expanded' : 'collapsed'}>
+          <img src={MatchlessLogo} alt="Matchless Logo" className="nav-logo top-logo" />
 
-        <button
-          className={selectedPage === 'home' ? 'active' : ''}
-          onClick={() => handleNavigation('home')}
-        >
-          Home
-        </button>
-        <button
-          className={selectedPage === 'bikes' ? 'active' : ''}
-          onClick={() => handleNavigation('bikes')}
-        >
-          Bikes
-        </button>
-        <button
-          className={selectedPage === 'events' ? 'active' : ''}
-          onClick={() => handleNavigation('events')}
-        >
-          Events
-        </button>
-        <button
-          className={selectedPage === 'suppliers' ? 'active' : ''}
-          onClick={() => handleNavigation('suppliers')}
-        >
-          Suppliers
-        </button>
-        {/* <button
-          className={selectedPage === 'archive' ? 'active' : ''}
-          onClick={() => handleNavigation('archive')}
-        >
-          Archive
-        </button> */}
-        <button
-          className={selectedPage === 'contact' ? 'active' : ''}
-          onClick={() => handleNavigation('contact')}
-        >
-          Contact
-        </button>
+          <button
+            className={selectedPage === 'home' ? 'active' : ''}
+            onClick={() => handleNavigation('home')}
+          >
+            Home
+          </button>
+          <button
+            className={selectedPage === 'bikes' ? 'active' : ''}
+            onClick={() => handleNavigation('bikes')}
+          >
+            Bikes
+          </button>
+          <button
+            className={selectedPage === 'events' ? 'active' : ''}
+            onClick={() => handleNavigation('events')}
+          >
+            Events
+          </button>
+          <button
+            className={selectedPage === 'suppliers' ? 'active' : ''}
+            onClick={() => handleNavigation('suppliers')}
+          >
+            Suppliers
+          </button>
+          {/* <button
+            className={selectedPage === 'archive' ? 'active' : ''}
+            onClick={() => handleNavigation('archive')}
+          >
+            Archive
+          </button> */}
+          <button
+            className={selectedPage === 'contact' ? 'active' : ''}
+            onClick={() => handleNavigation('contact')}
+          >
+            Contact
+          </button>
 
-        <img src={AJSLogo} alt="AJS Logo" className="nav-logo bottom-logo" />
-      </nav>
-    </header>
+          <img src={AJSLogo} alt="AJS Logo" className="nav-logo bottom-logo" />
+        </nav>
+      </header>
+
+      {/* Secondary navigation bar */}
+      {secondaryMenuItems && secondaryMenuItems.length > 0 && (
+        <nav className="secondary-nav">
+          {secondaryMenuItems.map((item) => (
+            <button
+              key={item.name}
+              className={item.isActive ? 'active' : ''}
+              onClick={item.onClick}
+            >
+              {item.name}
+            </button>
+          ))}
+        </nav>
+      )}
+    </>
   );
 }
 

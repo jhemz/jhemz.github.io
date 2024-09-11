@@ -1,69 +1,68 @@
+/* Header styles */
 header {
-    background-color: #51624F; /* Set background color */
-    color: #ffffff;
-  
-    display: flex;
-    justify-content: center; /* Center the nav horizontally */
-    align-items: center; /* Center the nav vertically */
-    position: fixed;
-    top: 20px; /* Push the header down a bit from the top */
-    left: 50%;
-    transform: translateX(-50%); /* Center the header horizontally on the page */
-    width: calc(100% - 40px); /* Make sure the header doesn't touch the edges */
-    max-width: 1200px; /* Set a max width for larger screens */
-    z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for the floating effect */
-    border-radius: 15px; /* Round the corners */
-    margin-top: 20px;
-    height: 50px;
-  }
-  
-  .logo {
-    position: absolute;
-    top: -40px; /* Protrude upwards */
-    left: 20px; /* Adjust horizontal positioning */
-    z-index: 1100; /* Ensure it's above the header */
-    height: 150px; /* Set a larger height if needed */
-   
-    border-radius: 50%; /* Optional: Add a circular border */
-   
-    padding: 0px; /* Add padding around the logo */
-  }
-  
+  background-color: #51624F; /* Set background color */
+  color: #ffffff;
+  z-index: 1000;
+  display: flex;
+  justify-content: center; /* Center the nav horizontally */
+  align-items: center; /* Center the nav vertically */
+  position: fixed;
+  top: 20px; /* Push the header down a bit from the top */
+  left: 50%;
+  transform: translateX(-50%); /* Center the header horizontally on the page */
+  width: calc(100% - 40px); /* Make sure the header doesn't touch the edges */
+  max-width: 1200px; /* Set a max width for larger screens */
+  z-index: 1000000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for the floating effect */
+  border-radius: 15px; /* Round the corners */
+  margin-top: 20px;
+  height: 50px;
+}
+
+.logo {
+  position: absolute;
+  top: -40px; /* Protrude upwards */
+  left: 20px; /* Adjust horizontal positioning */
+  z-index: 1100; /* Ensure it's above the header */
+  height: 150px; /* Set a larger height if needed */
+  border-radius: 50%; /* Optional: Add a circular border */
+  padding: 0px; /* Add padding around the logo */
+}
+
+nav {
+  display: flex;
+  gap: 5px;
+  justify-content: center; /* Center links inside nav */
+  align-items: center;
+  flex-grow: 1; /* Allow nav to take up remaining space */
+}
+
+nav a {
+  color: #ffffff;
+  font-size: 1em;
+  padding: 10px 15px;
+  border-radius: 5px; /* Slight rounding of nav link backgrounds */
+  transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav-logo {
+  width: 30px;
+  height: auto;
+}
+
+.menu-toggle {
+  display: none; /* Hidden by default on desktop */
+  position: absolute;
+  right: 20px;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
   nav {
-    display: flex;
-    gap: 5px;
-    justify-content: center; /* Center links inside nav */
-    align-items: center;
-    flex-grow: 1; /* Allow nav to take up remaining space */
-  }
-  
-  nav a {
-    color: #ffffff;
-    font-size: 1em;
-    padding: 10px 15px;
-    border-radius: 5px; /* Slight rounding of nav link backgrounds */
-    transition: background-color 0.3s ease;
-  }
-  
-  nav a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-  }
-  
-  .nav-logo {
-    width: 30px;
-    height: auto;
-  }
-  
-  .menu-toggle {
-    display: none; /* Hidden by default on desktop */
-    position: absolute;
-    right: 20px;
-  }
-  
-  /* Mobile Styles */
-  @media (max-width: 768px) {
-    nav {
       display: none;
       flex-direction: column;
       position: fixed;
@@ -74,44 +73,44 @@ header {
       height: calc(100vh - 70px);
       z-index: 999;
       padding-top: 10px;
-    }
-  
-    .logo {
-        margin-top: 20px;
-        height: 100px; /* Set a larger height if needed */
-      }
+  }
 
-    nav a {
+  .logo {
+      margin-top: 20px;
+      height: 85px; /* Set a larger height if needed */
+  }
+
+  nav a {
       padding: 15px 20px;
       width: 100%;
       text-align: center;
-    }
-  
-    .menu-toggle {
+  }
+
+  .menu-toggle {
       display: flex;
       flex-direction: column;
       cursor: pointer;
-    }
-  
-    .menu-toggle .bar {
+  }
+
+  .menu-toggle .bar {
       width: 25px;
       height: 3px;
       background-color: #ffffff;
       margin: 4px 0;
-    }
-  
-    nav.expanded {
-        background-color: rgba(0, 0, 0, 0.877);
-        display: flex; /* Show the nav when expanded */
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height:100vh; /* Ensure it still fits the viewport */
-        width: 100vw;
-        top: -50px;
-        z-index: 10000;
-    }
   }
+
+  nav.expanded {
+      background-color: rgba(0, 0, 0, 0.877);
+      display: flex; /* Show the nav when expanded */
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh; /* Ensure it still fits the viewport */
+      width: 100vw;
+      top: -50px;
+      z-index: 10000;
+  }
+}
 
 /* Style for the header buttons */
 nav button {
@@ -140,4 +139,77 @@ nav button:hover {
   color: white; /* Ensure text stays white */
   border-radius: 20px; /* Make it more rounded for a bubble effect */
   padding: 10px 15px; /* Increase padding for a larger bubble */
+}
+
+/* Secondary nav for desktop */
+.secondary-nav {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex; /* Use flex to center the content */
+  justify-content: center; /* Center the buttons horizontally */
+  background-color: #f8f8f8;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  border-radius: 0 0 15px 15px; /* Rounded bottom corners */
+  position: fixed; /* Make it fixed on the screen */
+  top: 90px; /* Adjust this value to place it just below the header */
+  z-index: 10000;
+  max-width: 100%; /* Prevents overflow, allows centering */
+  width: fit-content; /* Shrinks to fit the content */
+  margin-left: auto; /* Centers the navigation */
+  margin-right: auto; /* Centers the navigation */
+  left: 0;
+  right: 0;
+}
+
+/* Secondary nav buttons */
+.secondary-nav button {
+  color: black;
+  padding: 10px 20px; /* Consistent padding */
+  cursor: pointer;
+  font-weight: normal; /* Ensure font weight doesn't change */
+  font-size: 16px; /* Fixed font size */
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  border-radius: 5px; /* Rounded button corners */
+  margin: 0 5px;
+  min-width: 100px; /* Consistent width */
+  text-align: center; /* Ensure text is centered */
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+.secondary-nav button:hover {
+  background-color: #ddd; /* Changes background color on hover */
+  border-radius: 5px; /* Keep rounded corners consistent */
+}
+
+.secondary-nav button.active {
+  background-color: #51624F; /* Active state background */
+  border-radius: 5px; /* Keep rounded corners consistent */
+}
+
+.secondary-nav button:hover, .secondary-nav button.active {
+  font-weight: normal; /* Ensures font-weight remains the same */
+  padding: 10px 20px; /* Ensures padding doesn't change on hover */
+}
+
+/* Mobile styles for secondary nav */
+@media (max-width: 768px) {
+  .secondary-nav {
+      height: 85px;
+      display: flex;
+      flex-direction: row; /* Align buttons in a row for mobile */
+      justify-content: space-around; /* Distribute buttons evenly */
+      position: fixed; /* Keep it fixed */
+      top: 90px; /* Adjust to stay below the header */
+      padding: 8px; /* Reduce padding for mobile */
+      background-color: #f8f8f8; /* Keep background consistent */
+      z-index: 999; /* Ensure it stays above other content */
+  }
+
+  .secondary-nav button {
+      width: 22%; /* Make buttons take up ~quarter of the width */
+      margin: 0; /* No margin between buttons */
+      font-size: 14px; /* Slightly reduce font size for smaller screens */
+      padding: 8px; /* Increase padding for better touch targets */
+  }
 }
