@@ -22,6 +22,7 @@ const NumberPlateTable = ({ data }) => {
   };
 
   const tableColumnStyle = {
+    background: 'white',
     flex: '1 1 300px', // Flex-grow, flex-shrink, and min-width for responsiveness
     margin: '10px', // Space between columns
     maxWidth: '100%',
@@ -38,6 +39,12 @@ const NumberPlateTable = ({ data }) => {
     textAlign: 'left',
   };
 
+  const thStyle = {
+    ...thTdStyle, // Copy styles from thTdStyle
+    backgroundColor: 'rgba(81, 98, 79, 0.95)', // Green background for the header
+    color: 'white', // White text color for contrast
+  };
+
   return (
     <div style={tableWrapperStyle}>
       {columns.map((columnData, columnIndex) => (
@@ -45,8 +52,8 @@ const NumberPlateTable = ({ data }) => {
           <table style={tableStyle}>
             <thead>
               <tr>
-                <th style={thTdStyle}>Code</th>
-                <th style={thTdStyle}>Location</th>
+                <th style={thStyle}>Code</th>
+                <th style={thStyle}>Location</th>
               </tr>
             </thead>
             <tbody>
