@@ -6,6 +6,7 @@ const NumberPlatesTab = ({ numberPlates }) => {
   const [locationDisplay, setLocationDisplay] = useState('');
 
   const locationToolStyle = {
+    zIndex:'1000',
     textAlign: 'center',
     marginBottom: '20px',
     position: 'relative', // Keep relative positioning
@@ -83,6 +84,7 @@ const NumberPlatesTab = ({ numberPlates }) => {
 
   const explanationTextStyle = {
     fontSize: '18px',
+    backgroundColor:'white',
     marginBottom: '20px',
     color: '#333',
     maxWidth: '100%', // Ensure it doesn't overflow
@@ -92,6 +94,7 @@ const NumberPlatesTab = ({ numberPlates }) => {
   };
 
   const cardStyle = {
+    zIndex:'1000',
     backgroundColor: 'white',
     borderRadius: '8px',
     padding: '20px',
@@ -102,7 +105,7 @@ const NumberPlatesTab = ({ numberPlates }) => {
   };
 
   return (
-    <div className="tabcontent">
+    <div >
       {/* White card container for the explanatory text */}
       <div style={cardStyle}>
         <p style={explanationTextStyle}>

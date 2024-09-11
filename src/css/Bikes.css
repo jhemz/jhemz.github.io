@@ -119,6 +119,7 @@
 @media (max-width: 768px) {
     .tabcontent {
         padding: 10px;
+        z-index: 1000;
     }
 }
 
