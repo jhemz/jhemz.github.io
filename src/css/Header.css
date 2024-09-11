@@ -203,7 +203,7 @@ nav button:hover {
       top: 90px; /* Adjust to stay below the header */
       padding: 8px; /* Reduce padding for mobile */
       background-color: #f8f8f8; /* Keep background consistent */
-      z-index: 999; /* Ensure it stays above other content */
+      z-index: 9099; /* Ensure it stays above other content */
   }
 
   .secondary-nav button {
