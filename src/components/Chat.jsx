@@ -155,6 +155,7 @@ const Chat = ({ bikes }) => {
            marginTop: '-1px',
            textAlign: 'center',
            wordWrap: 'break-word', // Ensure long words or links break and don't overflow
+           minHeight: '50px', // Minimum height to ensure consistent spacing for short content
            width: '100%', // Ensures it takes full width of the container
            display: 'block', // Make sure the div behaves like a block element, allowing natural height growth
          }}
