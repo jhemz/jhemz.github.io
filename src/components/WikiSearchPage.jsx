@@ -104,7 +104,7 @@ const WikiSearchPage = ({ onNavigate }) => {
     maxWidth: '800px',
     marginBottom: '30px',
     backgroundColor: '#fff',
-    marginTop: '100px',
+    marginTop: '150px',
     padding: '20px',
     borderRadius: '10px',
     boxShadow: '0 4px 10px rgba(0, 0, 0, 0.3)',
