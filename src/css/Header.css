@@ -31,7 +31,7 @@ header {
 
 nav {
   display: flex;
-  gap: 5px;
+  gap: 0px;
   justify-content: center; /* Center links inside nav */
   align-items: center;
   flex-grow: 1; /* Allow nav to take up remaining space */
@@ -81,7 +81,7 @@ nav a:hover {
   }
 
   nav a {
-      padding: 15px 20px;
+      padding: 15px 0px;
       width: 100%;
       text-align: center;
   }
@@ -119,9 +119,9 @@ nav button {
   color: white; /* Make the text white */
   font-size: inherit;
   cursor: pointer;
-  padding: 10px 15px; /* Increase padding for a larger bubble */
+  padding: 10px 20px; /* Increase padding for a larger bubble */
   border-radius: 20px; /* Make it more rounded for a bubble effect */
-  margin: 0 10px; /* Add some spacing between buttons */
+  margin: 0 0px; /* Add some spacing between buttons */
   text-decoration: none;
 }
 
@@ -129,16 +129,16 @@ nav button {
 nav button.active {
   background-color: rgba(255, 255, 255, 0.2); /* Light white background for the bubble */
   color: white; /* Ensure text stays white */
-  border-radius: 20px; /* Make it more rounded for a bubble effect */
-  padding: 10px 15px; /* Increase padding for a larger bubble */
+  border-radius: 00px; /* Make it more rounded for a bubble effect */
+  padding: 13px 20px; /* Increase padding for a larger bubble */
 }
 
 /* Optional: Style for button hover effect */
 nav button:hover {
-  background-color: rgba(255, 255, 255, 0.2); /* Light white background for the bubble */
+  background-color: rgba(255, 255, 255, 0.35); /* Light white background for the bubble */
   color: white; /* Ensure text stays white */
-  border-radius: 20px; /* Make it more rounded for a bubble effect */
-  padding: 10px 15px; /* Increase padding for a larger bubble */
+  border-radius: 00px; /* Make it more rounded for a bubble effect */
+  padding: 13px 20px; /* Increase padding for a larger bubble */
 }
 
 /* Secondary nav for desktop */

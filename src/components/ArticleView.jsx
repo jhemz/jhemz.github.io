@@ -22,9 +22,9 @@ const ArticleView = ({ article, onBack }) => {
 
   // Styling for the article content container
   const articleContentStyle = {
-    maxWidth: '800px', // Limit the width of the article content
+    maxWidth: '900px', // Limit the width of the article content
     margin: '0 auto',  // Center the article content
-    padding: '20px',
+    padding: '50px',
     marginTop: '150px',
     lineHeight: '1.6', // Improve readability
     backgroundColor: '#f9f9f9',

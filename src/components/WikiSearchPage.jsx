@@ -36,10 +36,16 @@ const WikiSearchPage = ({ onNavigate, onSelectArticle }) => {
 
   // Styling for the search container
   const containerStyle = {
-    padding: '20px',
-    marginTop: '170px',
+    padding: '50px',
+    maxWidth: '900px', // Limit the width of the article content for large screens
+    background:'white',
+    marginTop: '150px',
     fontFamily: 'Arial, sans-serif',
     minHeight: '100vh',
+    borderRadius: '8px',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+    width: '100vw',
+    boxSizing: 'border-box', // Ensure padding doesn't affect overall width
   };
 
   const searchSectionStyle = {
@@ -67,7 +73,6 @@ const WikiSearchPage = ({ onNavigate, onSelectArticle }) => {
     color: 'black',
     marginBottom: '10px',
     overflow: 'hidden',
-    maxWidth: '100%',
     wordWrap: 'break-word',
   };
 
@@ -77,6 +82,27 @@ const WikiSearchPage = ({ onNavigate, onSelectArticle }) => {
     objectFit: 'cover',
     borderRadius: '8px',
     marginRight: '10px',
+  };
+
+  const articleCardStyle = {
+    border: '1px solid #ddd',
+    padding: '10px',
+    borderRadius: '5px',
+    marginBottom: '10px',
+    cursor: 'pointer',
+    maxWidth: '100%',
+    width: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    flexWrap: 'wrap', // Make sure content wraps properly on smaller screens
+  };
+
+  const noArticlesStyle = {
+    textAlign: 'center',
+    fontSize: '18px',
+    color: '#777',
+    padding: '20px',
+    minWidth: '100%', // Ensure it doesn't shrink the container
   };
 
   return (
@@ -98,43 +124,51 @@ const WikiSearchPage = ({ onNavigate, onSelectArticle }) => {
 
         {/* List of Articles */}
         <div>
-          {filteredArticles.map((article) => (
-            <div
-              key={article.id}
-              style={{
-                border: '1px solid #ddd',
-                padding: '10px',
-                borderRadius: '5px',
-                marginBottom: '10px',
-                cursor: 'pointer',
-                maxWidth: '100%',
-                margin: '0 auto',
-                width: '100%',
-                display: 'flex',
-                alignItems: 'center',
-              }}
-              onClick={() => handleArticleClick(article)}
-            >
-              {/* Article Image */}
-              <img
-                src={require(`../assets/wikiImages/${article.image}`)}
-                alt={article.title}
-                style={imageStyle}
-              />
+          {filteredArticles.length > 0 ? (
+            filteredArticles.map((article) => (
+              <div
+                key={article.id}
+                style={articleCardStyle}
+                onClick={() => handleArticleClick(article)}
+              >
+                {/* Article Image */}
+                <img
+                  src={require(`../assets/wikiImages/${article.image}`)}
+                  alt={article.title}
+                  style={imageStyle}
+                />
 
-              {/* Article Title and Preview */}
-              <div>
-                <h3 style={titleStyle}>{article.title}</h3>
-                <p>{stripHtmlTags(article.content).substring(0, 100)}...</p>
+                {/* Article Title and Preview */}
+                <div style={{ flex: '1', minWidth: '0' }}>
+                  <h3 style={titleStyle}>{article.title}</h3>
+                  <p>{stripHtmlTags(article.content).substring(0, 100)}...</p>
+                </div>
               </div>
-            </div>
-          ))}
-
-          {filteredArticles.length === 0 && (
-            <p>No articles found for "{searchTerm}"</p>
+            ))
+          ) : (
+            <p style={noArticlesStyle}>No articles found for "{searchTerm}"</p>
           )}
         </div>
       </div>
+
+      {/* Media Query for Mobile Responsiveness */}
+      <style jsx="true">{`
+        @media (max-width: 768px) {
+          .container {
+            padding: 20px;
+            width:100vw;
+          }
+
+          .article-card {
+            flex-direction: column; /* Stack the image and text on top of each other on smaller screens */
+            text-align: center;
+          }
+
+          img {
+            margin: 0 auto; /* Center the image */
+          }
+        }
+      `}</style>
     </div>
   );
 };
