@@ -86,6 +86,12 @@ function Header({ selectedPage, onNavigate, secondaryMenuItems }) {
             Archive
           </button> */}
           <button
+            className={selectedPage === 'wiki' ? 'active' : ''}
+            onClick={() => handleNavigation('wiki')}
+          >
+            Wiki
+          </button>
+          <button
             className={selectedPage === 'contact' ? 'active' : ''}
             onClick={() => handleNavigation('contact')}
           >

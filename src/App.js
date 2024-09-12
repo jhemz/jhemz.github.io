@@ -11,6 +11,7 @@ import './App.css'; // Import global styles
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SuppliersPage from './components/SuppliersPage';
 import ArchivePage from './components/ArchivePage';
+import WikiSearchPage from './components/WikiSearchPage';
 
 function App() {
   const [selectedPage, setSelectedPage] = useState('home');
@@ -28,6 +29,8 @@ function App() {
         return <SuppliersPage onNavigate={setSelectedPage} />;
       case 'archive':
         return <ArchivePage onNavigate={setSelectedPage} />;
+      case 'wiki':
+        return <WikiSearchPage onNavigate={setSelectedPage} />;
       case 'contact':
         return <Contact onNavigate={setSelectedPage} />;
       default:
